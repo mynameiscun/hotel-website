@@ -53,6 +53,7 @@ a{
 
     background:#333;
     padding:18px;
+    
 }
 
 .navbar a{
@@ -66,17 +67,14 @@ a{
 }
 
 .hero{
-    height:auto;
+    height:50vh;
     background:
     linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
     url("../IMAGE/banner.png");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
     color:white;
+    background-size: cover;
+    background-position: center;
+    position:relative;
 }
 
 .hero-text h1{
@@ -87,33 +85,77 @@ a{
 .hero-text p{
     font-size:20px;
 }
+.box-wrapper{
+    display:flex;
+    justify-content:center;
+}
 
 .booking-box{
-
     width:70%;
-    margin:-60px auto 0;
-
     background:white;
     padding:25px;
-
     border-radius:8px;
-
     display:flex;
     justify-content:space-between;
-    gap:20px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.15);
+    transform: translateY(-50%);
+    position:absolute;
+}
+.booking-form{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
 
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+.booking-form input,
+.booking-form select{
+    padding:12px 14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:14px;
+    outline:none;
+}
+.booking-form button{
+    padding:12px 24px;
+    border:none;
+    border-radius:8px;
+    background:#e0a61f;
+    color:white;
+    font-weight:600;
+}
+
+.booking-form button:hover{
+    background:#cf9e8c;
 }
 
 section{
     padding:80px;
     text-align:center;
 }
-
+.rooms-section {
+    background:#efece5;
+}
 .rooms{
-    background:#fffdf7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:70px;
+    width: 100%;
+}
+.room-card{
+    width:30%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.room-card img{
+    width:100%;
+    border-radius:8px;
 }
 
+.room-card:hover img{
+   transform:scale(1.1);
+}
 .facilities{
     background:white;
 }

@@ -1,0 +1,132 @@
+/*
+LINH
+*/
+
+body{
+    margin:0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+a{
+    text-decoration:none;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color: #fffdf7;
+    padding:15px 60px;
+}
+
+.language{
+    font-size:14px;
+    margin-left: 120px;
+}
+
+.logo img{
+    height:100px;
+
+}
+
+.contact{
+    list-style:none;
+    display:flex;
+    gap:15px;
+    margin:0;
+    padding:0;
+}
+
+.contact img{
+    width:50px;
+    height:50px;
+
+}
+.contact img:hover{
+    transform:scale(1.2);
+}
+
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+
+    background:#333;
+    padding:18px;
+}
+
+.navbar a{
+    color:white;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#f2b544;
+}
+
+.hero{
+    height:auto;
+    background:
+    linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url("../IMAGE/banner.png");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-text h1{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.hero-text p{
+    font-size:20px;
+}
+
+.booking-box{
+
+    width:70%;
+    margin:-60px auto 0;
+
+    background:white;
+    padding:25px;
+
+    border-radius:8px;
+
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+section{
+    padding:80px;
+    text-align:center;
+}
+
+.rooms{
+    background:#fffdf7;
+}
+
+.facilities{
+    background:white;
+}
+
+.news{
+    background:#fffdf7;
+}
+
+footer{
+    background:#222;
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+}

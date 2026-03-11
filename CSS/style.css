@@ -1,14 +1,23 @@
 /*
 LINH
 */
-
+*{
+    box-sizing: border-box;
+}
 body{
     margin:0;
     font-family:"Lato", sans-serif;
 }
-
+html, body{
+    overflow-x: hidden;
+}
 a{
     text-decoration:none;
+}
+.header{ 
+   position: sticky;
+    top: 0;
+    z-index: 1000;/* fix việc bị section khác đè lên */
 }
 /* --TOPBAR-- */
 .topbar{
@@ -16,7 +25,7 @@ a{
     justify-content:space-between;
     align-items:center;
     background-color: #fffdf7;
-    padding:15px 60px;
+    padding:0 60px;
 }
 .login a{
     padding:8px 22px;
@@ -25,7 +34,7 @@ a{
     font-size:15px;
     font-family:"Lato", sans-serif;
     font-weight:600;
-    border-radius:20px;
+    border-radius:20px;   
 }
 .login a:hover{
     background-color:#e0a61f;
@@ -74,7 +83,7 @@ a{
 
 /* --HERO BANNER-- */
 .hero{
-    height:50vh;
+    height:100%;
     background:
     linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
     url("../IMAGE/banner.png");
@@ -137,6 +146,7 @@ a{
 section{
     padding:80px;
     text-align:center;
+    scroll-margin-top: 170px; /*khi click vào nav, section sẽ không bị che bởi header */
 }
 
 /* --ABOUT US-- */
@@ -215,7 +225,9 @@ section{
 }
 
 .room-card{
-    width:60vh;
+   width:100%;
+    max-width:400px;
+    flex:1;
 }
 
 .room-card img{
@@ -242,7 +254,8 @@ section{
     background:white;
 }
 .img-info img{
-    width: 60vh;
+    width:100%;
+    max-width:400px;
     border-radius: 8px;
     transition: 0.3s;
 }
@@ -290,18 +303,19 @@ section{
    background:#efece5;
 }
 .news-section img{
-    width:60vh;
+   width:100%;
+    max-width:400px;
     border-radius:8px;
 }
 .news-container{
     display:flex;
-    justify-content:space-between;
     gap:20px;
     flex-wrap: wrap;
     justify-content: center;
 }
 .news-card{
-    width: 60vh;
+    width:100%;
+    max-width:400px;
 }
 .news-card a{
     text-decoration: none;
@@ -314,12 +328,82 @@ section{
     transform: scale(1.05);
     color:#4d3600;
 }
+.contact-section{
+    background:#898ca1;
+    color:rgb(0, 0, 0);
+    text-align:center;
+    padding:60px 20px;
+}
+.contact-section h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+.contact-section p{
+    margin-bottom:25px;
+}
+.contact-btn{
+    padding:12px 30px;
+    background:#ffffff;
+    color:rgb(0, 0, 0);
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+    border: 2px solid #e0a61f;
+}
 
+.contact-btn:hover{
+    background:#e0a61f;
+    color:white;
+}
 footer{
     background:#222;
     color:white;
 
     text-align:center;
-
     padding:25px;
+}
+@media (max-width: 768px){
+    .booking-box{
+        flex-direction: column;
+        transform: none;
+        position: static;
+
+    }
+    .booking-form{
+        flex-direction: column;
+        gap: 10px;
+
+    }
+    .about-container{
+        flex-direction: column;
+        align-items: start;
+    }
+    .about-us{
+        width:100%;
+     }
+     .about-us p{
+        font-size: 15px;
+     }
+     .about-box img{
+        width: 3vh;
+     }
+     .about-box h2{
+        font-size: 20px;
+     }
+     .about-box li{
+        font-size: 16px;
+     }
+     .rooms{
+        flex-direction: column;
+    }
+     .img-info{
+        flex-direction: column;
+     }
+     .news-container{
+        flex-direction: column;
+     }
+     .navbar{
+        gap: 16px;
+     }
 }

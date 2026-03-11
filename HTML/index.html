@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
-    <title>Hotel_Booking</title>
+<title>Hotel_Booking</title>
 </head>
 <body>
 <!-- HEADER -->
 <header>
     <div class="topbar">
-        <div class="language">
-            EN | VI
+        <div class="login">
+            <a href="login.html">Login</a>
         </div>
         <div class="logo">
             <img src="../IMAGE/logo.png" alt="Hotel Logo">
@@ -62,35 +63,181 @@
         </form>
     </div>
 </div>
+ 
+<!--ABOUT SECTION-->
+<section class="about">
+    <div class="about-title">
+        <h2>About Us</h2>
+    </div>
+    <div class="about-container">
+        <div class="about-us">
+                <p>
+                    Welcome to Plazzo Serento, a luxurious five-star hotel located in the heart of the city. 
+                </p>
+                <p>    
+                    Designed with elegance and comfort in mind, our hotel offers a sophisticated space where guests can truly relax and enjoy their stay. 
+                </p>
+                <p>
+                    With its modern facilities and refined atmosphere, Plazzo Serento is the perfect destination for travelers seeking both convenience and luxury.
+                </p>
+            <ul class="contact">
+                <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>
+                <li><a href="#"><img src="../IMAGE/youtube.png" alt="Youtube"></a></li>      
+            </ul>
+            <div class="moreinfo">
+                <a href="contact.html">More Info</a>
+            </div>
+        </div>
+       
+            <div class="about-box">
+            <h2>Why should choose us</h2>
+            <ul> 
+                <li><img src="../IMAGE/convenience.png">Convenient</li>
+                <li><img src="../IMAGE/support.png">Comfortable</li>
+                <li><img src="../IMAGE/diamond.png">Luxurious</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 <!-- ROOMS SECTION -->
 
 <section class="rooms-section">
     <h2>Our Rooms</h2>
+
     <div class="rooms">
+
         <div class="room-card">
-            <a href="rooms.html"><img src="../IMAGE/room1.png" alt="Room 1"></a>
+            <a href="room-detail.html" class="room-link">
+                <img src="../IMAGE/room1.png" alt="">
+                <h3 class="room-title">Royal Suite</h3>
+            </a> 
         </div>
+
         <div class="room-card">
-            <a href="rooms.html"><img src="../IMAGE/room2.png" alt="Room 2"></a>
+            <a href="room-detail.html" class="room-link">
+                <img src="../IMAGE/room2.png" alt="">
+                <h3 class="room-title">Executive Suite</h3>
+            </a>       
         </div>
+
         <div class="room-card">
-            <a href="rooms.html"><img src="../IMAGE/room3.png" alt="Room 3"></a>
+            <a href="room-detail.html" class="room-link">
+                <img src="../IMAGE/room3.png" alt="">
+                <h3 class="room-title">Deluxe Twin</h3>
+            </a>
+        </div>
+        <div class="moreinfo">
+            <a href="rooms.html">More Info</a>
+        </div>
+    </div>
+</section>
+
+<!-- FACILITIES SECTION --><!--dùng bootstrap data-bs-toggle-->>
+ <section class="facilities">
+    <h2>Our Facilities</h2>
+<div class="nav nav-tabs" id="nav-tab">
+    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#restaurant" aria-selected="true">
+        RESTAURANT
+    </button>
+    <button class="nav-link " data-bs-toggle="tab" data-bs-target="#spa" aria-selected="false">
+        SPA
+    </button>
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pool" aria-selected="false">
+        POOL
+    </button>
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gym" aria-selected="false">
+        GYM
+    </button>
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#coffee" aria-selected="false">
+        COFFEE SHOP
+    </button>
+</div>
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="restaurant">
+        <div class="img-info">
+            <img src="../IMAGE/restaurant1.png" alt="Restaurant">
+            <img src="../IMAGE/restaurant2.png" alt="Restaurant">
+            <img src="../IMAGE/restaurant3.png" alt="Restaurant">
+        </div>
+        <div class="moreinfo">
+            <a href="facilities.html">More Info</a>
+        </div>
+       
+    </div>
+
+    <div class="tab-pane fade" id="spa">
+        <div class="img-info">
+            <img src="../IMAGE/spa1.png" alt="SPA">
+            <img src="../IMAGE/spa2.png" alt="SPA">
+            <img src="../IMAGE/spa3.png" alt="SPA">
+        </div>
+         <div class="moreinfo">
+            <a href="facilities.html">More Info</a>
         </div>
     </div>
 
-</section> 
-
-
-<!-- FACILITIES SECTION -->
-<section class="facilities">
-    <h2>Facilities</h2>
+    <div class="tab-pane fade" id="pool">
+        <div class="img-info">
+            <img src="../IMAGE/pool1.png" alt="POOL">
+            <img src="../IMAGE/pool2.png" alt="POOL">
+            <img src="../IMAGE/pool3.png" alt="POOL">
+        </div>
+         <div class="moreinfo">
+            <a href="facilities.html">More Info</a>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="gym">
+        <div class="img-info">
+            <img src="../IMAGE/gym1.png" alt="GYM">
+            <img src="../IMAGE/gym2.png" alt="GYM">
+            <img src="../IMAGE/gym3.png" alt="GYM">
+        </div>
+         <div class="moreinfo">
+            <a href="facilities.html">More Info</a>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="coffee">
+        <div class="img-info">
+            <img src="../IMAGE/coffe1.png" alt="COFFEE SHOP">
+            <img src="../IMAGE/coffe2.png" alt="COFFEE SHOP">
+            <img src="../IMAGE/coffe3.png" alt="COFFEE SHOP">
+        </div>
+        <div class="moreinfo">
+            <a href="facilities.html">More Info</a>
+        </div>
+    </div>    
+</div>
 </section>
 
 
 <!-- NEWS SECTION -->
-<section class="news">
+<section class="news-section">
     <h2>Latest News</h2>
+    <div class="news-container">
+        <div class="news-card">
+            <a href="news-detail.html" class="news-link">
+                <img src="../IMAGE/news1.png" alt="News 1">
+                <h3 class="news-title">Grand Opening: Experience Luxury at Plazzo Serento Hotel</h3>
+            </a>
+        </div>
+        <div class="news-card">
+            <a href="news-detail.html" class="news-link">
+                <img src="../IMAGE/news2.png" alt="News 2" >
+                <h3 class="news-title">Exclusive Summer Offer: Enjoy Special Discounts on Luxury Suites</h3>
+            </a>
+        </div>
+        <div class="news-card">
+            <a href="news-detail.html" class="news-link">
+                <img src="../IMAGE/news3.png" alt="News 3">
+                <h3 class="news-title">Discover Our New Premium Facilities for a Perfect Stay</h3>
+            </a>
+        </div>
+        <div class="moreinfo">
+            <a href="news.html">More Info</a>
+        </div>
+    </div>
 </section>
 
 
@@ -98,5 +245,6 @@
 <footer>
     <p>© 2026 Hotel Website</p>
 </footer>
+<script src="../JS/bootstrap.bundle.min.js"></script>
 </body>
 </html>

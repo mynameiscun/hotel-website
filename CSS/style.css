@@ -11,23 +11,35 @@ body{
 a{
     text-decoration:none;
 }
-.header{ 
+/* HEADER*/
+.header{
+    background:#e5ded0e7;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;/* fix việc bị section khác đè lên */
 }
-/* --TOPBAR-- */
-.topbar{
+.header a{
+    color: #333;
+    font-weight: 600;
+}
+.right{
+    margin: 5px 20px;
     display:flex;
-    justify-content:space-between;
+    justify-content: center;
     align-items:center;
-    background-color: #fffdf7;
-    padding:0 60px;
+    gap:20px;
+}
+.login{
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .login a{
     padding:8px 22px;
     border:2px solid #e0a61f;
-    color:#584722;
     font-size:15px;
     font-family:"Lato", sans-serif;
     font-weight:600;
@@ -38,38 +50,37 @@ a{
     color:white;
     transform:scale(1.05);
 }
-
-.logo img{
-    height:100px;
-}
-
 .contact{
     list-style:none;
     display:flex;
     gap:15px;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: auto;
+    align-items: center;
 }
 
 .contact img{
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
 
 }
 .contact img:hover{
     transform:scale(1.2);
 }
-
+.logo{
+    display:flex;
+    align-items:center;
+    margin: 5px 20px;
+}
+.logo img{
+    height:100px;
+}
 .navbar{
     display:flex;
-    justify-content:center;
     gap:35px;
-    background:#333;
-    padding:18px;
 }
 
 .navbar a{
-    color:white;
     font-size:16px;
     transition:0.3s;
 }
@@ -295,6 +306,20 @@ section{
     color: white;
     transform: scale(1.2);
 }
+.view-more a{
+    display:inline-block;
+    border:2px solid #e0a61f;
+    margin-top:15px;
+    padding:10px 20px;
+    color:rgb(0, 0, 0);
+    border-radius:8px;
+}
+.view-more {
+    margin-top: 90px;
+}
+.view-more:hover {
+    transform: translateX(10px);
+}
 /* --NEWS-- */
 .news-section{
    background:#efece5;
@@ -360,6 +385,7 @@ footer{
     text-align:center;
     padding:25px;
 }
+
 @media (max-width: 768px){
     .booking-box{
         flex-direction: column;
@@ -406,7 +432,35 @@ footer{
         flex-direction: column;
         align-items: center;
      }
-     .navbar{
-        gap: 16px;
-     }
+    .header{
+        position: relative;
+        flex-direction: column;
+        padding:10px;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items:center;
+        gap:0;
+    }
+
+    .navbar a{
+        font-size:16px;
+        padding:5px 0;
+    }
+    .right{
+        width:80%;
+        gap:15px;
+        justify-content:space-between;
+    }
+
+    .contact{
+        flex-direction:row;
+        gap:10px;
+    }
+
+    .logo img{
+        height:100px;
+    }
+
 }

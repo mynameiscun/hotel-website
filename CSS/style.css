@@ -16,9 +16,11 @@ a{
     background:#2C2C2C;
     display:flex;
     align-items: center;
+    justify-content:space-between;
     position: sticky;
     top: 0;
-    padding:0 60px;
+    padding:0 40px;
+    margin: auto;
     z-index: 1000;/* fix việc bị section khác đè lên */
 }
 .header a{
@@ -26,15 +28,15 @@ a{
     font-weight: 600;
 }
 .right{
-    flex:1;
     display:flex;
-    justify-content: flex-end;
-    gap:20px;
+    gap:10px;
+    flex:2;
 }
 .login{
-    gap: 10px;
+    gap: 7px;
     display: flex;
     flex-wrap: wrap;
+
 }
 .login a{
     padding:8px 22px;
@@ -70,16 +72,18 @@ a{
 .logo{
     display:flex;
     align-items:center;
-    flex:1;
+    flex:2;
 }
 .logo img{
     height:70px;
 }
 .navbar{
     display:flex;
-    flex: 2;
-    justify-content: center;
-    gap: 35px;
+    gap:35px;
+    justify-content:center;
+    text-align:center;
+    flex-wrap: wrap;
+    flex:4;
 }
 
 .navbar a{

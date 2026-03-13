@@ -6,30 +6,29 @@ LINH
 }
 body{
     margin:0;
-    font-family:"Lato", sans-serif;
+    font-family:'Playfair Display',serif;
 }
 a{
     text-decoration:none;
 }
 /* HEADER*/
 .header{
-    background:#e5ded0e7;
+    background:#2C2C2C;
     display:flex;
-    justify-content:space-between;
     align-items: center;
     position: sticky;
     top: 0;
+    padding:0 60px;
     z-index: 1000;/* fix việc bị section khác đè lên */
 }
 .header a{
-    color: #333;
+    color: #ffffff;
     font-weight: 600;
 }
 .right{
-    margin: 5px 20px;
+    flex:1;
     display:flex;
-    justify-content: center;
-    align-items:center;
+    justify-content: flex-end;
     gap:20px;
 }
 .login{
@@ -55,8 +54,9 @@ a{
     display:flex;
     gap:15px;
     margin: 0;
-    padding: auto;
+    padding: 0;
     align-items: center;
+    margin-right: 50px;
 }
 
 .contact img{
@@ -70,14 +70,16 @@ a{
 .logo{
     display:flex;
     align-items:center;
-    margin: 5px 20px;
+    flex:1;
 }
 .logo img{
-    height:100px;
+    height:70px;
 }
 .navbar{
     display:flex;
-    gap:35px;
+    flex: 2;
+    justify-content: center;
+    gap: 35px;
 }
 
 .navbar a{
@@ -91,7 +93,6 @@ a{
 
 /* --HERO BANNER-- */
 .hero{
-    height:100%;
     background:
     linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
     url("../IMAGE/banner.png");
@@ -101,7 +102,7 @@ a{
     position:relative;
 }
 .hero-text h1{
-    font: size 55vh;;
+    font-size: 55px;
     margin-bottom:10px;
 }
 .hero-text p{
@@ -122,6 +123,7 @@ a{
     box-shadow:0 10px 40px rgba(0,0,0,0.15);
     transform: translateY(-50%);
     position:absolute;
+
 }
 .booking-form{
     display:flex;
@@ -161,6 +163,8 @@ section{
 .about-title{    
     text-align:center;
     margin-bottom:40px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
 }
 .about-container{
     display:flex;
@@ -171,14 +175,9 @@ section{
 }
 .about-us{
     width:60%;
-    font-size:20px;
+    font-size:22px;
     line-height:1.6;
-    font-family:"Lato", sans-serif;
-    align-items: center;
     text-align: start;
-}
-.about-us h2{
-    font-size: 25px;
 }
 .about-box li{
     display:flex;
@@ -194,8 +193,7 @@ section{
     border: 2px solid #e0a61f;
     background:#fff;
     box-shadow:0 4px 15px rgba(0,0,0,0.1);
-    font-family:"Lato", sans-serif;
-    
+    margin-bottom: 80px;   
 }
 .about-box:hover{
     transform: translateY(-8px);
@@ -203,7 +201,7 @@ section{
 }
 
 .about-box img{
-    width: 60px;
+    width: 30px;
     margin-bottom: 15px;
 }
 .about-box h3{
@@ -213,9 +211,6 @@ section{
 .about-box p{
     font-size: 14px;
     color: #666;
-}
-.about-box img{
-    width: 4vh;
 }
 
 /* --ROOMS-- */
@@ -251,7 +246,7 @@ section{
     font-size:22px;
     font-weight:600;
     color:#e0a61f;
-    font-family: "Lato", sans-serif;
+    font-family: 'Playfair Display',serif;
 }
 .room-link:hover .room-title{
     color:#4d3600;
@@ -314,12 +309,6 @@ section{
     color:rgb(0, 0, 0);
     border-radius:8px;
 }
-.view-more {
-    margin-top: 90px;
-}
-.view-more:hover {
-    transform: translateX(10px);
-}
 /* --NEWS-- */
 .news-section{
    background:#efece5;
@@ -349,6 +338,10 @@ section{
 .news-link:hover .news-title{
     transform: scale(1.05);
     color:#4d3600;
+}
+.news-title{
+    font-size: 22px;
+    font-family: 'Playfair Display',serif;
 }
 .contact-section{
     background:#898ca1;
@@ -441,7 +434,8 @@ footer{
     .navbar{
         flex-direction: column;
         align-items:center;
-        gap:0;
+        gap:10px;
+        margin: 0;
     }
 
     .navbar a{
@@ -450,17 +444,11 @@ footer{
     }
     .right{
         width:80%;
-        gap:15px;
+        gap:20px;
         justify-content:space-between;
     }
 
-    .contact{
-        flex-direction:row;
-        gap:10px;
-    }
-
     .logo img{
-        height:100px;
+        height:60px;
     }
-
 }

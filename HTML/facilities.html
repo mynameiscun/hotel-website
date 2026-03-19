@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Facilities</title>
+
+<link rel="stylesheet" href="../CSS/style.css">
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+.facilities-container{
+display:flex;
+width:90%;
+margin:50px auto;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* ảnh */
+
+.gallery{
+flex:2;
+padding:20px;
+}
+
+.gallery-main img{
+width:100%;
+border-radius:5px;
+}
+
+.gallery-thumb{
+display:flex;
+gap:10px;
+margin-top:10px;
+}
+
+.gallery-thumb img{
+width:100px;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* mô tả */
+
+.facility-info{
+flex:1;
+padding:30px;
+border-left:1px solid #eee;
+}
+
+.facility-info h2{
+margin-top:0;
+}
+
+.facility-info ul{
+list-style:none;
+padding:0;
+}
+
+.facility-info li{
+margin:10px 0;
+}
+
+/* nút */
+
+.close-btn{
+position:absolute;
+top:20px;
+right:30px;
+font-size:25px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="close-btn">✕</a>
+
+<div class="facilities-container">
+
+<!-- ảnh -->
+
+<div class="gallery">
+
+<div class="gallery-main">
+<img id="mainImg" src="../IMAGE/restaurant1.png">
+</div>
+
+<div class="gallery-thumb">
+<img src="../IMAGE/restaurant1.png" onclick="changeImg(this)">
+<img src="../IMAGE/restaurant2.png" onclick="changeImg(this)">
+<img src="../IMAGE/restaurant3.png" onclick="changeImg(this)">
+</div>
+
+</div>
+
+<!-- mô tả -->
+
+<div class="facility-info">
+
+<h2>Restaurant</h2>
+
+<p>
+Our restaurant offers a luxurious dining experience with
+international cuisine, elegant atmosphere and professional service.
+</p>
+
+<h3>Facilities</h3>
+
+<ul>
+<li>🍽 Fine dining restaurant</li>
+<li>☕ Coffee & beverage</li>
+<li>📶 Free Wifi</li>
+<li>❄ Air conditioning</li>
+<li>🛎 24/7 service</li>
+</ul>
+
+</div>
+
+</div>
+
+<script>
+
+function changeImg(img){
+document.getElementById("mainImg").src = img.src;
+}
+
+</script>
+
+</body>
+</html>

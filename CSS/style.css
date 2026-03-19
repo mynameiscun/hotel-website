@@ -456,10 +456,12 @@ footer{
         height:60px;
     }
 }
-/* --- FEATURED NEWS LAYOUT --- */
+/*
+THÀNH
+*/
 .featured-news {
     background: #ffffff;
-    padding: 60px 10%; /* Căn lề hai bên cho gọn */
+    padding: 60px 10%; 
 }
 .featured-news .section-title {
     text-align: center;
@@ -482,12 +484,12 @@ footer{
 }
 .news-main-card img {
     width: 100%;
-    height: 350px; /* Cố định chiều cao ảnh lớn */
+    height: 350px; 
     object-fit: cover;
 }
 .news-sub-card img {
     width: 100%;
-    height: 150px; /* Cố định chiều cao ảnh nhỏ */
+    height: 150px; 
     object-fit: cover;
 }
 .news-content {
@@ -527,10 +529,9 @@ footer{
     background: #e0a61f;
     color: #fff;
 }
-/* --- LATEST NEWS SECTION --- */
 .latest-news {
     background: #ffffff;
-    padding: 20px 10% 80px; /* Căn lề đồng bộ với phần trên */
+    padding: 20px 10% 80px; 
 }
 .latest-news .section-title {
     text-align: center;
@@ -543,7 +544,7 @@ footer{
 .latest-news-item {
     display: flex;
     background: #fff;
-    border: 1px solid #eaeaea; /* Viền mỏng như trong ảnh */
+    border: 1px solid #eaeaea; 
     margin-bottom: 30px;
     transition: 0.3s;
 }
@@ -551,7 +552,7 @@ footer{
     box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 .latest-news-img {
-    flex: 0 0 45%; /* Ảnh chiếm 45% chiều ngang */
+    flex: 0 0 45%; 
 }
 .latest-news-img img {
     width: 100%;
@@ -603,7 +604,7 @@ footer{
     color: #4d3600;
 }
 .latest-news-readmore::after {
-    content: '→'; /* Mũi tên bên cạnh chữ Xem thêm */
+    content: '→'; 
     margin-left: 8px;
     font-size: 18px;
 }
@@ -628,15 +629,13 @@ footer{
     color: white;
 }
 
-/* Ẩn các bài viết ban đầu */
 .hidden-news {
     display: none !important;
 }
 
-/* Đảm bảo hiển thị tốt trên điện thoại */
 @media (max-width: 768px) {
     .latest-news-item {
-        flex-direction: column; /* Đẩy ảnh lên trên chữ */
+        flex-direction: column; 
     }
     .latest-news-img {
         flex: none;
@@ -646,18 +645,17 @@ footer{
         padding: 20px;
     }
 }
-/* --- NEWS FILTER BAR --- */
 .news-filter-section {
     background: #ffffff;
-    padding: 40px 10% 10px; /* Căn lề cho khớp với thiết kế */
+    padding: 40px 10% 10px; 
     text-align: center;
 }
 .news-filter-container {
     display: flex;
     justify-content: center;
-    gap: 50px; /* Khoảng cách giữa các chữ */
+    gap: 50px;
     flex-wrap: wrap;
-    border-bottom: 1px solid #eaeaea; /* Đường gạch dưới giống ảnh */
+    border-bottom: 1px solid #eaeaea; 
     padding-bottom: 20px;
 }
 .filter-btn {
@@ -677,23 +675,20 @@ footer{
 .filter-btn:hover {
     color: #666;
 }
-/* Hiệu ứng khi được chọn (Active) */
 .filter-btn.active {
-    color: #333; /* Chữ đậm màu hơn */
+    color: #333; 
 }
-/* Tạo hình tam giác lộn ngược màu cam phía trên nút Active */
 .filter-btn.active::before {
     content: "";
     position: absolute;
-    top: -15px; /* Điều chỉnh vị trí tam giác */
+    top: -15px;
     left: 50%;
     transform: translateX(-50%);
     border-width: 8px;
     border-style: solid;
-    border-color: #e0a61f transparent transparent transparent; /* Tam giác màu vàng cam */
+    border-color: #e0a61f transparent transparent transparent; 
 }
 
-/* Responsive cho điện thoại */
 @media (max-width: 768px) {
     .news-filter-container {
         gap: 15px;
@@ -702,7 +697,6 @@ footer{
         font-size: 13px;
     }
 }   
-/* --- TRANG NEWS DETAIL --- */
 .article-title {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
@@ -754,7 +748,6 @@ footer{
     color: #fff;
 }
 
-/* --- SIDEBAR WIDGETS --- */
 .sidebar-widget {
     background: #ffffff;
     border: 1px solid #eaeaea;
@@ -818,7 +811,6 @@ footer{
     font-size: 13px;
     color: #999;
 }
-/* --- TRANG TEAM --- */
 .team-card {
     background: #ffffff;
     border-radius: 8px;
@@ -832,23 +824,23 @@ footer{
 .team-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border: 1px solid #e0a61f; /* Viền vàng gold hiện lên khi hover */
+    border: 1px solid #e0a61f;
 }
 .team-img-wrapper {
     width: 100%;
     height: 320px;
     overflow: hidden;
-    background-color: #efece5; /* Màu nền dự phòng nếu ảnh bị trong suốt */
+    background-color: #efece5; 
 }
 .team-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top; /* Tập trung hiển thị khuôn mặt */
+    object-position: top; 
     transition: transform 0.5s ease;
 }
 .team-card:hover .team-img {
-    transform: scale(1.1); /* Phóng to ảnh nhẹ khi hover */
+    transform: scale(1.1); 
 }
 .team-info {
     padding: 25px 20px;

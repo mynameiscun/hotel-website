@@ -635,3 +635,414 @@ footer{
         height:60px;
     }
 }
+/*
+THÀNH
+*/
+.featured-news {
+    background: #ffffff;
+    padding: 60px 10%; 
+}
+.featured-news .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+.news-main-card, .news-sub-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    height: 100%;
+}
+.news-main-card:hover, .news-sub-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+.news-main-card img {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover;
+}
+.news-sub-card img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+}
+.news-content {
+    padding: 20px;
+    text-align: left;
+}
+.news-main-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.news-sub-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: bold;
+}
+.news-desc {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.btn-readmore {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #e0a61f;
+    color: #e0a61f;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.btn-readmore:hover {
+    background: #e0a61f;
+    color: #fff;
+}
+.latest-news {
+    background: #ffffff;
+    padding: 20px 10% 80px; 
+}
+.latest-news .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+.latest-news-item {
+    display: flex;
+    background: #fff;
+    border: 1px solid #eaeaea; 
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+.latest-news-item:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+.latest-news-img {
+    flex: 0 0 45%; 
+}
+.latest-news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 250px;
+    display: block;
+}
+.latest-news-content {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+.latest-news-date {
+    font-size: 15px; 
+    margin-bottom: 15px; 
+    color: #e0a61f; 
+    font-weight: 600;
+}
+.latest-news-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; 
+    color: #333;
+    line-height: 1.4; 
+    margin-bottom: 20px; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.latest-news-desc {
+    color: #555; 
+    font-size: 17px; 
+    line-height: 1.9; 
+    margin-bottom: 35px;
+}
+.latest-news-readmore {
+    color: #e0a61f;
+    text-decoration: none;
+    font-size: 16px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; 
+    display: inline-flex;
+    align-items: center;
+}
+.latest-news-readmore:hover {
+    color: #4d3600;
+}
+.latest-news-readmore::after {
+    content: '→'; 
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+/* Nút Load More */
+.load-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+.btn-load-more {
+    padding: 12px 35px;
+    background: transparent;
+    border: 1px solid #e0a61f;
+    color: #e0a61f;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-load-more:hover {
+    background: #e0a61f;
+    color: white;
+}
+
+.hidden-news {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .latest-news-item {
+        flex-direction: column; 
+    }
+    .latest-news-img {
+        flex: none;
+        width: 100%;
+    }
+    .latest-news-content {
+        padding: 20px;
+    }
+}
+.news-filter-section {
+    background: #ffffff;
+    padding: 40px 10% 10px; 
+    text-align: center;
+}
+.news-filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eaeaea; 
+    padding-bottom: 20px;
+}
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+.filter-btn:hover {
+    color: #666;
+}
+.filter-btn.active {
+    color: #333; 
+}
+.filter-btn.active::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #e0a61f transparent transparent transparent; 
+}
+
+@media (max-width: 768px) {
+    .news-filter-container {
+        gap: 15px;
+    }
+    .filter-btn {
+        font-size: 13px;
+    }
+}   
+.article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #333;
+    line-height: 1.4;
+    text-align: left;
+}
+.article-meta {
+    font-size: 14px;
+    color: #777;
+    font-family: 'Lato', sans-serif;
+}
+.article-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.article-content h4 {
+    font-family: 'Playfair Display', serif;
+    color: #e0a61f;
+    font-size: 22px;
+    text-align: left;
+}
+.custom-quote {
+    font-style: italic;
+    font-size: 20px;
+    color: #4d3600;
+    padding: 20px 30px;
+    border-left: 4px solid #e0a61f;
+    background: #fdfbf7;
+    margin: 30px 0;
+    font-family: 'Playfair Display', serif;
+}
+.tag-link {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #efece5;
+    color: #333;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-right: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.tag-link:hover {
+    background: #e0a61f;
+    color: #fff;
+}
+
+.sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+.widget-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+.widget-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #e0a61f;
+}
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.category-list li {
+    border-bottom: 1px dashed #eaeaea;
+    padding: 12px 0;
+}
+.category-list li:last-child {
+    border-bottom: none;
+}
+.category-list a {
+    color: #555;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+.category-list a:hover {
+    color: #e0a61f;
+}
+.recent-info h5 {
+    font-size: 15px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+.recent-info h5 a {
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.recent-info h5 a:hover {
+    color: #e0a61f;
+}
+.recent-date {
+    font-size: 13px;
+    color: #999;
+}
+.team-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    height: 100%;
+    text-align: center;
+}
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border: 1px solid #e0a61f;
+}
+.team-img-wrapper {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background-color: #efece5; 
+}
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; 
+    transition: transform 0.5s ease;
+}
+.team-card:hover .team-img {
+    transform: scale(1.1); 
+}
+.team-info {
+    padding: 25px 20px;
+}
+.team-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.team-role {
+    display: block;
+    font-size: 14px;
+    color: #e0a61f;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+.team-info p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}

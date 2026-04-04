@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKING</title>
+</head>
+<style>
+    
+    .booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.booking-table th, .booking-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.booking-table th {
+  background: #b89b5e;
+  color: #fff;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-content{
+background:#fff;
+padding:25px;
+border-radius:12px;
+width:420px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.payment-note{
+color:#555;
+margin-bottom:15px;
+}
+
+.bank-info{
+background:#f7f7f7;
+padding:15px;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+.bank-row{
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px solid #ddd;
+}
+
+.bank-row:last-child{
+border-bottom:none;
+}
+
+.payment-warning{
+background:#fff3cd;
+padding:10px;
+border-radius:6px;
+font-size:14px;
+margin-bottom:15px;
+}
+
+.btn-payment{
+width:100%;
+padding:12px;
+background:#b89b5e;
+color:white;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn-payment:hover{
+background:#a6884f;
+}
+</style>
+<body>
+    <!-- BOOKING PAGE -->
+<section class="booking-info-container">
+  <h2>Thông tin đặt phòng</h2>
+  <table class="booking-table">
+    <thead>
+      <tr>
+        <th>Loại phòng</th>
+        <th>Họ tên</th>
+        <th>SĐT</th>
+        <th>Check-in</th>
+        <th>Check-out</th>
+        <th>Khách</th>
+        <th>Giá</th>
+        <th>Thanh toán</th>
+      </tr>
+    </thead>
+    <tbody id="booking-data"></tbody>
+  </table>
+</section>
+
+<!-- MODAL THANH TOÁN -->
+<div id="payment-modal" class="modal">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h3>🏦 Thanh toán chuyển khoản</h3>
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+    </div>
+
+    <p class="payment-note">
+      Vui lòng chuyển khoản theo thông tin bên dưới để hoàn tất đặt phòng
+    </p>
+
+    <div class="bank-info">
+
+      <div class="bank-row">
+        <span>Ngân hàng</span>
+        <strong>Vietcombank</strong>
+      </div>
+
+      <div class="bank-row">
+        <span>Chủ tài khoản</span>
+        <strong>KHÁCH SẠN LUXURY HOTEL</strong>
+      </div>
+
+      <div class="bank-row">
+        <span>Số tài khoản</span>
+        <strong>123456789</strong>
+      </div>
+
+      <div class="bank-row">
+        <span>Nội dung chuyển khoản</span>
+        <strong id="transfer-content">Thanh toán đặt phòng</strong>
+      </div>
+
+    </div>
+
+    <div class="payment-warning">
+      ⚠️ Sau khi chuyển khoản, vui lòng nhấn xác nhận để chúng tôi kiểm tra
+    </div>
+
+    <button class="btn-payment" onclick="confirmPayment()">
+      Tôi đã chuyển khoản
+    </button>
+
+  </div>
+</div>
+<script>
+function showBookingTable(){
+
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  const allBookings = JSON.parse(localStorage.getItem("bookings")) || {};
+
+  const bookings = allBookings[loggedInUser] || [];
+
+  let rows = "";
+
+  bookings.forEach(booking => {
+    rows += `
+      <tr>
+        <td>${booking.room}</td>
+        <td>${booking.name}</td>
+        <td>${booking.phone}</td>
+        <td>${booking.checkIn}</td>
+        <td>${booking.checkOut}</td>
+        <td>${booking.guests}</td>
+        <td>${booking.price}</td>
+        <td><button onclick="openModal()" class="btn-payment">Thanh toán</button></td>
+      </tr>`;
+  });
+
+  document.getElementById("booking-data").innerHTML = rows;
+}
+// modal
+function openModal(){
+  document.getElementById("payment-modal").style.display = "flex";
+}
+
+function closeModal(){
+  document.getElementById("payment-modal").style.display = "none";
+}
+
+// thanh toán
+document.getElementById("payment-form")?.addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Thanh toán thành công!");
+  closeModal();
+});
+
+// load page
+document.addEventListener("DOMContentLoaded", showBookingTable);
+//confirm chuyển khoản
+function confirmPayment(){
+  alert("Yêu cầu thanh toán đã được ghi nhận!");
+  closeModal();
+}
+</script>
+</body>
+</html>

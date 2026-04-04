@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="../CSS/rm-detail-style.css">
     <title>Room Details - Plazzo Serento</title>
 </head>
+<style>
+.error-msg {
+    font-size: 12px;
+    color: red;
+    display: block;
+    margin-top: 2px;
+}
+</style>
 <body>
 <!-- HEADER -->
 <div class="header">
@@ -206,44 +214,43 @@
         <aside class="right-content">
             <div class="booking-box-card">
                 <h2>Booking Form</h2>
-                <form action="#" method="POST">
+                <form id="booking-form">
                     <div class="input-group">
                         <label for="room-select">Select Room Type</label>
                         <select class="real-input" id="room-select">
-                            <option value="500000">Royal Suite</option>
-                            <option value="800000">Executive Suite</option>
-                            <option value="1000000">Deluxe Twin</option>
+                        <option value="Royal Suite|500000">Royal Suite</option>
+                        <option value="Executive Suite|800000">Executive Suite</option>
+                        <option value="Deluxe Twin|1000000">Deluxe Twin</option>
                         </select>
                     </div>
 
                     <div class="input-group">
                         <label>Full Name</label>
-                        <input type="text" class="real-input" placeholder="Your Name..." required>
+                        <input type="text" id="booking-name" class="real-input" required>
                     </div>
 
                     <div class="input-group">
                         <label>Phone Number</label>
-                        <input type="tel" class="real-input" placeholder="Phone..." required>
+                        <input type="tel" id="booking-phone" class="real-input" required>
                     </div>
 
                     <div class="input-group">
                         <label>Check-in Date</label>
-                        <input type="date" class="real-input" required>
+                        <input type="date" id="booking-checkin" class="real-input" required>
                     </div>
 
                     <div class="input-group">
                         <label>Check-out Date</label>
-                        <input type="date" class="real-input" required>
+                        <input type="date" id="booking-checkout" class="real-input" required>
                     </div>
 
                     <div class="input-group">
                         <label>Guests</label>
-                        <select class="real-input">
-                            <option>1 Room, 2 Adults</option>
-                            <option>1 Room, 1 Adult</option>
+                        <select id="booking-guests" class="real-input">
+                        <option>1 Room, 2 Adults</option>
+                        <option>1 Room, 1 Adult</option>
                         </select>
                     </div>
-
                     <div class="price-row-custom">
                         <span class="price-label">Pricing</span>
                         <div class="price-val-custom">
@@ -251,8 +258,8 @@
                             <span class="unit">VNĐ</span>
                         </div>
                     </div>
-
-                    <button type="submit" class="btn-reserve-custom">Reserve Now</button>
+                <button type="submit" class="btn-reserve-custom">Reserve Now</button>
+                <button type="button" class="btn-reserve-custom" onclick="window.location.href='booking.html'">🛒Your reservations</button>
                 </form>
             </div>
         </aside>
@@ -269,10 +276,99 @@
     const priceDisplay = document.getElementById('display-price');
 
     select.addEventListener('change', function() {
-        const price = parseInt(this.value).toLocaleString('en-US');
-        priceDisplay.innerText = price;
+        const price = this.value.split("|")[1];
+        priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
     });
-</script>
+    window.addEventListener("DOMContentLoaded", function(){
+    const price = select.value.split("|")[1];
+    priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
+});
+    // validation for booking form
+    document.addEventListener("DOMContentLoaded", function () {
+    const nameInput = document.querySelector('input[type="text"]');
+    const phoneInput = document.querySelector('input[type="tel"]');
+    const checkInInput = document.querySelectorAll('input[type="date"]')[0];
+    const checkOutInput = document.querySelectorAll('input[type="date"]')[1];
 
+    function showError(input, message) {
+        let errorSpan = input.nextElementSibling;
+        if (!errorSpan || !errorSpan.classList.contains("error-msg")) {
+            errorSpan = document.createElement("span");
+            errorSpan.classList.add("error-msg");
+            input.insertAdjacentElement("afterend", errorSpan);
+        }
+        errorSpan.textContent = "* " + message;
+    }
+
+    function clearError(input) {
+        let errorSpan = input.nextElementSibling;
+        if (errorSpan && errorSpan.classList.contains("error-msg")) {
+            errorSpan.textContent = "";
+        }
+    }
+
+    // Regex: tên phải viết hoa chữ cái đầu mỗi từ
+    const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
+
+    // Regex: số điện thoại 10 số, bắt đầu bằng 01-09
+    const phoneRegex = /^(0[1-9])[0-9]{8}$/;
+
+    nameInput.addEventListener("input", () => {
+        if (!nameRegex.test(nameInput.value.trim())) {
+            showError(nameInput, "Tên phải viết hoa chữ cái đầu mỗi từ và không chứa số.");
+        } else {
+            clearError(nameInput);
+        }
+    });
+
+    phoneInput.addEventListener("input", () => {
+        if (!phoneRegex.test(phoneInput.value.trim())) {
+            showError(phoneInput, "Số điện thoại phải đủ 10 số và bắt đầu từ 01-09.");
+        } else {
+            clearError(phoneInput);
+        }
+    });
+});
+// booking flow
+document.getElementById("booking-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  if(!loggedInUser){
+    alert("Bạn phải login trước");
+    window.location.href="login.html";
+    return;
+  }
+
+  const [roomName, roomPrice] =
+  document.getElementById("room-select").value.split("|");
+
+  const booking = {
+    room: roomName,
+    name: document.getElementById("booking-name").value,
+    phone: document.getElementById("booking-phone").value,
+    checkIn: document.getElementById("booking-checkin").value,
+    checkOut: document.getElementById("booking-checkout").value,
+    guests: document.getElementById("booking-guests").value,
+    price: roomPrice
+  };
+
+  let allBookings =
+  JSON.parse(localStorage.getItem("bookings")) || {};
+
+  if(!allBookings[loggedInUser]){
+    allBookings[loggedInUser] = [];
+  }
+
+  allBookings[loggedInUser].push(booking);
+
+  localStorage.setItem("bookings", JSON.stringify(allBookings));
+
+  alert("Đặt phòng thành công");
+
+  window.location.href="booking.html";
+});
+</script>
 </body>
 </html>

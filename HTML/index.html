@@ -410,6 +410,11 @@
     function closeFacilities(){ //dong//
         document.getElementById("facilityModal").style.display="none";
     }
+    if(!sessionStorage.getItem("demoStarted")){
+    localStorage.clear();
+    sessionStorage.setItem("demoStarted", "true");
+    }
+</script>
 </script>
 </body>
 </html>

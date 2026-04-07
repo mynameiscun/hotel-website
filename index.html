@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+<title>Hotel_Booking</title>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
+    </div>
+        <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        </div>
+    <div class="right">
+        <div class="login">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign up</a>
+        </div>
+        <ul class="contact">
+            <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
+            <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>        
+        </ul>   
+    </div>
+</div>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Welcome to Our Hotel</h1>
+        <p>Enjoy your trip with us!</p>
+    </div>
+</section>
+<div class="box-wrapper">
+    <div class="booking-box">
+        <h2>Search Your Stay</h2>
+        <form action="rooms.html" method="get" class="booking-form">
+            <input type="date" name="checkin" required>
+            <input type="date" name="checkout" required>
+            <select name="guests">
+                <option value="">Guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+            </select>
+            <select name="room">
+                <option value="">Room Type</option>
+                <option value="single">Single Room</option>
+                <option value="double">Double Room</option>
+                <option value="suite">Suite</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+ 
+<!--ABOUT SECTION-->
+<section class="about" id="about">
+    <div class="about-title">
+        <h2>About Us</h2>
+    </div>
+    <div class="about-container">
+        <div class="about-us">
+                <p> 
+                    Welcome to Plazzo Serento, a luxurious five-star hotel located in the heart of the city. We are a premier destination for travelers seeking the perfect blend of comfort, style, and sophistication. 
+                </p>
+                <p>    
+                    Featuring spacious and elegantly designed rooms and suites, our hotel offers breathtaking city views, premium amenities, and exceptional service to ensure an unforgettable stay.
+                </p>
+                <p>
+                    With a strong focus on comfort and personalized attention, guests can relax in a refined atmosphere and indulge in unique dining experiences, making every moment at Plazzo Serento truly special.
+                    Welcome to Plazzo Serento, a luxurious five-star hotel located in the heart of the city.
+                </p>
+            <ul class="contact">
+                <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>     
+            </ul>
+        </div>
+       
+            <div class="about-box">
+            <h2>Why should choose us</h2>
+            <ul> 
+                <li><img src="../IMAGE/convenience.png">Convenient</li>
+                <li><img src="../IMAGE/support.png">Comfortable</li>
+                <li><img src="../IMAGE/diamond.png">Luxurious</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ROOMS SECTION -->
+
+<section class="rooms-section" id="rooms">
+    <h2>Our Rooms</h2>
+
+    <div class="rooms-container">
+        <div class="room-card">
+            <div class="room-image-block">
+                <img src="../IMAGE/room1.png" alt="Royal Suite">
+                <div class="room-title-overlay">Royal Suite</div>
+            </div>
+            <div class="room-details">
+                <div class="room-info-icons">
+                    <div class="info-item">
+                        <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>28m²</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>King Bed</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 Guests</span>
+                    </div>
+                </div>
+                <div class="room-footer">
+                    <div class="price"><b>500,000 VNĐ</b><span>/đêm</span></div>
+                    <a href="room-detail.html#royal-suite" class="detail-btn">More Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="room-card">
+            <div class="room-image-block">
+                <img src="../IMAGE/room2.png" alt="Executive Suite">
+                <div class="room-title-overlay">Executive Suite</div>
+            </div>
+            <div class="room-details">
+                <div class="room-info-icons">
+                    <div class="info-item">
+                        <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>45m²</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Queen Bed</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 Guests</span>
+                    </div>
+                </div>
+                <div class="room-footer">
+                    <div class="price"><b>800,000 VNĐ</b><span>/đêm</span></div>
+                    <a href="room-detail.html#executive-suite" class="detail-btn">More Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="room-card">
+            <div class="room-image-block">
+                <img src="../IMAGE/room3.png" alt="Deluxe Twin">
+                <div class="room-title-overlay">Deluxe Twin</div>
+            </div>
+            <div class="room-details">
+                <div class="room-info-icons">
+                    <div class="info-item">
+                        <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>60m²</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Twin Bed</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 Guests</span>
+                    </div>
+                </div>
+                <div class="room-footer">
+                    <div class="price"><b>1,000,000 VNĐ</b><span>/đêm</span></div>
+                    <a href="room-detail.html#deluxe-twin" class="detail-btn">More Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="moreinfo">
+        <a href="rooms.html">More Rooms</a>
+    </div>
+</section>
+
+<!-- FACILITIES SECTION --><!--dùng bootstrap data-bs-toggle-->
+ <section class="facilities" id="facilities">
+    <h2>Our Facilities</h2>
+<div class="nav nav-tabs" id="nav-tab">
+    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#restaurant" aria-selected="true">
+        RESTAURANT
+    </button>
+    <button class="nav-link " data-bs-toggle="tab" data-bs-target="#spa" aria-selected="false">
+        SPA
+    </button>
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pool" aria-selected="false">
+        POOL
+    </button>
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gym" aria-selected="false">
+        GYM
+    </button>
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#coffee" aria-selected="false">
+        COFFEE SHOP
+    </button>
+</div>
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="restaurant">
+        <div class="img-info">
+            <img src="../IMAGE/restaurant1.png" alt="Restaurant">
+            <img src="../IMAGE/restaurant2.png" alt="Restaurant">
+            <img src="../IMAGE/restaurant3.png" alt="Restaurant">
+        </div>
+        <div class="moreinfo">
+            <a href="javascript:void(0)" onclick="openFacilities('restaurant')">More Info</a>
+        </div>
+       
+    </div>
+
+    <div class="tab-pane fade" id="spa">
+        <div class="img-info">
+            <img src="../IMAGE/spa1.png" alt="SPA">
+            <img src="../IMAGE/spa2.png" alt="SPA">
+            <img src="../IMAGE/spa3.png" alt="SPA">
+        </div>
+         <div class="moreinfo">
+            <a href="javascript:void(0)" onclick="openFacilities('spa')">More Info</a>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="pool">
+        <div class="img-info">
+            <img src="../IMAGE/pool1.png" alt="POOL">
+            <img src="../IMAGE/pool2.png" alt="POOL">
+            <img src="../IMAGE/pool3.png" alt="POOL">
+        </div>
+         <div class="moreinfo">
+            <a href="javascript:void(0)" onclick="openFacilities('pool')">More Info</a>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="gym">
+        <div class="img-info">
+            <img src="../IMAGE/gym1.png" alt="GYM">
+            <img src="../IMAGE/gym2.png" alt="GYM">
+            <img src="../IMAGE/gym3.png" alt="GYM">
+        </div>
+         <div class="moreinfo">
+            <a href="javascript:void(0)" onclick="openFacilities('gym')">More Info</a>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="coffee">
+        <div class="img-info">
+            <img src="../IMAGE/coffe1.png" alt="COFFEE SHOP">
+            <img src="../IMAGE/coffe2.png" alt="COFFEE SHOP">
+            <img src="../IMAGE/coffe3.png" alt="COFFEE SHOP">
+        </div>
+        <div class="moreinfo">
+            <a href="javascript:void(0)" onclick="openFacilities('coffee')">More Info</a>
+        </div>
+    </div>    
+</div>
+<div id="facilityModal" class="facility-modal">
+    <div class="facility-container">
+        <!--Anh-->
+        <div class="facility-gallery">
+            <img id="facilityMainImg">
+            <div class="thumbs"></div>
+        </div>
+        <!--Content-->
+        <div class="facility-info">
+            <span class="close-btn" onclick="closeFacilities()">✕</span>
+            <h2 id="facilityTitle">Restaurant</h2>
+            <p id="facilityText"></p>
+        </div>
+    </div>    
+</div>
+</section>
+
+
+<!-- NEWS SECTION -->
+<section class="news-section" id="news">
+    <h2>Latest News</h2>
+    <div class="news-container">
+        <div class="news-card">
+            <a href="news-detail.html" class="news-link">
+                <img src="../IMAGE/news1.png" alt="News 1">
+                <h3 class="news-title">Grand Opening: Experience Luxury at Plazzo Serento Hotel</h3>
+            </a>
+        </div>
+        <div class="news-card">
+            <a href="news-detail.html" class="news-link">
+                <img src="../IMAGE/news2.png" alt="News 2" >
+                <h3 class="news-title">Exclusive Summer Offer: Enjoy Special Discounts on Luxury Suites</h3>
+            </a>
+        </div>
+        <div class="news-card">
+            <a href="news-detail.html" class="news-link">
+                <img src="../IMAGE/news3.png" alt="News 3">
+                <h3 class="news-title">Discover Our New Premium Facilities for a Perfect Stay</h3>
+            </a>
+        </div>
+    </div>
+    <div class="moreinfo">
+            <a href="news.html">More Info</a>
+    </div>
+</section>
+
+<section class="contact-section" id="contact">
+    <h2>Need Help With Your Booking?</h2>
+    <p>Our team is ready to assist you anytime.</p>
+
+    <a href="contact.html" class="contact-btn">Contact Us</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Hotel Website</p>
+</footer>
+<script src="../JS/bootstrap.bundle.min.js"></script>
+<script>
+    //du lieu
+    const facilityData = {
+    restaurant: {
+        title: "Restaurant",
+        details: [
+            { img: "../IMAGE/restaurant1.png", desc: "The restaurant features a luxurious and elegant interior with warm lighting and modern furniture, creating a comfortable and relaxing dining environment for guests.", 
+                                               service: "★★★★★ (5/5) - Professional and attentive staff provide excellent service to ensure a pleasant dining experience.", 
+                                               atmosphere: "★★★★☆ (4/5) - Warm and sophisticated, perfect for family dinners or business meetings." },
+            { img: "../IMAGE/restaurant2.png", desc: "A bright dining space with large glass windows allowing natural light to fill the room, creating a refreshing and pleasant dining atmosphere.", 
+                                               service: "★★★★☆ (4/5)", 
+                                               atmosphere: "★★★★★ (5/5)" },
+            { img: "../IMAGE/restaurant3.png", desc: "At night, the restaurant becomes more charming with soft lighting, creating a cozy and romantic dining space.", 
+                                               service: "★★★★★ (5/5)", 
+                                               atmosphere: "★★★★★ (5/5)" }
+        ]
+    },
+    spa: {
+        title: "Spa",
+        details: [
+            { img: "../IMAGE/spa1.png", desc: "The steam room is designed with natural stone and modern lighting, offering a premium space for detoxification and improving overall wellness.", 
+                                        service: "★★★★★ (5/5) - Professional therapists provide attentive and high-quality services, ensuring a soothing and revitalizing experience for every guest.", 
+                                        atmosphere: "★★★★★ (5/5) - Calm, quiet, and intimate setting, ideal for stress relief and complete relaxation." },
+            { img: "../IMAGE/spa2.png", desc: "Deep tissue hot stone massages performed by our professional therapists to rejuvenate your body.", 
+                                        service: "★★★★★ (5/5) - Well-maintained facilities with consistent steam levels, providing a comfortable and beneficial experience for guests.", 
+                                        atmosphere: "★★★★☆ (4/5) - Warm and tranquil environment, perfect for relaxing muscles and cleansing the body." },
+            { img: "../IMAGE/spa3.png", desc: "The relaxation room provides a comfortable resting area with soft beds, wooden decor, and a minimalist design, ideal for unwinding after spa treatments.", 
+                                        service: "★★★★☆ (4/5) - Clean and well-prepared space with essential amenities to support a pleasant resting experience.", 
+                                        atmosphere: "★★★★★ (5/5) - Peaceful and cozy ambiance, offering guests a sense of comfort and relaxation." }
+        ]
+    },
+    pool: {
+        title: "Swimming Pool",
+        details: [
+            { img: "../IMAGE/pool1.png", desc: "Our infinity pool offers a breathtaking panoramic view of the city skyline from the top floor.", service: "★★★★☆ (4/5)", atmosphere: "★★★★★ (5/5)" },
+            { img: "../IMAGE/pool2.png", desc: "High-end salt filtration system ensures the water is always crystal clear and safe for your skin.", service: "★★★★★ (5/5)", atmosphere: "★★★★★ (5/5)" },
+            { img: "../IMAGE/pool3.png", desc: "Poolside bar serving cool cocktails and snacks while you enjoy the sun-loungers.", service: "★★★★★ (5/5)", atmosphere: "★★★★☆ (4/5)" }
+        ]
+    },
+    gym: {
+        title: "Fitness Gym",
+        details: [
+            { img: "../IMAGE/gym1.png", desc: "Equipped with state-of-the-art cardio machines and treadmills imported directly from Europe.", service: "★★★★★ (5/5)", atmosphere: "★★★★☆ (4/5)" },
+            { img: "../IMAGE/gym2.png", desc: "A dedicated free-weights area with a full range of dumbbells for all fitness levels.", service: "★★★★★ (5/5)", atmosphere: "★★★★★ (5/5)" },
+            { img: "../IMAGE/gym3.png", desc: "Peaceful Yoga and Pilates studio with professional mats and a calming atmosphere.", service: "★★★★☆ (4/5)", atmosphere: "★★★★★ (5/5)" }
+        ]
+    },
+    coffee: {
+        title: "Coffee",
+        details: [
+            { img: "../IMAGE/coffe1.png", desc: "Enjoy specialty hand-crafted coffee in a cozy space filled with artistic inspiration.", service: "★★★★★ (5/5)", atmosphere: "★★★★★ (5/5)" },
+            { img: "../IMAGE/coffe2.png", desc: "Quiet workspace with high-speed Wi-Fi and power outlets, perfect for remote work.", service: "★★★★★ (5/5)", atmosphere: "★★★★☆ (4/5)" },
+            { img: "../IMAGE/coffe3.png", desc: "Beautiful outdoor balcony area to enjoy the morning breeze and watch the busy streets.", service: "★★★★☆ (4/5)", atmosphere: "★★★★★ (5/5)" }
+        ]
+    }
+}; 
+
+    let currentType = "restaurant"; //dich vu//
+    let currentIndex = 0; //anh//
+    function openFacilities(type){
+        let modal = document.getElementById("facilityModal");
+        modal.style.display = "flex";
+        currentType = type;
+        currentIndex = 0;
+        renderFacility();
+    }
+    
+    function renderFacility(){
+        let data = facilityData[currentType]; //lay du lieu//
+        let item = data.details[currentIndex]; //lay anh + mo ta//
+            document.getElementById("facilityTitle").innerText = data.title; //doi tieu de//
+            document.getElementById("facilityMainImg").src = item.img; // doi anh lon//
+            document.getElementById("facilityText").innerHTML = `
+            <span class="label">Description:</span> ${item.desc} <br><br>
+            <span class="label">Service:</span>
+            <span class="stars">${item.service}</span> <br><br>
+            <span class="label">Atmosphere:</span>
+            <span class="stars">${item.atmosphere}</span>`; //doi mo ta + noi dung//
+            updateThumbs(); //anh cu the//
+        }
+    function updateThumbs(){ //xoa anh cu//
+        let thumbs = document.querySelector(".thumbs");
+        thumbs.innerHTML = "";
+        facilityData[currentType].details.forEach((item, index)=>{
+            thumbs.innerHTML += `
+            <img src="${item.img}" onclick="changeImg(${index})">`;
+        });
+    }
+    function changeImg(index){ //click//
+        currentIndex = index;
+        renderFacility();
+    }
+    function closeFacilities(){ //dong//
+        document.getElementById("facilityModal").style.display="none";
+    }
+    if(!sessionStorage.getItem("demoStarted")){
+    localStorage.clear();
+    sessionStorage.setItem("demoStarted", "true");
+    }
+</script>
+</script>
+</body>
+</html>

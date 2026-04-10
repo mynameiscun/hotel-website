@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/rm-detail-style.css">
+    <title>Room Details - Plazzo Serento</title>
+</head>
+<style>
+.error-msg {
+    font-size: 12px;
+    color: red;
+    display: block;
+    margin-top: 2px;
+}
+</style>
+<body>
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
+    </div>
+    <div class="navbar">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#rooms">Rooms</a>
+        <a href="index.html#facilities">Facilities</a>
+        <a href="index.html#news">News</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="right">
+        <div class="login">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign up</a>
+        </div>
+        <ul class="contact">
+            <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
+            <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>
+        </ul>   
+    </div>
+</div>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Room Details</h1>
+        <p>Enjoy your trip with us!</p>
+    </div>
+</section>
+<div class="box-wrapper">
+    <div class="booking-box">
+        <h2>Search Your Stay</h2>
+        <form action="rooms.html" method="get" class="booking-form">
+            <input type="date" name="checkin" required>
+            <input type="date" name="checkout" required>
+            <select name="guests">
+                <option value="">Guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+            </select>
+            <select name="room">
+                <option value="">Room Type</option>
+                <option value="single">Single Room</option>
+                <option value="double">Double Room</option>
+                <option value="suite">Suite</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<!-- MAIN CONTENT -->
+<div class="container detail-page">
+    <div class="main-layout-wrapper">
+        <!-- DETAILS PART -->
+        <div class="left-content">
+            <section class="room-item" id="royal-suite">
+                <div class="image-gallery-top">
+                    <div class="main-img"><img src="../IMAGE/room1.png" alt="Royal Suite"></div>
+                    <div class="sub-imgs">
+                        <img src="../IMAGE/room1.1.png" alt="Royal Detail 1">
+                        <img src="../IMAGE/room1.2.png" alt="Royal Detail 2">
+                    </div>
+                </div>
+
+                <div class="room-header">
+                    <div class="title-row">
+                        <h1>Royal Suite</h1>
+                        <span class="rating">★ 4.5</span>
+                    </div>
+                    <p class="location">📍 Bora Bora, French Polynesia</p>
+                    <p class="desc">Experience the ultimate luxury in our Royal Suite. Located at the highest point of the resort, it offers an 180-degree ocean view, a private infinity pool, and a personal butler service available 24/7 to cater to your every need.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amenities</h3>
+                    <ul class="grid-list">
+                        <li>🛏️ King Bed: 1</li>
+                        <li>🧺 Private Laundry: 1</li>
+                        <li>🧊 Mini Bar: Premium</li>
+                        <li>🛏️ Living Room: 1</li>
+                        <li>🍳 Kitchenette: 1</li>
+                        <li>📶 Wifi: Ultra Fast</li>
+                        <li>🚿 Jacuzzi: 1</li>
+                        <li>❄️ Air Conditioner: 4</li>
+                        <li>🏊 Private Pool: 1</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Hotel Information</h3>
+                    <ul class="grid-list hotel-info">
+                        <li>🕒 Check In: 2:00 pm</li>
+                        <li>🅿️ Valet Parking: Free</li>
+                        <li>🕒 Check Out: 12:00 pm</li>
+                        <li>🔞 Minimum Age: 18</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="room-item" id="executive-suite">
+                <div class="image-gallery-top">
+                    <div class="main-img"><img src="../IMAGE/room2.png" alt="Executive Suite"></div>
+                    <div class="sub-imgs">
+                        <img src="../IMAGE/room2.1.png" alt="Exec Detail 1">
+                        <img src="../IMAGE/room2.2.png" alt="Exec Detail 2">
+                    </div>
+                </div>
+
+                <div class="room-header">
+                    <div class="title-row">
+                        <h1>Executive Suite</h1>
+                        <span class="rating">★ 4.8</span>
+                    </div>
+                    <p class="location">📍 Central District, Ho Chi Minh City</p>
+                    <p class="desc">Designed for the modern professional, the Executive Suite blends business with pleasure. Enjoy a dedicated workspace, soundproof walls, and exclusive access to the Executive Lounge for networking and relaxation.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amenities</h3>
+                    <ul class="grid-list">
+                        <li>🛏️ Queen Bed: 1</li>
+                        <li>🖥️ Workspace: 1</li>
+                        <li>🧊 Refrigerator: 1</li>
+                        <li>☕ Coffee Maker: 1</li>
+                        <li>🍳 Microwave: 1</li>
+                        <li>📶 Wifi: Dedicated</li>
+                        <li>🚿 Shower: 1</li>
+                        <li>❄️ AC: Central</li>
+                        <li>🏊 Gym Access: 24/7</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Hotel Information</h3>
+                    <ul class="grid-list hotel-info">
+                        <li>🕒 Check In: 1:00 pm</li>
+                        <li>🅿️ Secure Garage: Yes</li>
+                        <li>🕒 Check Out: 11:00 am</li>
+                        <li>🚭 Smoking: No</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="room-item" id="deluxe-twin">
+                <div class="image-gallery-top">
+                    <div class="main-img"><img src="../IMAGE/room3.png" alt="Deluxe Twin"></div>
+                    <div class="sub-imgs">
+                        <img src="../IMAGE/room3.1.png" alt="Deluxe Detail 1">
+                        <img src="../IMAGE/room3.2.png" alt="Deluxe Detail 2">
+                    </div>
+                </div>
+
+                <div class="room-header">
+                    <div class="title-row">
+                        <h1>Deluxe Twin</h1>
+                        <span class="rating">★ 5</span>
+                    </div>
+                    <p class="location">📍 Beachfront, Da Nang City</p>
+                    <p class="desc">Perfect for friends or small families, our Deluxe Twin rooms offer comfort and convenience. Each room features two separate beds and a large balcony overlooking the pristine white sands of the beach.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="info-card">
+                    <h3>Amenities</h3>
+                    <ul class="grid-list">
+                        <li>🛏️ Twin Beds: 2</li>
+                        <li>🧺 Laundry: Available</li>
+                        <li>🧊 Refrigerator: 1</li>
+                        <li>📺 Smart TV: 1</li>
+                        <li>🧼 Toiletries: Full Set</li>
+                        <li>📶 Wifi: Free</li>
+                        <li>🚿 Bathtub: 1</li>
+                        <li>❄️ Air Conditioner: 1</li>
+                        <li>⛱️ Beach Access: Yes</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Hotel Information</h3>
+                    <ul class="grid-list hotel-info">
+                        <li>🕒 Check In: 2:00 pm</li>
+                        <li>🅿️ Secure Garage: Yes</li>
+                        <li>🕒 Check Out: 12:00 pm</li>
+                        <li>🐾 Pets: Not Allowed</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <!-- BOOKING FORM -->
+        <aside class="right-content">
+            <div class="booking-box-card">
+                <h2>Booking Form</h2>
+                <form id="booking-form">
+                    <div class="input-group">
+                        <label for="room-select">Select Room Type</label>
+                        <select class="real-input" id="room-select">
+                        <option value="Royal Suite|500000">Royal Suite</option>
+                        <option value="Executive Suite|800000">Executive Suite</option>
+                        <option value="Deluxe Twin|1000000">Deluxe Twin</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="booking-name" class="real-input" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="booking-phone" class="real-input" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Check-in Date</label>
+                        <input type="date" id="booking-checkin" class="real-input" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Check-out Date</label>
+                        <input type="date" id="booking-checkout" class="real-input" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Guests</label>
+                        <select id="booking-guests" class="real-input">
+                        <option>1 Room, 2 Adults</option>
+                        <option>1 Room, 1 Adult</option>
+                        </select>
+                    </div>
+                    <div class="price-row-custom">
+                        <span class="price-label">Pricing</span>
+                        <div class="price-val-custom">
+                            <span class="amount" id="display-price">500,000</span>
+                            <span class="unit">VNĐ</span>
+                        </div>
+                    </div>
+                <button type="submit" class="btn-reserve-custom">Reserve Now</button>
+                <button type="button" class="btn-reserve-custom" onclick="window.location.href='booking.html'">🛒Your reservations</button>
+                </form>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Hotel Website </p>
+</footer>
+
+<script>
+    const select = document.getElementById('room-select');
+    const priceDisplay = document.getElementById('display-price');
+
+    select.addEventListener('change', function() {
+        const price = this.value.split("|")[1];
+        priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
+    });
+    window.addEventListener("DOMContentLoaded", function(){
+    const price = select.value.split("|")[1];
+    priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
+});
+    // validation for booking form
+    document.addEventListener("DOMContentLoaded", function () {
+    const nameInput = document.querySelector('input[type="text"]');
+    const phoneInput = document.querySelector('input[type="tel"]');
+    const checkInInput = document.querySelectorAll('input[type="date"]')[0];
+    const checkOutInput = document.querySelectorAll('input[type="date"]')[1];
+
+    function showError(input, message) {
+        let errorSpan = input.nextElementSibling;
+        if (!errorSpan || !errorSpan.classList.contains("error-msg")) {
+            errorSpan = document.createElement("span");
+            errorSpan.classList.add("error-msg");
+            input.insertAdjacentElement("afterend", errorSpan);
+        }
+        errorSpan.textContent = "* " + message;
+    }
+
+    function clearError(input) {
+        let errorSpan = input.nextElementSibling;
+        if (errorSpan && errorSpan.classList.contains("error-msg")) {
+            errorSpan.textContent = "";
+        }
+    }
+
+    // Regex: tên phải viết hoa chữ cái đầu mỗi từ
+    const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
+
+    // Regex: số điện thoại 10 số, bắt đầu bằng 01-09
+    const phoneRegex = /^(0[1-9])[0-9]{8}$/;
+
+    nameInput.addEventListener("input", () => {
+        if (!nameRegex.test(nameInput.value.trim())) {
+            showError(nameInput, "Tên phải viết hoa chữ cái đầu mỗi từ và không chứa số.");
+        } else {
+            clearError(nameInput);
+        }
+    });
+
+    phoneInput.addEventListener("input", () => {
+        if (!phoneRegex.test(phoneInput.value.trim())) {
+            showError(phoneInput, "Số điện thoại phải đủ 10 số và bắt đầu từ 01-09.");
+        } else {
+            clearError(phoneInput);
+        }
+    });
+});
+// booking flow
+document.getElementById("booking-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  if(!loggedInUser){
+    alert("Bạn phải login trước");
+    window.location.href="login.html";
+    return;
+  }
+
+  const [roomName, roomPrice] =
+  document.getElementById("room-select").value.split("|");
+
+  const booking = {
+    room: roomName,
+    name: document.getElementById("booking-name").value,
+    phone: document.getElementById("booking-phone").value,
+    checkIn: document.getElementById("booking-checkin").value,
+    checkOut: document.getElementById("booking-checkout").value,
+    guests: document.getElementById("booking-guests").value,
+    price: roomPrice
+  };
+
+  let allBookings =
+  JSON.parse(localStorage.getItem("bookings")) || {};
+
+  if(!allBookings[loggedInUser]){
+    allBookings[loggedInUser] = [];
+  }
+
+  allBookings[loggedInUser].push(booking);
+
+  localStorage.setItem("bookings", JSON.stringify(allBookings));
+
+  alert("Đặt phòng thành công");
+
+  window.location.href="booking.html";
+});
+</script>
+</body>
+</html>

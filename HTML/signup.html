@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGN UP</title>
+    
     <style>
         .auth-container {
   display: flex;
@@ -88,29 +89,143 @@
         <label>Password</label>
         <input type="password" id="signup-password" placeholder="Choose a password" required>
       </div>
-      <button type="submit" class="btn-auth" onclick="localStorage.clear()">Sign Up</button>
+      <button type="submit" class="btn-auth">Sign Up</button>
       <p class="switch-auth">Already have an account? <a href="login.html">Login</a></p>
     </form>
   </div>
 </section>
+<script src="../JS/jquery-4.0.0.min.js"></script>
 <script>
-  // SIGN UP
-document.getElementById("signup-form")?.addEventListener("submit", function(e){
-  e.preventDefault();
-  const newUser = {
-    name: document.getElementById("signup-name").value,
-    email: document.getElementById("signup-email").value,
-    username: document.getElementById("signup-username").value,
-    password: document.getElementById("signup-password").value
-  };
-  localStorage.setItem("user", JSON.stringify(newUser));
-  alert("Đăng ký thành công! Vui lòng đăng nhập.");
-  window.location.href = "login.html";
+ 
+$(document).ready(function(){
+
+$("#signup-form").submit(function(e){
+
+e.preventDefault();
+
+let name = $("#signup-name").val().trim();
+let email = $("#signup-email").val().trim();
+let username = $("#signup-username").val().trim();
+let password = $("#signup-password").val().trim();
+
+
+// lấy users
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+// check username trùng
+let exist = users.find(user => user.username === username);
+
+if(exist){
+alert("Username đã tồn tại");
+return;
+}
+
+
+// tạo user
+let newUser = {
+name:name,
+email:email,
+username:username,
+password:password
+};
+
+// push user
+users.push(newUser);
+
+// save
+localStorage.setItem("users", JSON.stringify(users));
+
+
+// HIỂN THỊ MODAL SAU KHI SUCCESS
+$("#signupModal").css("display","flex").hide().fadeIn();
+
 });
-if(!sessionStorage.getItem("demoStarted")){
-    localStorage.clear();
-    sessionStorage.setItem("demoStarted", "true");
-    }
+
+
+// nút login
+$("#goLogin").click(function(){
+
+window.location.href="login.html";
+
+});
+
+
+// nút X đóng modal
+$(".close-modal").click(function(){
+
+$("#signupModal").fadeOut();
+
+});
+
+
+// click ngoài modal đóng
+$(window).click(function(e){
+
+if($(e.target).is("#signupModal")){
+$("#signupModal").fadeOut();
+}
+
+});
+
+});
+
 </script>
+<!-- SUCCESS MODAL -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close-modal">&times;</span>
+    
+    <h3>Đăng ký thành công</h3>
+    <p>Tài khoản đã được tạo</p>
+    
+    <button id="goLogin">Đăng nhập ngay</button>
+
+  </div>
+</div>
+
+<style>
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+padding:25px;
+border-radius:8px;
+text-align:center;
+width:350px;
+position:relative;
+}
+
+.close-modal{
+position:absolute;
+top:10px;
+right:15px;
+font-size:22px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.modal-content button{
+margin-top:15px;
+padding:10px 20px;
+background:#b89b5e;
+border:none;
+color:white;
+cursor:pointer;
+}
+</style>
 </body>
 </html>

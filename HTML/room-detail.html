@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/rm-detail-style.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    
     <title>Room Details - Plazzo Serento</title>
 </head>
 <style>
@@ -30,7 +32,7 @@
         <a href="index.html#contact">Contact</a>
     </div>
     <div class="right">
-        <div class="login">
+        <div class="login" id="auth-area">
             <a href="login.html">Login</a>
             <a href="signup.html">Sign up</a>
         </div>
@@ -270,7 +272,7 @@
 <footer>
     <p>© 2026 Hotel Website </p>
 </footer>
-
+<script src="../JS/jquery-4.0.0.min.js"></script>
 <script>
     const select = document.getElementById('room-select');
     const priceDisplay = document.getElementById('display-price');
@@ -330,45 +332,255 @@
     });
 });
 // booking flow
-document.getElementById("booking-form").addEventListener("submit", function(e){
-  e.preventDefault();
 
-  const loggedInUser = localStorage.getItem("loggedInUser");
+$(document).ready(function(){
 
-  if(!loggedInUser){
-    alert("Bạn phải login trước");
-    window.location.href="login.html";
-    return;
-  }
+// =======================
+// CHECK LOGIN HEADER
+// =======================
 
-  const [roomName, roomPrice] =
-  document.getElementById("room-select").value.split("|");
+let loggedUser = localStorage.getItem("loggedInUser");
 
-  const booking = {
-    room: roomName,
-    name: document.getElementById("booking-name").value,
-    phone: document.getElementById("booking-phone").value,
-    checkIn: document.getElementById("booking-checkin").value,
-    checkOut: document.getElementById("booking-checkout").value,
-    guests: document.getElementById("booking-guests").value,
-    price: roomPrice
-  };
+if(loggedUser){
 
-  let allBookings =
-  JSON.parse(localStorage.getItem("bookings")) || {};
+$("#auth-area").html(`
+<span style="color: white;">Xin chào, ${loggedUser}</span>
+<a href="#" id="logoutBtn">Logout</a>
+`);
 
-  if(!allBookings[loggedInUser]){
-    allBookings[loggedInUser] = [];
-  }
+}
 
-  allBookings[loggedInUser].push(booking);
 
-  localStorage.setItem("bookings", JSON.stringify(allBookings));
+// =======================
+// LOGOUT
+// =======================
 
-  alert("Đặt phòng thành công");
+$(document).on("click","#logoutBtn",function(){
 
-  window.location.href="booking.html";
+localStorage.removeItem("loggedInUser");
+location.reload();
+
+});
+
+
+// =======================
+// BOOKING FORM
+// =======================
+
+$("#booking-form").submit(function(e){
+
+e.preventDefault();
+
+let loggedUser = localStorage.getItem("loggedInUser");
+
+// chưa login
+if(!loggedUser){
+
+$("#loginRequiredModal")
+.css("display","flex")
+.hide()
+.fadeIn();
+
+return;
+
+}
+
+
+// validate
+
+let name = $("#booking-name").val().trim();
+let phone = $("#booking-phone").val().trim();
+let checkIn = $("#booking-checkin").val();
+let checkOut = $("#booking-checkout").val();
+
+let nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
+let phoneRegex = /^(0[1-9])[0-9]{8}$/;
+
+if(!nameRegex.test(name)){
+showErrorModal("Tên phải viết hoa chữ cái đầu mỗi từ");
+return;
+}
+
+if(!phoneRegex.test(phone)){
+showErrorModal("Số điện thoại phải đủ 10 số");
+return;
+}
+
+if(checkIn >= checkOut){
+showErrorModal("Ngày check-out phải lớn hơn check-in");
+return;
+}
+
+// tạo booking
+
+let roomData = $("#room-select").val().split("|");
+
+let booking = {
+room: roomData[0],
+price: roomData[1],
+name: name,
+phone: phone,
+checkIn: checkIn,
+checkOut: checkOut,
+guests: $("#booking-guests").val(),
+status:"Chưa thanh toán"
+};
+
+
+// lưu booking theo user
+
+let bookings = JSON.parse(localStorage.getItem("bookings")) || {};
+
+if(!bookings[loggedUser]){
+bookings[loggedUser] = [];
+}
+
+bookings[loggedUser].push(booking);
+
+localStorage.setItem("bookings", JSON.stringify(bookings));
+
+
+// show success modal
+
+$("#bookingSuccessModal")
+.css("display","flex")
+.hide()
+.fadeIn();
+
+});
+
+
+// =======================
+// LOGIN MODAL
+// =======================
+
+$("#goLogin").click(function(){
+
+window.location.href="login.html";
+
+});
+
+$("#closeModal").click(function(){
+
+$("#loginRequiredModal").fadeOut();
+
+});
+
+
+// =======================
+// SUCCESS MODAL
+// =======================
+
+$("#goBooking").click(function(){
+
+window.location.href="booking.html";
+
+});
+
+$("#closeSuccess").click(function(){
+
+$("#bookingSuccessModal").fadeOut();
+
+});
+function showErrorModal(message){
+$("#errorMessage").text(message);
+
+$("#errorModal")
+.css("display","flex")
+.hide()
+.fadeIn();
+}
+// close error modal
+$("#closeError , #closeErrorBtn").click(function(){
+$("#errorModal").fadeOut();
+});
 });
 </script>
+<!-- LOGIN REQUIRED MODAL -->
+<div id="loginRequiredModal" class="modal">
+<div class="modal-content">
+<h3>Bạn cần đăng nhập</h3>
+<p>Vui lòng đăng nhập để đặt phòng</p>
+
+<button id="goLogin" class="btn btn-primary">Login</button>
+<button id="closeModal" class="btn btn-danger">Cancel</button>
+
+</div>
+</div>
+<!-- BOOKING SUCCESS MODAL -->
+<div id="bookingSuccessModal" class="modal">
+<div class="modal-content">
+
+<span class="close-x" id="closeSuccess">&times;</span>
+
+<h3>Đặt phòng thành công </h3>
+<p>Phòng của bạn đã được lưu vào hệ thống</p>
+
+<button id="goBooking" class="btn-reserve-custom">
+Xem đặt phòng
+</button>
+
+</div>
+</div>
+<!-- ERROR MODAL -->
+<div id="errorModal" class="modal">
+<div class="modal-content">
+
+<span class="close-x" id="closeError">&times;</span>
+
+<h3>Lỗi</h3>
+<p id="errorMessage"></p>
+
+<button id="closeErrorBtn" class="btn btn-danger">
+Đóng
+</button>
+
+</div>
+</div>
+<style>
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+padding:30px;
+border-radius:8px;
+text-align:center;
+width:350px;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.modal-content button{
+margin:10px 5px;
+padding:8px 18px;
+cursor:pointer;
+}
+.modal-content{
+position:relative;
+}
+
+.close-x{
+position:absolute;
+top:10px;
+right:15px;
+font-size:22px;
+cursor:pointer;
+font-weight:bold;
+}
+</style>
+
 </body>
 </html>

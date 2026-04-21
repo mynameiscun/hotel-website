@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
+    
 <title>Hotel_Booking</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
         <a href="#contact">Contact</a>
         </div>
     <div class="right">
-        <div class="login">
+        <div class="login" id="auth-area">
             <a href="login.html">Login</a>
             <a href="signup.html">Sign up</a>
         </div>
@@ -355,6 +356,7 @@
 <footer>
     <p>© 2026 Hotel Website</p>
 </footer>
+<script src="../JS/jquery-4.0.0.min.js"></script>
 <script src="../JS/bootstrap.bundle.min.js"></script>
 <script>
     //du lieu
@@ -455,7 +457,64 @@
     localStorage.clear();
     sessionStorage.setItem("demoStarted", "true");
     }
+
+$(document).ready(function(){
+
+let loggedUser = localStorage.getItem("loggedInUser");
+
+// nếu đã login
+if(loggedUser){
+
+$("#auth-area").html(`
+<span>Xin chào, ${loggedUser}</span>
+<a href="#" id="logout-btn">Logout</a>
+`);
+
+}
+
+// logout
+$(document).on("click","#logout-btn",function(){
+
+localStorage.removeItem("loggedInUser");
+
+alert("Đăng xuất thành công");
+
+location.reload();
+
+});
+
+});
+
 </script>
+</script>
+<!-- logout script -->
+ <script>
+
+$(document).ready(function(){
+
+let loggedUser = localStorage.getItem("loggedInUser");
+
+if(loggedUser){
+
+$("#auth-area").html(`
+<span style="color: white;">Xin chào, ${loggedUser}</span>
+<a href="#" id="logoutBtn">Logout</a>
+`);
+
+}
+
+
+// logout
+$(document).on("click","#logoutBtn",function(){
+
+localStorage.removeItem("loggedInUser");
+
+location.reload();
+
+});
+
+});
+
 </script>
 </body>
 </html>

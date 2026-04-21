@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
+    
     <style>
         .auth-container {
   display: flex;
@@ -85,27 +86,149 @@
     </form>
   </div>
 </section>
+<script src="../JS/jquery-4.0.0.min.js"></script>
 <script>
-  // LOGIN
-document.getElementById("login-form").addEventListener("submit", function(e){
-  e.preventDefault();
+$(document).ready(function(){
 
-  const user = document.getElementById("login-username").value;
-  const pass = document.getElementById("login-password").value;
+$("#login-form").submit(function(e){
 
-  const savedUser = JSON.parse(localStorage.getItem("user"));
+e.preventDefault();
 
-  if(savedUser && savedUser.username === user && savedUser.password === pass){
+let username = $("#login-username").val().trim();
+let password = $("#login-password").val().trim();
 
-    localStorage.setItem("loggedInUser", user);
+// lấy user
+let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    alert("Login thành công!");
-    window.location.href = "room-detail.html";
+// tìm user
+let user = users.find(u => 
+u.username === username && 
+u.password === password
+);
 
-  } else {
-    alert("Sai tài khoản hoặc mật khẩu!");
-  }
+if(!user){
+
+$("#errorModal").css("display","flex").hide().fadeIn();
+
+return;
+}
+
+// lưu user login
+localStorage.setItem("loggedInUser", username);
+
+// hiện modal
+$("#loginModal").css("display","flex").hide().fadeIn();
+
 });
+
+
+// nút về home
+$("#goHome").click(function(){
+
+window.location.href="index.html";
+
+});
+
+
+// nút X đóng modal
+$(".close-modal").click(function(){
+
+$("#loginModal").fadeOut();
+
+});
+
+
+// click ngoài modal
+$(window).click(function(e){
+
+if($(e.target).is("#loginModal")){
+$("#loginModal").fadeOut();
+}
+
+});
+$("#closeError,.close-error").click(function(){
+$("#errorModal").fadeOut();
+});
+});
+
 </script>
+
+<!-- LOGIN SUCCESS MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close-modal">&times;</span>
+
+    <h3>Đăng nhập thành công</h3>
+    <p>Chuyển về trang chủ</p>
+
+    <button id="goHome">Về trang chủ</button>
+
+  </div>
+</div>
+<!-- LOGIN ERROR MODAL -->
+<div id="errorModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close-error">&times;</span>
+
+    <h3 style="color:red;">Đăng nhập thất bại</h3>
+    <p>Sai username hoặc password</p>
+
+    <button id="closeError">OK</button>
+
+  </div>
+</div>
+<style>
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+padding:25px;
+border-radius:8px;
+text-align:center;
+width:350px;
+position:relative;
+}
+
+.close-modal{
+position:absolute;
+top:10px;
+right:15px;
+font-size:22px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.modal-content button{
+margin-top:15px;
+padding:10px 20px;
+background:#b89b5e;
+color:white;
+border:none;
+cursor:pointer;
+}
+.close-error{
+position:absolute;
+top:10px;
+right:15px;
+font-size:22px;
+cursor:pointer;
+font-weight:bold;
+}
+</style>
 </body>
 </html>

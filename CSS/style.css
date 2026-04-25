@@ -178,26 +178,29 @@ section{
     flex-wrap: wrap;
 }
 .about-us{
-    width:60%;
+    width: 60%;
     font-size:22px;
     line-height:1.6;
     text-align: start;
+}
+.about-box ul{
+    margin-top: 20px;
 }
 .about-box li{
     display:flex;
     list-style:none;
     gap:10px;
     font-size:18px;
-    margin-bottom:12px;
+    margin-bottom:15px;
 }
 .about-box{
-    flex:1;
-    padding:25px;
+    flex: 0 0 35%;
+    padding: 20px 20px 10px;
     border-radius:12px;
     border: 2px solid #e0a61f;
     background:#fff;
     box-shadow:0 4px 15px rgba(0,0,0,0.1);
-    margin-bottom: 80px;   
+    margin-bottom: 50px;   
 }
 .about-box:hover{
     transform: translateY(-8px);

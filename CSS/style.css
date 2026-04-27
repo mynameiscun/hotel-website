@@ -6,7 +6,7 @@ LINH
 }
 body{
     margin:0;
-    font-family:'Playfair Display',serif;
+    font-family: 'Playfair Display', serif;
 }
 a{
     text-decoration:none;
@@ -42,7 +42,7 @@ a{
     padding:8px 22px;
     border:2px solid #e0a61f;
     font-size:15px;
-    font-family:"Lato", sans-serif;
+    /*font-family:"Lato", sans-serif;*/ 
     font-weight:600;
     border-radius:20px;   
 }
@@ -84,6 +84,8 @@ a{
     text-align:center;
     flex-wrap: wrap;
     flex:4;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .navbar a{

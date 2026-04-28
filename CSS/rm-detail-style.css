@@ -4,11 +4,11 @@
     padding: 0; 
 }
 body { 
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Playfair Display', serif;
     background-color: #fff; 
     color: #333; 
     line-height: 1.6; 
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .container.detail-page {
@@ -75,12 +75,6 @@ body {
     color: #555; 
     margin-bottom: 20px; 
 }
-.read-more { 
-    color: #e0a61f; 
-    text-decoration: none; 
-    font-weight: bold; 
-    font-size: 14px; 
-}
 
 .info-card { 
     background: #fff; 
@@ -90,7 +84,7 @@ body {
     margin-top: 25px; 
 }
 .info-card h3 { 
-    font-size: 1.1rem; 
+    font-size: 22px; 
     margin-bottom: 20px; 
     text-align: center; 
     border-bottom: 1px solid #f9f9f9; 
@@ -108,10 +102,10 @@ body {
     display: flex; 
     align-items: center; 
     gap: 8px; 
-    font-size: 20px; 
+    font-size: 16px; 
     color: #555; 
+    white-space: nowrap;
 }
-
 .right-content {
     flex: 0 0 32%; 
     position: sticky;
@@ -141,7 +135,7 @@ body {
 }
 .input-group label { 
     display: block; 
-    font-size: 20px; 
+    font-size: 22px; 
     font-weight: 800; 
     color: #000; 
     text-transform: uppercase;
@@ -150,7 +144,7 @@ body {
 .real-input { 
     width: 100%; 
     border: none; 
-    font-size: 15px; 
+    font-size: 22px; 
     padding: 5px 0; 
     outline: none; 
     background: transparent; 
@@ -166,7 +160,7 @@ body {
     margin-top: 30px; 
 }
 .price-label { 
-    font-size: 15px; 
+    font-size: 22px; 
     color: #888; 
 }
 .amount { 
@@ -175,7 +169,7 @@ body {
     color: #e0a61f; 
 }
 .unit { 
-    font-size: 14px; 
+    font-size: 22px; 
     color: #888; 
     margin-left: 3px; 
 }
@@ -187,7 +181,7 @@ body {
     padding: 18px; 
     border: none; 
     border-radius: 12px;
-    font-size: 16px; 
+    font-size: 22px; 
     font-weight: 600; 
     cursor: pointer; 
     transition: 0.3s; 
@@ -206,4 +200,30 @@ footer { background: #222; color: white; text-align: center; padding: 30px; marg
     .left-content, .right-content { flex: 0 0 100%; width: 100%; }
     .right-content { position: static; margin-top: 40px; }
     .grid-list { grid-template-columns: repeat(2, 1fr); } 
+}
+/* Fix header menu */
+
+.header .navbar{
+display:flex;
+gap:30px;
+}
+
+.header .navbar a{
+text-decoration:none;
+color:white;
+font-size:16px;
+font-weight:600;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.header .navbar a:hover{
+color:#e0a61f;
+}
+.navbar{
+display:flex;
+gap:30px;
+margin-right:30px;   /* thêm dòng này */
+}
+.navbar{
+margin-left:-90px;
 }

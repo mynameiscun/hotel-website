@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
-<title>Hotel_Booking</title>
+    
+<title>Khách sạn Plazzo Serento</title>
 </head>
 <body>
 
@@ -15,17 +16,17 @@
         <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
     </div>
         <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#rooms">Rooms</a>
-        <a href="#facilities">Facilities</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
+        <a href="#home">Trang chủ</a>
+        <a href="#about">Về chúng tôi</a>
+        <a href="#rooms">Hệ thống phòng</a>
+        <a href="#facilities">Dịch vụ & tiện ích</a>
+        <a href="#news">Cập nhật</a>
+        <a href="#contact">Kết nối</a>
         </div>
     <div class="right">
-        <div class="login">
-            <a href="login.html">Login</a>
-            <a href="signup.html">Sign up</a>
+        <div class="login" id="auth-area">
+            <a href="login.html">Đăng nhập</a>
+            <a href="signup.html">Tạo tài khoản</a>
         </div>
         <ul class="contact">
             <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
@@ -36,30 +37,30 @@
 <!-- HERO SECTION -->
 <section class="hero" id="home">
     <div class="hero-text">
-        <h1>Welcome to Our Hotel</h1>
-        <p>Enjoy your trip with us!</p>
+        <h1>Không gian nghỉ dưỡng đẳng cấp</h1>
+        <p>Nâng tầm hành trình của bạn cùng chúng tôi</p>
     </div>
 </section>
 <div class="box-wrapper">
     <div class="booking-box">
-        <h2>Search Your Stay</h2>
+        <h2>Khám phá kỳ nghỉ</h2>
         <form action="rooms.html" method="get" class="booking-form">
             <input type="date" name="checkin" required>
             <input type="date" name="checkout" required>
             <select name="guests">
-                <option value="">Guests</option>
-                <option value="1">1 Guest</option>
-                <option value="2">2 Guests</option>
-                <option value="3">3 Guests</option>
-                <option value="4">4 Guests</option>
+                <option value="">Số khách</option>
+                <option value="1">1 người</option>
+                <option value="2">2 người</option>
+                <option value="3">3 người</option>
+                <option value="4">4 người</option>
             </select>
             <select name="room">
-                <option value="">Room Type</option>
-                <option value="single">Single Room</option>
-                <option value="double">Double Room</option>
-                <option value="suite">Suite</option>
+                <option value="">Loại phòng</option>
+                <option value="single">Royal Suite</option>
+                <option value="double">Executive Suite</option>
+                <option value="suite">Deluxe Twin</option>
             </select>
-            <button type="submit">Search</button>
+            <button type="submit">Tìm phòng</button>
         </form>
     </div>
 </div>
@@ -71,16 +72,10 @@
     </div>
     <div class="about-container">
         <div class="about-us">
-                <p> 
-                    Welcome to Plazzo Serento, a luxurious five-star hotel located in the heart of the city. We are a premier destination for travelers seeking the perfect blend of comfort, style, and sophistication. 
-                </p>
-                <p>    
-                    Featuring spacious and elegantly designed rooms and suites, our hotel offers breathtaking city views, premium amenities, and exceptional service to ensure an unforgettable stay.
-                </p>
-                <p>
-                    With a strong focus on comfort and personalized attention, guests can relax in a refined atmosphere and indulge in unique dining experiences, making every moment at Plazzo Serento truly special.
-                    Welcome to Plazzo Serento, a luxurious five-star hotel located in the heart of the city.
-                </p>
+                <p><b>Plazzo Serento – Biểu tượng của sự xa hoa giữa lòng thành phố</b></p>
+                <p>Tọa lạc tại vị trí đắc địa bậc nhất, Plazzo Serento là khách sạn 5 sao đẳng cấp, nơi hội tụ tinh hoa của nghệ thuật sống thượng lưu, sự tinh tế trong từng chi tiết và dịch vụ hoàn mỹ.<p>
+                <p>Mỗi phòng nghỉ và suite tại đây đều được thiết kế sang trọng, không gian rộng mở với tầm nhìn ngoạn mục bao trọn thành phố. Nội thất cao cấp cùng hệ tiện nghi hiện đại mang đến trải nghiệm lưu trú vượt xa mong đợi.</p>
+                <p>Tại Plazzo Serento, mọi trải nghiệm đều được cá nhân hóa, từ phong cách phục vụ chuẩn mực đến hành trình ẩm thực đỉnh cao. Đây không chỉ là nơi lưu trú, mà còn là điểm chạm của những khoảnh khắc tinh hoa, nơi mỗi phút giây đều được nâng tầm thành một trải nghiệm đáng nhớ.</p>
             <ul class="contact">
                 <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
                 <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>     
@@ -88,11 +83,11 @@
         </div>
        
             <div class="about-box">
-            <h2>Why should choose us</h2>
+            <h2>Giá trị tạo nên đẳng cấp</h2>
             <ul> 
-                <li><img src="../IMAGE/convenience.png">Convenient</li>
-                <li><img src="../IMAGE/support.png">Comfortable</li>
-                <li><img src="../IMAGE/diamond.png">Luxurious</li>
+                <li><img src="../IMAGE/convenience.png">Vị trí đắc địa</li>
+                <li><img src="../IMAGE/support.png">Trải nghiệm êm ái</li>
+                <li><img src="../IMAGE/diamond.png">Đẳng cấp thượng lưu</li>
             </ul>
         </div>
     </div>
@@ -101,7 +96,7 @@
 <!-- ROOMS SECTION -->
 
 <section class="rooms-section" id="rooms">
-    <h2>Our Rooms</h2>
+    <h2>Không gian nghỉ dưỡng tinh tế</h2>
 
     <div class="rooms-container">
         <div class="room-card">
@@ -115,15 +110,15 @@
                         <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>28m²</span>
                     </div>
                     <div class="info-item">
-                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>King Bed</span>
+                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Giường King cao cấp</span>
                     </div>
                     <div class="info-item">
-                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 Guests</span>
+                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 khách</span>
                     </div>
                 </div>
                 <div class="room-footer">
                     <div class="price"><b>500,000 VNĐ</b><span>/đêm</span></div>
-                    <a href="room-detail.html#royal-suite" class="detail-btn">More Details</a>
+                    <a href="room-detail.html#royal-suite" class="detail-btn">Khám phá chi tiết</a>
                 </div>
             </div>
         </div>
@@ -139,10 +134,10 @@
                         <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>45m²</span>
                     </div>
                     <div class="info-item">
-                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Queen Bed</span>
+                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Giường Queen cao cấp</span>
                     </div>
                     <div class="info-item">
-                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 Guests</span>
+                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 khách</span>
                     </div>
                 </div>
                 <div class="room-footer">
@@ -163,10 +158,10 @@
                         <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>60m²</span>
                     </div>
                     <div class="info-item">
-                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Twin Bed</span>
+                        <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>2 giường đơn</span>
                     </div>
                     <div class="info-item">
-                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 Guests</span>
+                        <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 khách</span>
                     </div>
                 </div>
                 <div class="room-footer">
@@ -178,7 +173,7 @@
     </div>
 
     <div class="moreinfo">
-        <a href="rooms.html">More Rooms</a>
+        <a href="#">More Rooms</a>
     </div>
 </section>
 
@@ -355,6 +350,7 @@
 <footer>
     <p>© 2026 Hotel Website</p>
 </footer>
+<script src="../JS/jquery-4.0.0.min.js"></script>
 <script src="../JS/bootstrap.bundle.min.js"></script>
 <script>
     //du lieu
@@ -455,7 +451,64 @@
     localStorage.clear();
     sessionStorage.setItem("demoStarted", "true");
     }
+
+$(document).ready(function(){
+
+let loggedUser = localStorage.getItem("loggedInUser");
+
+// nếu đã login
+if(loggedUser){
+
+$("#auth-area").html(`
+<span>Xin chào, ${loggedUser}</span>
+<a href="#" id="logout-btn">Logout</a>
+`);
+
+}
+
+// logout
+$(document).on("click","#logout-btn",function(){
+
+localStorage.removeItem("loggedInUser");
+
+alert("Đăng xuất thành công");
+
+location.reload();
+
+});
+
+});
+
 </script>
+</script>
+<!-- logout script -->
+ <script>
+
+$(document).ready(function(){
+
+let loggedUser = localStorage.getItem("loggedInUser");
+
+if(loggedUser){
+
+$("#auth-area").html(`
+<span style="color: white;">Xin chào, ${loggedUser}</span>
+<a href="#" id="logoutBtn">Logout</a>
+`);
+
+}
+
+
+// logout
+$(document).on("click","#logoutBtn",function(){
+
+localStorage.removeItem("loggedInUser");
+
+location.reload();
+
+});
+
+});
+
 </script>
 </body>
 </html>

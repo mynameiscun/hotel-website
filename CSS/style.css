@@ -519,7 +519,11 @@ color: white;
     text-decoration: none;
     color: #e0a61f;
 }
-.news-card:hover{
+.news-card a img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+}.news-card:hover{
     transform: scale(1.05);
 }
 .news-link:hover .news-title{
@@ -527,6 +531,7 @@ color: white;
     color:#4d3600;
 }
 .news-title{
+    text-transform: uppercase;
     font-size: 22px;
     font-family: 'Playfair Display',serif;
 }

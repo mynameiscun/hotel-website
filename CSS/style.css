@@ -563,6 +563,12 @@ footer{
     color:white;
     padding:25px;
 }
+#footer-bottom{
+    padding-top: 25px;    
+    padding-bottom: 10px;
+    height: auto;
+    text-align: center;
+}
 
 @media (max-width: 768px){
     .booking-box{

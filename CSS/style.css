@@ -530,7 +530,7 @@ color: white;
     font-size: 22px;
     font-family: 'Playfair Display',serif;
 }
-.contact-section{
+/*.contact-section{
     background:#898ca1;
     color:rgb(0, 0, 0);
     text-align:center;
@@ -542,7 +542,7 @@ color: white;
 }
 .contact-section p{
     margin-bottom:25px;
-}
+}*/
 .contact-btn{
     padding:12px 30px;
     background:#ffffff;
@@ -561,8 +561,6 @@ color: white;
 footer{
     background:#222;
     color:white;
-
-    text-align:center;
     padding:25px;
 }
 

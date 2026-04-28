@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-4.0.0.min.js"></script>
+    <script src="../JS/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../CSS/style.css">
-    
-<title>Khách sạn Plazzo Serento</title>
+    <title>Khách sạn Plazzo Serento</title>
 </head>
 <body>
-
 <!-- HEADER -->
 <div class="header">
     <div class="logo">
@@ -20,7 +20,7 @@
         <a href="#about">Về chúng tôi</a>
         <a href="#rooms">Hệ thống phòng</a>
         <a href="#facilities">Dịch vụ & tiện ích</a>
-        <a href="#news">Cập nhật</a>
+        <a href="#news">Tin tức</a>
         <a href="#contact">Kết nối</a>
         </div>
     <div class="right">
@@ -64,7 +64,6 @@
         </form>
     </div>
 </div>
- 
 <!--ABOUT SECTION-->
 <section class="about" id="about">
     <div class="about-title">
@@ -92,12 +91,9 @@
         </div>
     </div>
 </section>
-
 <!-- ROOMS SECTION -->
-
 <section class="rooms-section" id="rooms">
     <h2>Không gian nghỉ dưỡng tinh tế</h2>
-
     <div class="rooms-container">
         <div class="room-card">
             <div class="room-image-block">
@@ -122,7 +118,6 @@
                 </div>
             </div>
         </div>
-
         <div class="room-card">
             <div class="room-image-block">
                 <img src="../IMAGE/room2.png" alt="Executive Suite">
@@ -142,11 +137,10 @@
                 </div>
                 <div class="room-footer">
                     <div class="price"><b>800,000 VNĐ</b><span>/đêm</span></div>
-                    <a href="room-detail.html#executive-suite" class="detail-btn">More Details</a>
+                    <a href="room-detail.html#executive-suite" class="detail-btn">Khám phá chi tiết</a>
                 </div>
             </div>
         </div>
-
         <div class="room-card">
             <div class="room-image-block">
                 <img src="../IMAGE/room3.png" alt="Deluxe Twin">
@@ -166,35 +160,30 @@
                 </div>
                 <div class="room-footer">
                     <div class="price"><b>1,000,000 VNĐ</b><span>/đêm</span></div>
-                    <a href="room-detail.html#deluxe-twin" class="detail-btn">More Details</a>
+                    <a href="room-detail.html#deluxe-twin" class="detail-btn">Khám phá chi tiết</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="moreinfo">
-        <a href="#">More Rooms</a>
-    </div>
 </section>
-
 <!-- FACILITIES SECTION --><!--dùng bootstrap data-bs-toggle-->
  <section class="facilities" id="facilities">
-    <h2>Our Facilities</h2>
+    <h2>Tiện ích cao cấp</h2>
 <div class="nav nav-tabs" id="nav-tab">
     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#restaurant" aria-selected="true">
-        RESTAURANT
+        NHÀ HÀNG
     </button>
     <button class="nav-link " data-bs-toggle="tab" data-bs-target="#spa" aria-selected="false">
         SPA
     </button>
     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pool" aria-selected="false">
-        POOL
+        HỒ BƠI
     </button>
     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gym" aria-selected="false">
-        GYM
+        PHÒNG GYM
     </button>
     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#coffee" aria-selected="false">
-        COFFEE SHOP
+        COFFEE 
     </button>
 </div>
 <div class="tab-content">
@@ -205,11 +194,9 @@
             <img src="../IMAGE/restaurant3.png" alt="Restaurant">
         </div>
         <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('restaurant')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('restaurant')">Khám phá thêm</a>
         </div>
-       
     </div>
-
     <div class="tab-pane fade" id="spa">
         <div class="img-info">
             <img src="../IMAGE/spa1.png" alt="SPA">
@@ -217,10 +204,9 @@
             <img src="../IMAGE/spa3.png" alt="SPA">
         </div>
          <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('spa')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('spa')">Khám phá thêm</a>
         </div>
     </div>
-
     <div class="tab-pane fade" id="pool">
         <div class="img-info">
             <img src="../IMAGE/pool1.png" alt="POOL">
@@ -228,7 +214,7 @@
             <img src="../IMAGE/pool3.png" alt="POOL">
         </div>
          <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('pool')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('pool')">Khám phá thêm</a>
         </div>
     </div>
     <div class="tab-pane fade" id="gym">
@@ -238,7 +224,7 @@
             <img src="../IMAGE/gym3.png" alt="GYM">
         </div>
          <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('gym')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('gym')">Khám phá thêm</a>
         </div>
     </div>
     <div class="tab-pane fade" id="coffee">
@@ -248,7 +234,7 @@
             <img src="../IMAGE/coffe3.png" alt="COFFEE SHOP">
         </div>
         <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('coffee')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('coffee')">Khám phá thêm</a>
         </div>
     </div>    
 </div>
@@ -268,11 +254,9 @@
     </div>    
 </div>
 </section>
-
-
 <!-- NEWS SECTION -->
 <section class="news-section" id="news">
-    <h2>Latest News</h2>
+    <h2>Tin tức</h2>
     <div class="news-container">
         <div class="news-card">
             <a href="news-detail.html?id=news1" class="news-link">
@@ -297,14 +281,11 @@
             <a href="news.html">More Info</a>
     </div>
 </section>
-
-<section class="contact-section" id="contact">
-    <h2>Need Help With Your Booking?</h2>
-    <p>Our team is ready to assist you anytime.</p>
-
+<!--<section class="contact-section" id="contact">
+    <h2>Bạn cần hỗ trợ đặt phòng?</h2>
+    <p>Đội ngũ chuyên nghiệp của chúng tôi luôn sẵn sàng phục vụ bạn 24/7.</p>
     <a href="contact.html" class="contact-btn">Contact Us</a>
-</section>
-
+</section>-->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-col">
@@ -348,7 +329,7 @@
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 Hotel Website</p>
+    <p> © 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
 </footer>
 <script src="../JS/jquery-4.0.0.min.js"></script>
 <script src="../JS/bootstrap.bundle.min.js"></script>
@@ -358,8 +339,8 @@
     restaurant: {
         title: "Restaurant",
         details: [
-            { img: "../IMAGE/restaurant1.png", desc: "The restaurant features a luxurious and elegant interior with warm lighting and modern furniture, creating a comfortable and relaxing dining environment for guests.", 
-                                               service: "★★★★★ (5/5) - Professional and attentive staff provide excellent service to ensure a pleasant dining experience.", 
+            { img: "../IMAGE/restaurant1.png", desc: "Không gian ẩm thực đẳng cấp, tinh tế trong từng chi tiết. Trải nghiệm thượng hạng, nơi cảm xúc được nâng tầm.", 
+                                               service: "★★★★★ (5/5) - Phục vụ chuyên nghiệp, tận tâm", 
                                                atmosphere: "★★★★☆ (4/5) - Warm and sophisticated, perfect for family dinners or business meetings." },
             { img: "../IMAGE/restaurant2.png", desc: "A bright dining space with large glass windows allowing natural light to fill the room, creating a refreshing and pleasant dining atmosphere.", 
                                                service: "★★★★☆ (4/5)", 
@@ -373,7 +354,7 @@
         title: "Spa",
         details: [
             { img: "../IMAGE/spa1.png", desc: "The steam room is designed with natural stone and modern lighting, offering a premium space for detoxification and improving overall wellness.", 
-                                        service: "★★★★★ (5/5) - Professional therapists provide attentive and high-quality services, ensuring a soothing and revitalizing experience for every guest.", 
+                                        service: "★★★★★ (5/5) - Phục vụ chuyên nghiệp, tận tâm.", 
                                         atmosphere: "★★★★★ (5/5) - Calm, quiet, and intimate setting, ideal for stress relief and complete relaxation." },
             { img: "../IMAGE/spa2.png", desc: "Deep tissue hot stone massages performed by our professional therapists to rejuvenate your body.", 
                                         service: "★★★★★ (5/5) - Well-maintained facilities with consistent steam levels, providing a comfortable and beneficial experience for guests.", 
@@ -425,11 +406,13 @@
             document.getElementById("facilityTitle").innerText = data.title; //doi tieu de//
             document.getElementById("facilityMainImg").src = item.img; // doi anh lon//
             document.getElementById("facilityText").innerHTML = `
-            <span class="label">Description:</span> ${item.desc} <br><br>
-            <span class="label">Service:</span>
+            <span class="label">Mô tả:</span> ${item.desc} <br><br>
+            <span class="label">Dịch vụ::</span>
             <span class="stars">${item.service}</span> <br><br>
-            <span class="label">Atmosphere:</span>
-            <span class="stars">${item.atmosphere}</span>`; //doi mo ta + noi dung//
+            <span class="label">Không khí:</span>
+            <span class="stars">${item.atmosphere}</span>
+            <span class="label">Điểm nhấn:</span>
+            <span class="stars">${item.hightlight}</span>`; //doi mo ta + noi dung//
             updateThumbs(); //anh cu the//
         }
     function updateThumbs(){ //xoa anh cu//

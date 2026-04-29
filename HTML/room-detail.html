@@ -4,20 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-4.0.0.min.js"></script>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/rm-detail-style.css">
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
 
     <title>Trải nghiệm phòng</title>
 </head>
-<style>
-    .error-msg {
-        font-size: 12px;
-        color: red;
-        display: block;
-        margin-top: 2px;
-    }
-</style>
+
 
 <body>
     <!-- HEADER -->
@@ -199,7 +193,7 @@
                     </div>
 
                     <div class="info-card">
-                        <h3>Tiện nghi cap cấp</h3>
+                        <h3>Tiện nghi cao cấp</h3>
                         <ul class="grid-list">
                             <li>🛏️ Hai giường đơn: 2</li>
                             <li>🧺 Dịch vụ giặt ủi: Có</li>
@@ -282,234 +276,10 @@
 
         </div>
     </div>
-
-    <footer>
-        <p>© 2026 Hotel Website </p>
+    <!-- FOOTER -->
+    <footer id="footer-bottom">
+        <p> © 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
     </footer>
-    <script src="../JS/jquery-4.0.0.min.js"></script>
-    <script>
-        const select = document.getElementById('room-select');
-        const priceDisplay = document.getElementById('display-price');
-
-        select.addEventListener('change', function () {
-            const price = this.value.split("|")[1];
-            priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
-        });
-        window.addEventListener("DOMContentLoaded", function () {
-            const price = select.value.split("|")[1];
-            priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
-        });
-        // validation for booking form
-        document.addEventListener("DOMContentLoaded", function () {
-            const nameInput = document.querySelector('input[type="text"]');
-            const phoneInput = document.querySelector('input[type="tel"]');
-            const checkInInput = document.querySelectorAll('input[type="date"]')[0];
-            const checkOutInput = document.querySelectorAll('input[type="date"]')[1];
-
-            function showError(input, message) {
-                let errorSpan = input.nextElementSibling;
-                if (!errorSpan || !errorSpan.classList.contains("error-msg")) {
-                    errorSpan = document.createElement("span");
-                    errorSpan.classList.add("error-msg");
-                    input.insertAdjacentElement("afterend", errorSpan);
-                }
-                errorSpan.textContent = "* " + message;
-            }
-
-            function clearError(input) {
-                let errorSpan = input.nextElementSibling;
-                if (errorSpan && errorSpan.classList.contains("error-msg")) {
-                    errorSpan.textContent = "";
-                }
-            }
-
-            // Regex: tên phải viết hoa chữ cái đầu mỗi từ
-            const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
-
-            // Regex: số điện thoại 10 số, bắt đầu bằng 01-09
-            const phoneRegex = /^(0[1-9])[0-9]{8}$/;
-
-            nameInput.addEventListener("input", () => {
-                if (!nameRegex.test(nameInput.value.trim())) {
-                    showError(nameInput, "Tên phải viết hoa chữ cái đầu mỗi từ và không chứa số.");
-                } else {
-                    clearError(nameInput);
-                }
-            });
-
-            phoneInput.addEventListener("input", () => {
-                if (!phoneRegex.test(phoneInput.value.trim())) {
-                    showError(phoneInput, "Số điện thoại phải đủ 10 số và bắt đầu từ 01-09.");
-                } else {
-                    clearError(phoneInput);
-                }
-            });
-        });
-        // booking flow
-
-        $(document).ready(function () {
-
-            // =======================
-            // CHECK LOGIN HEADER
-            // =======================
-
-            let loggedUser = localStorage.getItem("loggedInUser");
-
-            if (loggedUser) {
-
-                $("#auth-area").html(`
-<span style="color: white;">Xin chào, ${loggedUser}</span>
-<a href="#" id="logoutBtn">Logout</a>
-`);
-
-            }
-
-
-            // =======================
-            // LOGOUT
-            // =======================
-
-            $(document).on("click", "#logoutBtn", function () {
-
-                localStorage.removeItem("loggedInUser");
-                location.reload();
-
-            });
-
-
-            // =======================
-            // BOOKING FORM
-            // =======================
-
-            $("#booking-form").submit(function (e) {
-
-                e.preventDefault();
-
-                let loggedUser = localStorage.getItem("loggedInUser");
-
-                // chưa login
-                if (!loggedUser) {
-
-                    $("#loginRequiredModal")
-                        .css("display", "flex")
-                        .hide()
-                        .fadeIn();
-
-                    return;
-
-                }
-
-
-                // validate
-
-                let name = $("#booking-name").val().trim();
-                let phone = $("#booking-phone").val().trim();
-                let checkIn = $("#booking-checkin").val();
-                let checkOut = $("#booking-checkout").val();
-
-                let nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
-                let phoneRegex = /^(0[1-9])[0-9]{8}$/;
-
-                if (!nameRegex.test(name)) {
-                    showErrorModal("Tên phải viết hoa chữ cái đầu mỗi từ");
-                    return;
-                }
-
-                if (!phoneRegex.test(phone)) {
-                    showErrorModal("Số điện thoại phải đủ 10 số");
-                    return;
-                }
-
-                if (checkIn >= checkOut) {
-                    showErrorModal("Ngày check-out phải lớn hơn check-in");
-                    return;
-                }
-
-                // tạo booking
-
-                let roomData = $("#room-select").val().split("|");
-
-                let booking = {
-                    room: roomData[0],
-                    price: roomData[1],
-                    name: name,
-                    phone: phone,
-                    checkIn: checkIn,
-                    checkOut: checkOut,
-                    guests: $("#booking-guests").val(),
-                    status: "Chưa thanh toán"
-                };
-
-
-                // lưu booking theo user
-
-                let bookings = JSON.parse(localStorage.getItem("bookings")) || {};
-
-                if (!bookings[loggedUser]) {
-                    bookings[loggedUser] = [];
-                }
-
-                bookings[loggedUser].push(booking);
-
-                localStorage.setItem("bookings", JSON.stringify(bookings));
-
-
-                // show success modal
-
-                $("#bookingSuccessModal")
-                    .css("display", "flex")
-                    .hide()
-                    .fadeIn();
-
-            });
-
-
-            // =======================
-            // LOGIN MODAL
-            // =======================
-
-            $("#goLogin").click(function () {
-
-                window.location.href = "login.html";
-
-            });
-
-            $("#closeModal").click(function () {
-
-                $("#loginRequiredModal").fadeOut();
-
-            });
-
-
-            // =======================
-            // SUCCESS MODAL
-            // =======================
-
-            $("#goBooking").click(function () {
-
-                window.location.href = "booking.html";
-
-            });
-
-            $("#closeSuccess").click(function () {
-
-                $("#bookingSuccessModal").fadeOut();
-
-            });
-            function showErrorModal(message) {
-                $("#errorMessage").text(message);
-
-                $("#errorModal")
-                    .css("display", "flex")
-                    .hide()
-                    .fadeIn();
-            }
-            // close error modal
-            $("#closeError , #closeErrorBtn").click(function () {
-                $("#errorModal").fadeOut();
-            });
-        });
-    </script>
     <!-- LOGIN REQUIRED MODAL -->
     <div id="loginRequiredModal" class="modal">
         <div class="modal-content">
@@ -551,52 +321,7 @@
 
         </div>
     </div>
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-
-
-            justify-content: center;
-            align-items: center;
-
-            z-index: 9999;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            width: 350px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .modal-content button {
-            margin: 10px 5px;
-            padding: 8px 18px;
-            cursor: pointer;
-        }
-
-        .modal-content {
-            position: relative;
-        }
-
-        .close-x {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 22px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-    </style>
-
+    <script src="../JS/rm-detail.js"></script>
 </body>
 
 </html>

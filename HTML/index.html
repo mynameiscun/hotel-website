@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-4.0.0.min.js"></script>
+    <script src="../JS/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../CSS/style.css">
-    
-<title>Khách sạn Plazzo Serento</title>
+    <title>Khách sạn Plazzo Serento</title>
 </head>
 <body>
-
 <!-- HEADER -->
 <div class="header">
     <div class="logo">
@@ -20,7 +20,7 @@
         <a href="#about">Về chúng tôi</a>
         <a href="#rooms">Hệ thống phòng</a>
         <a href="#facilities">Dịch vụ & tiện ích</a>
-        <a href="#news">Cập nhật</a>
+        <a href="#news">Tin tức</a>
         <a href="#contact">Kết nối</a>
         </div>
     <div class="right">
@@ -64,7 +64,6 @@
         </form>
     </div>
 </div>
- 
 <!--ABOUT SECTION-->
 <section class="about" id="about">
     <div class="about-title">
@@ -92,12 +91,9 @@
         </div>
     </div>
 </section>
-
 <!-- ROOMS SECTION -->
-
 <section class="rooms-section" id="rooms">
     <h2>Không gian nghỉ dưỡng tinh tế</h2>
-
     <div class="rooms-container">
         <div class="room-card">
             <div class="room-image-block">
@@ -122,7 +118,6 @@
                 </div>
             </div>
         </div>
-
         <div class="room-card">
             <div class="room-image-block">
                 <img src="../IMAGE/room2.png" alt="Executive Suite">
@@ -142,11 +137,10 @@
                 </div>
                 <div class="room-footer">
                     <div class="price"><b>800,000 VNĐ</b><span>/đêm</span></div>
-                    <a href="room-detail.html#executive-suite" class="detail-btn">More Details</a>
+                    <a href="room-detail.html#executive-suite" class="detail-btn">Khám phá chi tiết</a>
                 </div>
             </div>
         </div>
-
         <div class="room-card">
             <div class="room-image-block">
                 <img src="../IMAGE/room3.png" alt="Deluxe Twin">
@@ -166,35 +160,30 @@
                 </div>
                 <div class="room-footer">
                     <div class="price"><b>1,000,000 VNĐ</b><span>/đêm</span></div>
-                    <a href="room-detail.html#deluxe-twin" class="detail-btn">More Details</a>
+                    <a href="room-detail.html#deluxe-twin" class="detail-btn">Khám phá chi tiết</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="moreinfo">
-        <a href="#">More Rooms</a>
-    </div>
 </section>
-
 <!-- FACILITIES SECTION --><!--dùng bootstrap data-bs-toggle-->
  <section class="facilities" id="facilities">
-    <h2>Our Facilities</h2>
+    <h2>Tiện ích cao cấp</h2>
 <div class="nav nav-tabs" id="nav-tab">
     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#restaurant" aria-selected="true">
-        RESTAURANT
+        NHÀ HÀNG
     </button>
     <button class="nav-link " data-bs-toggle="tab" data-bs-target="#spa" aria-selected="false">
         SPA
     </button>
     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pool" aria-selected="false">
-        POOL
+        HỒ BƠI
     </button>
     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gym" aria-selected="false">
-        GYM
+        PHÒNG GYM
     </button>
     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#coffee" aria-selected="false">
-        COFFEE SHOP
+        COFFEE 
     </button>
 </div>
 <div class="tab-content">
@@ -205,11 +194,9 @@
             <img src="../IMAGE/restaurant3.png" alt="Restaurant">
         </div>
         <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('restaurant')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('restaurant')">Khám phá thêm</a>
         </div>
-       
     </div>
-
     <div class="tab-pane fade" id="spa">
         <div class="img-info">
             <img src="../IMAGE/spa1.png" alt="SPA">
@@ -217,10 +204,9 @@
             <img src="../IMAGE/spa3.png" alt="SPA">
         </div>
          <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('spa')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('spa')">Khám phá thêm</a>
         </div>
     </div>
-
     <div class="tab-pane fade" id="pool">
         <div class="img-info">
             <img src="../IMAGE/pool1.png" alt="POOL">
@@ -228,7 +214,7 @@
             <img src="../IMAGE/pool3.png" alt="POOL">
         </div>
          <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('pool')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('pool')">Khám phá thêm</a>
         </div>
     </div>
     <div class="tab-pane fade" id="gym">
@@ -238,7 +224,7 @@
             <img src="../IMAGE/gym3.png" alt="GYM">
         </div>
          <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('gym')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('gym')">Khám phá thêm</a>
         </div>
     </div>
     <div class="tab-pane fade" id="coffee">
@@ -248,7 +234,7 @@
             <img src="../IMAGE/coffe3.png" alt="COFFEE SHOP">
         </div>
         <div class="moreinfo">
-            <a href="javascript:void(0)" onclick="openFacilities('coffee')">More Info</a>
+            <a href="javascript:void(0)" onclick="openFacilities('coffee')">Khám phá thêm</a>
         </div>
     </div>    
 </div>
@@ -262,47 +248,38 @@
         <!--Content-->
         <div class="facility-info">
             <span class="close-btn" onclick="closeFacilities()">✕</span>
-            <h2 id="facilityTitle">Restaurant</h2>
+            <h2 id="facilityTitle">Nhà hàng</h2>
             <p id="facilityText"></p>
         </div>
     </div>    
 </div>
 </section>
-
-
 <!-- NEWS SECTION -->
 <section class="news-section" id="news">
-    <h2>Latest News</h2>
+    <h2>Tin tức</h2>
     <div class="news-container">
         <div class="news-card">
             <a href="news-detail.html?id=news1" class="news-link">
-                <img src="../IMAGE/news (2).webp" alt="News 1">
-                <h3 class="news-title">MÂM CỖ TẾT 3 MIỀN - NÉT ĐẸP VĂN HÓA SUM VẦY TRONG NGÀY ĐẦU NĂM...</h3>
+                <img src="../IMAGE/news (2).webp" alt="News 1" style="height: 250px;">
+                <h3 class="news-title" style="margin-top: 10px;">MÂM CỖ TẾT 3 MIỀN - NÉT ĐẸP VĂN HÓA SUM VẦY TRONG NGÀY ĐẦU NĂM...</h3>
             </a>
         </div>
         <div class="news-card">
             <a href="news-detail.html?id=news2" class="news-link">
-                <img src="../IMAGE/news (10).jpg" alt="News 2" >
-                <h3 class="news-title">Món ăn ngày Tết truyền thống Việt Nam: Hương vị sum vầy...</h3>
+                <img src="../IMAGE/news (10).jpg" alt="News 2" style="height: 250px;">
+                <h3 class="news-title"style="margin-top: 10px;">MÓN ĂN NGÀY TẾT TRUYỀN THỐNG VIỆT NAM: HƯƠNG VỊ SUM VẦY...</h3>
             </a>
         </div>
         <div class="news-card">
             <a href="news-detail.html?id=news3" class="news-link">
-                <img src="../IMAGE/news (11).jpg" alt="News 3">
-                <h3 class="news-title">Ăn gì ở Sa Pa? Top đặc sản Sa Pa nhất định phải thử khi lên...</h3>
+                <img src="../IMAGE/news (11).jpg" alt="News 3" style="height: 250px;">
+                <h3 class="news-title"style="margin-top: 10px;">ĂN GÌ Ở SÂP? TOP ĐẶC SẢN SÂP NHẤT ĐỊNH PHẢI THỬ KHI LÊN...</h3>
             </a>
         </div>
     </div>
     <div class="moreinfo">
-            <a href="news.html">More Info</a>
+            <a href="news.html">Xem thêm</a>
     </div>
-</section>
-
-<section class="contact-section" id="contact">
-    <h2>Need Help With Your Booking?</h2>
-    <p>Our team is ready to assist you anytime.</p>
-
-    <a href="contact.html" class="contact-btn">Contact Us</a>
 </section>
 
 <footer class="main-footer">
@@ -345,113 +322,22 @@
         </div>
     </div>
 </footer>
-
 <!-- FOOTER -->
-<footer>
-    <p>© 2026 Hotel Website</p>
+<footer id="footer-bottom">
+    <p> © 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
 </footer>
-<script src="../JS/jquery-4.0.0.min.js"></script>
-<script src="../JS/bootstrap.bundle.min.js"></script>
+<script src="../JS/facilities.js"></script>
 <script>
-    //du lieu
-    const facilityData = {
-    restaurant: {
-        title: "Restaurant",
-        details: [
-            { img: "../IMAGE/restaurant1.png", desc: "The restaurant features a luxurious and elegant interior with warm lighting and modern furniture, creating a comfortable and relaxing dining environment for guests.", 
-                                               service: "★★★★★ (5/5) - Professional and attentive staff provide excellent service to ensure a pleasant dining experience.", 
-                                               atmosphere: "★★★★☆ (4/5) - Warm and sophisticated, perfect for family dinners or business meetings." },
-            { img: "../IMAGE/restaurant2.png", desc: "A bright dining space with large glass windows allowing natural light to fill the room, creating a refreshing and pleasant dining atmosphere.", 
-                                               service: "★★★★☆ (4/5)", 
-                                               atmosphere: "★★★★★ (5/5)" },
-            { img: "../IMAGE/restaurant3.png", desc: "At night, the restaurant becomes more charming with soft lighting, creating a cozy and romantic dining space.", 
-                                               service: "★★★★★ (5/5)", 
-                                               atmosphere: "★★★★★ (5/5)" }
-        ]
-    },
-    spa: {
-        title: "Spa",
-        details: [
-            { img: "../IMAGE/spa1.png", desc: "The steam room is designed with natural stone and modern lighting, offering a premium space for detoxification and improving overall wellness.", 
-                                        service: "★★★★★ (5/5) - Professional therapists provide attentive and high-quality services, ensuring a soothing and revitalizing experience for every guest.", 
-                                        atmosphere: "★★★★★ (5/5) - Calm, quiet, and intimate setting, ideal for stress relief and complete relaxation." },
-            { img: "../IMAGE/spa2.png", desc: "Deep tissue hot stone massages performed by our professional therapists to rejuvenate your body.", 
-                                        service: "★★★★★ (5/5) - Well-maintained facilities with consistent steam levels, providing a comfortable and beneficial experience for guests.", 
-                                        atmosphere: "★★★★☆ (4/5) - Warm and tranquil environment, perfect for relaxing muscles and cleansing the body." },
-            { img: "../IMAGE/spa3.png", desc: "The relaxation room provides a comfortable resting area with soft beds, wooden decor, and a minimalist design, ideal for unwinding after spa treatments.", 
-                                        service: "★★★★☆ (4/5) - Clean and well-prepared space with essential amenities to support a pleasant resting experience.", 
-                                        atmosphere: "★★★★★ (5/5) - Peaceful and cozy ambiance, offering guests a sense of comfort and relaxation." }
-        ]
-    },
-    pool: {
-        title: "Swimming Pool",
-        details: [
-            { img: "../IMAGE/pool1.png", desc: "Our infinity pool offers a breathtaking panoramic view of the city skyline from the top floor.", service: "★★★★☆ (4/5)", atmosphere: "★★★★★ (5/5)" },
-            { img: "../IMAGE/pool2.png", desc: "High-end salt filtration system ensures the water is always crystal clear and safe for your skin.", service: "★★★★★ (5/5)", atmosphere: "★★★★★ (5/5)" },
-            { img: "../IMAGE/pool3.png", desc: "Poolside bar serving cool cocktails and snacks while you enjoy the sun-loungers.", service: "★★★★★ (5/5)", atmosphere: "★★★★☆ (4/5)" }
-        ]
-    },
-    gym: {
-        title: "Fitness Gym",
-        details: [
-            { img: "../IMAGE/gym1.png", desc: "Equipped with state-of-the-art cardio machines and treadmills imported directly from Europe.", service: "★★★★★ (5/5)", atmosphere: "★★★★☆ (4/5)" },
-            { img: "../IMAGE/gym2.png", desc: "A dedicated free-weights area with a full range of dumbbells for all fitness levels.", service: "★★★★★ (5/5)", atmosphere: "★★★★★ (5/5)" },
-            { img: "../IMAGE/gym3.png", desc: "Peaceful Yoga and Pilates studio with professional mats and a calming atmosphere.", service: "★★★★☆ (4/5)", atmosphere: "★★★★★ (5/5)" }
-        ]
-    },
-    coffee: {
-        title: "Coffee",
-        details: [
-            { img: "../IMAGE/coffe1.png", desc: "Enjoy specialty hand-crafted coffee in a cozy space filled with artistic inspiration.", service: "★★★★★ (5/5)", atmosphere: "★★★★★ (5/5)" },
-            { img: "../IMAGE/coffe2.png", desc: "Quiet workspace with high-speed Wi-Fi and power outlets, perfect for remote work.", service: "★★★★★ (5/5)", atmosphere: "★★★★☆ (4/5)" },
-            { img: "../IMAGE/coffe3.png", desc: "Beautiful outdoor balcony area to enjoy the morning breeze and watch the busy streets.", service: "★★★★☆ (4/5)", atmosphere: "★★★★★ (5/5)" }
-        ]
-    }
-}; 
 
-    let currentType = "restaurant"; //dich vu//
-    let currentIndex = 0; //anh//
-    function openFacilities(type){
-        let modal = document.getElementById("facilityModal");
-        modal.style.display = "flex";
-        currentType = type;
-        currentIndex = 0;
-        renderFacility();
-    }
-    
-    function renderFacility(){
-        let data = facilityData[currentType]; //lay du lieu//
-        let item = data.details[currentIndex]; //lay anh + mo ta//
-            document.getElementById("facilityTitle").innerText = data.title; //doi tieu de//
-            document.getElementById("facilityMainImg").src = item.img; // doi anh lon//
-            document.getElementById("facilityText").innerHTML = `
-            <span class="label">Description:</span> ${item.desc} <br><br>
-            <span class="label">Service:</span>
-            <span class="stars">${item.service}</span> <br><br>
-            <span class="label">Atmosphere:</span>
-            <span class="stars">${item.atmosphere}</span>`; //doi mo ta + noi dung//
-            updateThumbs(); //anh cu the//
-        }
-    function updateThumbs(){ //xoa anh cu//
-        let thumbs = document.querySelector(".thumbs");
-        thumbs.innerHTML = "";
-        facilityData[currentType].details.forEach((item, index)=>{
-            thumbs.innerHTML += `
-            <img src="${item.img}" onclick="changeImg(${index})">`;
-        });
-    }
-    function changeImg(index){ //click//
-        currentIndex = index;
-        renderFacility();
-    }
-    function closeFacilities(){ //dong//
-        document.getElementById("facilityModal").style.display="none";
-    }
+
+
+
     if(!sessionStorage.getItem("demoStarted")){
     localStorage.clear();
     sessionStorage.setItem("demoStarted", "true");
     }
 
+ //signup   
 $(document).ready(function(){
 
 let loggedUser = localStorage.getItem("loggedInUser");

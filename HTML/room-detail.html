@@ -1,590 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/rm-detail-style.css">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
-    
+
     <title>Trải nghiệm phòng</title>
 </head>
 <style>
-.error-msg {
-    font-size: 12px;
-    color: red;
-    display: block;
-    margin-top: 2px;
-}
+    .error-msg {
+        font-size: 12px;
+        color: red;
+        display: block;
+        margin-top: 2px;
+    }
 </style>
+
 <body>
-<!-- HEADER -->
-<div class="header">
-    <div class="logo">
-        <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
-    </div>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
+        </div>
         <div class="navbar">
-        <a href="#home">Trang chủ</a>
-        <a href="#about">Về chúng tôi</a>
-        <a href="#rooms">Hệ thống phòng</a>
-        <a href="#facilities">Dịch vụ & tiện ích</a>
-        <a href="#news">Cập nhật</a>
-        <a href="#contact">Kết nối</a>
+            <a href="index.html">Trang chủ</a>
+            <a href="index.html#about">Về chúng tôi</a>
+            <a href="room-detail.html">Hệ thống phòng</a>
+            <a href="index.html#facilities">Dịch vụ & tiện ích</a>
+            <a href="news.html">Tin tức</a>
+            <a href="#contact">Kết nối</a>
         </div>
-    <div class="right">
-        <div class="login" id="auth-area">
-            <a href="login.html">Đăng nhập</a>
-            <a href="signup.html">Tạo tài khoản</a>
+        <div class="right">
+            <div class="login" id="auth-area">
+                <a href="login.html">Đăng nhập</a>
+                <a href="signup.html">Tạo tài khoản</a>
+            </div>
+            <ul class="contact">
+                <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>
+            </ul>
         </div>
-        <ul class="contact">
-            <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
-            <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>        
-        </ul>   
     </div>
-</div>
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-    <div class="hero-text">
-        <h1>Thông tin phòng</h1>
-        <p>Trải nghiệm đẳng cấp</p>
-    </div>
-</section>
-<div class="box-wrapper">
-    <div class="booking-box">
-        <h2>Khám phá kỳ nghỉ</h2>
-        <form action="rooms.html" method="get" class="booking-form">
-            <input type="date" name="checkin" required>
-            <input type="date" name="checkout" required>
-            <select name="guests">
-                <option value="">Số khách</option>
-                <option value="1">1 người</option>
-                <option value="2">2 người</option>
-                <option value="3">3 người</option>
-                <option value="4">4 người</option>
-            </select>
-            <select name="room">
-                <option value="">Loại phòng</option>
-                <option value="single">Royal Suite</option>
-                <option value="double">Executive Suite</option>
-                <option value="suite">Deluxe Twin</option>
-            </select>
-            <button type="submit">Tìm phòng</button>
-        </form>
-    </div>
-</div>
-<!-- MAIN CONTENT -->
-<div class="container detail-page">
-    <div class="main-layout-wrapper">
-        <!-- DETAILS PART -->
-        <div class="left-content">
-            <section class="room-item" id="royal-suite">
-                <div class="image-gallery-top">
-                    <div class="main-img"><img src="../IMAGE/room1.png" alt="Royal Suite"></div>
-                    <div class="sub-imgs">
-                        <img src="../IMAGE/room1.1.png" alt="Royal Detail 1">
-                        <img src="../IMAGE/room1.2.png" alt="Royal Detail 2">
-                    </div>
-                </div>
-
-                <div class="room-header">
-                    <div class="title-row">
-                        <h1>Royal Suite</h1>
-                        <span class="rating">★ 4.5</span>
-                    </div>
-                    <p class="location">📍 Bora Bora, French Polynesia</p>
-                    <p class="desc">
-                        Trải nghiệm đỉnh cao của sự sang trọng tại Suite Hoàng Gia. 
-                        Tọa lạc ở vị trí cao nhất của khu nghỉ dưỡng, phòng sở hữu tầm nhìn biển 180°, hồ bơi vô cực riêng cùng dịch vụ quản gia 24/7, mang đến kỳ nghỉ trọn vẹn và đẳng cấp.
-                    </p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Tiện nghi cao cấp</h3>
-                    <ul class="grid-list">
-                        <li>🛏️ Giường King: 1</li>
-                        <li>🧺 Giặt riêng: 1</li>
-                        <li>🧊 Mini Bar: Cao cấp</li>
-                        <li>🛏️ Phòng khách: 1</li>
-                        <li>🍳 Bếp nhỏ: 1</li>
-                        <li>📶 Wifi: Tốc độ cao</li>
-                        <li>🚿 Jacuzzi: 1</li>
-                        <li>❄️ Điều hòa: 4</li>
-                        <li>🏊 Hồ bơi riêng: 1</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>Thông tin khách sạn</h3>
-                    <ul class="grid-list">
-                        <li>🕒 Nhận phòng: 14:00</li>
-                        <li>🅿️ Đỗ xe: Miễn phí</li>
-                        <li>🕒 Trả phòng: 12:00</li>
-                        <li>🔞 Độ tuổi tối thiểu: 18</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="room-item" id="executive-suite">
-                <div class="image-gallery-top">
-                    <div class="main-img"><img src="../IMAGE/room2.png" alt="Executive Suite"></div>
-                    <div class="sub-imgs">
-                        <img src="../IMAGE/room2.1.png" alt="Exec Detail 1">
-                        <img src="../IMAGE/room2.2.png" alt="Exec Detail 2">
-                    </div>
-                </div>
-
-                <div class="room-header">
-                    <div class="title-row">
-                        <h1>Executive Suite</h1>
-                        <span class="rating">★ 4.8</span>
-                    </div>
-                    <p class="location">📍 Central District, Ho Chi Minh City</p>
-                    <p class="desc">
-                       Được thiết kế dành cho những khách hàng hiện đại, Suite Điều Hành mang đến sự kết hợp hoàn hảo giữa công việc và nghỉ dưỡng. Phòng trang bị không gian làm việc riêng, cách âm tối ưu cùng quyền truy cập Executive Lounge – nơi lý tưởng để thư giãn và kết nối.
-                    </p>
-                </div>
-
-                <div class="info-card">
-                    <h3>💎 Tiện nghi cao cấp</h3>
-                    <ul class="grid-list"> 
-                        <li>🛏️ Giường Queen: 1</li>
-                        <li>🖥️ Không gian làm việc: 1</li>
-                        <li>🧊 Tủ lạnh: 1</li>
-                        <li>☕ Máy pha cà phê: 1</li>
-                        <li>🍳 Lò vi sóng: 1</li>
-                        <li>📶 Wifi riêng: Tốc độ cao</li>
-                        <li>🚿 Phòng tắm đứng: 1</li>
-                        <li>❄️ Điều hòa trung tâm</li>
-                        <li>🏋️ Phòng gym: 24/7</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>Thông tin khách sạn</h3>
-                    <ul class="grid-list">
-                        <li>🕒 Nhận phòng: 13:00</li>
-                        <li>🅿️ Bãi đỗ xe an ninh: Có</li>
-                        <li>🕒 Trả phòng: 11:00</li>
-                        <li>🚭 Hút thuốc: Không</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="room-item" id="deluxe-twin">
-                <div class="image-gallery-top">
-                    <div class="main-img"><img src="../IMAGE/room3.png" alt="Deluxe Twin"></div>
-                    <div class="sub-imgs">
-                        <img src="../IMAGE/room3.1.png" alt="Deluxe Detail 1">
-                        <img src="../IMAGE/room3.2.png" alt="Deluxe Detail 2">
-                    </div>
-                </div>
-
-                <div class="room-header">
-                    <div class="title-row">
-                        <h1>Deluxe Twin</h1>
-                        <span class="rating">★ 5</span>
-                    </div>
-                    <p class="location">📍 Beachfront, Da Nang City</p>
-                    <p class="desc">
-                        Lý tưởng cho bạn bè hoặc gia đình nhỏ, phòng Deluxe Twin mang đến không gian thoải mái với hai giường riêng biệt và ban công rộng, hướng nhìn ra bãi biển cát trắng tuyệt đẹp.
-                    </p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Tiện nghi cap cấp</h3>
-                    <ul class="grid-list">
-                        <li>🛏️ Hai giường đơn: 2</li>
-                        <li>🧺 Dịch vụ giặt ủi: Có</li>
-                        <li>🧊 Tủ lạnh: 1</li>
-                        <li>📺 Smart TV: 1</li>
-                        <li>🧼 Bộ đồ dùng cá nhân: Đầy đủ</li>
-                        <li>📶 Wifi miễn phí</li>
-                        <li>🚿 Bồn tắm: 1</li>
-                        <li>❄️ Điều hòa: 1</li>
-                        <li>🏖️ Lối ra biển: Có</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3>Thông tin khách sạn</h3>
-                    <ul class="grid-list">
-                        <li>🕒 Nhận phòng: 14:00</li>
-                        <li>🅿️ Bãi đỗ xe an ninh: Có</li>
-                        <li>🕒 Trả phòng: 12:00</li>
-                        <li>🐾 Thú cưng: Không cho phép</li>
-                    </ul>
-                </div>
-            </section>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Thông tin phòng</h1>
+            <p>Trải nghiệm đẳng cấp</p>
         </div>
-        <!-- BOOKING FORM -->
-        <aside class="right-content">
-            <div class="booking-box-card">
-                <h2>Đặt phòng</h2>
-                <form id="booking-form">
-                    <div class="input-group">
-                        <label for="room-select">Loại phòng</label>
-                        <select class="real-input" id="room-select">
-                        <option value="Royal Suite|500000">Royal Suite</option>
-                        <option value="Executive Suite|800000">Executive Suite</option>
-                        <option value="Deluxe Twin|1000000">Deluxe Twin</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Họ và tên</label>
-                        <input type="text" id="booking-name" class="real-input" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Số điện thoại</label>
-                        <input type="tel" id="booking-phone" class="real-input" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Ngày nhận phòng</label>
-                        <input type="date" id="booking-checkin" class="real-input" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Ngày trả phòng</label>
-                        <input type="date" id="booking-checkout" class="real-input" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Số khách</label>
-                        <select id="booking-guests" class="real-input">
-                        <option>1 phòng, 2 người lớn</option>
-                        <option>1 phòng, 1 người lớn</option>
-                        </select>
-                    </div>
-                    <div class="price-row-custom">
-                        <span class="price-label">Giá phòng</span>
-                        <div class="price-val-custom">
-                            <span class="amount" id="display-price">500,000</span>
-                            <span class="unit">VNĐ</span>
+    </section>
+    <div class="box-wrapper">
+        <div class="booking-box">
+            <h2>Khám phá kỳ nghỉ</h2>
+            <form action="rooms.html" method="get" class="booking-form">
+                <input type="date" name="checkin" required>
+                <input type="date" name="checkout" required>
+                <select name="guests">
+                    <option value="">Số khách</option>
+                    <option value="1">1 người</option>
+                    <option value="2">2 người</option>
+                    <option value="3">3 người</option>
+                    <option value="4">4 người</option>
+                </select>
+                <select name="room">
+                    <option value="">Loại phòng</option>
+                    <option value="single">Royal Suite</option>
+                    <option value="double">Executive Suite</option>
+                    <option value="suite">Deluxe Twin</option>
+                </select>
+                <button type="submit">Tìm phòng</button>
+            </form>
+        </div>
+    </div>
+    <!-- MAIN CONTENT -->
+    <div class="container detail-page">
+        <div class="main-layout-wrapper">
+            <!-- DETAILS PART -->
+            <div class="left-content">
+                <section class="room-item" id="royal-suite">
+                    <div class="image-gallery-top">
+                        <div class="main-img"><img src="../IMAGE/room1.png" alt="Royal Suite"></div>
+                        <div class="sub-imgs">
+                            <img src="../IMAGE/room1.1.png" alt="Royal Detail 1">
+                            <img src="../IMAGE/room1.2.png" alt="Royal Detail 2">
                         </div>
                     </div>
-                <button type="submit" class="btn-reserve-custom">Đặt phòng ngay</button>
-                <button type="button" class="btn-reserve-custom" onclick="window.location.href='booking.html'">🛒 Đơn đặt phòng</button>
-                </form>
+
+                    <div class="room-header">
+                        <div class="title-row">
+                            <h1>Royal Suite</h1>
+                            <span class="rating">★ 4.5</span>
+                        </div>
+                        <p class="location">📍 Bora Bora, French Polynesia</p>
+                        <p class="desc">
+                            Trải nghiệm đỉnh cao của sự sang trọng tại Suite Hoàng Gia.
+                            Tọa lạc ở vị trí cao nhất của khu nghỉ dưỡng, phòng sở hữu tầm nhìn biển 180°, hồ bơi vô cực
+                            riêng cùng dịch vụ quản gia 24/7, mang đến kỳ nghỉ trọn vẹn và đẳng cấp.
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Tiện nghi cao cấp</h3>
+                        <ul class="grid-list">
+                            <li>🛏️ Giường King: 1</li>
+                            <li>🧺 Giặt riêng: 1</li>
+                            <li>🧊 Mini Bar: Cao cấp</li>
+                            <li>🛏️ Phòng khách: 1</li>
+                            <li>🍳 Bếp nhỏ: 1</li>
+                            <li>📶 Wifi: Tốc độ cao</li>
+                            <li>🚿 Jacuzzi: 1</li>
+                            <li>❄️ Điều hòa: 4</li>
+                            <li>🏊 Hồ bơi riêng: 1</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Thông tin khách sạn</h3>
+                        <ul class="grid-list">
+                            <li>🕒 Nhận phòng: 14:00</li>
+                            <li>🅿️ Đỗ xe: Miễn phí</li>
+                            <li>🕒 Trả phòng: 12:00</li>
+                            <li>🔞 Độ tuổi tối thiểu: 18</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="room-item" id="executive-suite">
+                    <div class="image-gallery-top">
+                        <div class="main-img"><img src="../IMAGE/room2.png" alt="Executive Suite"></div>
+                        <div class="sub-imgs">
+                            <img src="../IMAGE/room2.1.png" alt="Exec Detail 1">
+                            <img src="../IMAGE/room2.2.png" alt="Exec Detail 2">
+                        </div>
+                    </div>
+
+                    <div class="room-header">
+                        <div class="title-row">
+                            <h1>Executive Suite</h1>
+                            <span class="rating">★ 4.8</span>
+                        </div>
+                        <p class="location">📍 Central District, Ho Chi Minh City</p>
+                        <p class="desc">
+                            Được thiết kế dành cho những khách hàng hiện đại, Suite Điều Hành mang đến sự kết hợp hoàn
+                            hảo giữa công việc và nghỉ dưỡng. Phòng trang bị không gian làm việc riêng, cách âm tối ưu
+                            cùng quyền truy cập Executive Lounge – nơi lý tưởng để thư giãn và kết nối.
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>💎 Tiện nghi cao cấp</h3>
+                        <ul class="grid-list">
+                            <li>🛏️ Giường Queen: 1</li>
+                            <li>🖥️ Không gian làm việc: 1</li>
+                            <li>🧊 Tủ lạnh: 1</li>
+                            <li>☕ Máy pha cà phê: 1</li>
+                            <li>🍳 Lò vi sóng: 1</li>
+                            <li>📶 Wifi riêng: Tốc độ cao</li>
+                            <li>🚿 Phòng tắm đứng: 1</li>
+                            <li>❄️ Điều hòa trung tâm</li>
+                            <li>🏋️ Phòng gym: 24/7</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Thông tin khách sạn</h3>
+                        <ul class="grid-list">
+                            <li>🕒 Nhận phòng: 13:00</li>
+                            <li>🅿️ Bãi đỗ xe an ninh: Có</li>
+                            <li>🕒 Trả phòng: 11:00</li>
+                            <li>🚭 Hút thuốc: Không</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="room-item" id="deluxe-twin">
+                    <div class="image-gallery-top">
+                        <div class="main-img"><img src="../IMAGE/room3.png" alt="Deluxe Twin"></div>
+                        <div class="sub-imgs">
+                            <img src="../IMAGE/room3.1.png" alt="Deluxe Detail 1">
+                            <img src="../IMAGE/room3.2.png" alt="Deluxe Detail 2">
+                        </div>
+                    </div>
+
+                    <div class="room-header">
+                        <div class="title-row">
+                            <h1>Deluxe Twin</h1>
+                            <span class="rating">★ 5</span>
+                        </div>
+                        <p class="location">📍 Beachfront, Da Nang City</p>
+                        <p class="desc">
+                            Lý tưởng cho bạn bè hoặc gia đình nhỏ, phòng Deluxe Twin mang đến không gian thoải mái với
+                            hai giường riêng biệt và ban công rộng, hướng nhìn ra bãi biển cát trắng tuyệt đẹp.
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Tiện nghi cap cấp</h3>
+                        <ul class="grid-list">
+                            <li>🛏️ Hai giường đơn: 2</li>
+                            <li>🧺 Dịch vụ giặt ủi: Có</li>
+                            <li>🧊 Tủ lạnh: 1</li>
+                            <li>📺 Smart TV: 1</li>
+                            <li>🧼 Bộ đồ dùng cá nhân: Đầy đủ</li>
+                            <li>📶 Wifi miễn phí</li>
+                            <li>🚿 Bồn tắm: 1</li>
+                            <li>❄️ Điều hòa: 1</li>
+                            <li>🏖️ Lối ra biển: Có</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Thông tin khách sạn</h3>
+                        <ul class="grid-list">
+                            <li>🕒 Nhận phòng: 14:00</li>
+                            <li>🅿️ Bãi đỗ xe an ninh: Có</li>
+                            <li>🕒 Trả phòng: 12:00</li>
+                            <li>🐾 Thú cưng: Không cho phép</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-        </aside>
+            <!-- BOOKING FORM -->
+            <aside class="right-content">
+                <div class="booking-box-card">
+                    <h2>Đặt phòng</h2>
+                    <form id="booking-form">
+                        <div class="input-group">
+                            <label for="room-select">Loại phòng</label>
+                            <select class="real-input" id="room-select">
+                                <option value="Royal Suite|500000">Royal Suite</option>
+                                <option value="Executive Suite|800000">Executive Suite</option>
+                                <option value="Deluxe Twin|1000000">Deluxe Twin</option>
+                            </select>
+                        </div>
 
+                        <div class="input-group">
+                            <label>Họ và tên</label>
+                            <input type="text" id="booking-name" class="real-input" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Số điện thoại</label>
+                            <input type="tel" id="booking-phone" class="real-input" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Ngày nhận phòng</label>
+                            <input type="date" id="booking-checkin" class="real-input" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Ngày trả phòng</label>
+                            <input type="date" id="booking-checkout" class="real-input" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Số khách</label>
+                            <select id="booking-guests" class="real-input">
+                                <option>1 phòng, 2 người lớn</option>
+                                <option>1 phòng, 1 người lớn</option>
+                            </select>
+                        </div>
+                        <div class="price-row-custom">
+                            <span class="price-label">Giá phòng</span>
+                            <div class="price-val-custom">
+                                <span class="amount" id="display-price">500,000</span>
+                                <span class="unit">VNĐ</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-reserve-custom">Đặt phòng ngay</button>
+                        <button type="button" class="btn-reserve-custom"
+                            onclick="window.location.href='booking.html'">🛒 Đơn đặt phòng</button>
+                    </form>
+                </div>
+            </aside>
+
+        </div>
     </div>
-</div>
 
-<footer>
-    <p>© 2026 Hotel Website </p>
-</footer>
-<script src="../JS/jquery-4.0.0.min.js"></script>
-<script>
-    const select = document.getElementById('room-select');
-    const priceDisplay = document.getElementById('display-price');
+    <footer>
+        <p>© 2026 Hotel Website </p>
+    </footer>
+    <script src="../JS/jquery-4.0.0.min.js"></script>
+    <script>
+        const select = document.getElementById('room-select');
+        const priceDisplay = document.getElementById('display-price');
 
-    select.addEventListener('change', function() {
-        const price = this.value.split("|")[1];
-        priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
-    });
-    window.addEventListener("DOMContentLoaded", function(){
-    const price = select.value.split("|")[1];
-    priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
-});
-    // validation for booking form
-    document.addEventListener("DOMContentLoaded", function () {
-    const nameInput = document.querySelector('input[type="text"]');
-    const phoneInput = document.querySelector('input[type="tel"]');
-    const checkInInput = document.querySelectorAll('input[type="date"]')[0];
-    const checkOutInput = document.querySelectorAll('input[type="date"]')[1];
+        select.addEventListener('change', function () {
+            const price = this.value.split("|")[1];
+            priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
+        });
+        window.addEventListener("DOMContentLoaded", function () {
+            const price = select.value.split("|")[1];
+            priceDisplay.innerText = parseInt(price).toLocaleString('vi-VN');
+        });
+        // validation for booking form
+        document.addEventListener("DOMContentLoaded", function () {
+            const nameInput = document.querySelector('input[type="text"]');
+            const phoneInput = document.querySelector('input[type="tel"]');
+            const checkInInput = document.querySelectorAll('input[type="date"]')[0];
+            const checkOutInput = document.querySelectorAll('input[type="date"]')[1];
 
-    function showError(input, message) {
-        let errorSpan = input.nextElementSibling;
-        if (!errorSpan || !errorSpan.classList.contains("error-msg")) {
-            errorSpan = document.createElement("span");
-            errorSpan.classList.add("error-msg");
-            input.insertAdjacentElement("afterend", errorSpan);
-        }
-        errorSpan.textContent = "* " + message;
-    }
+            function showError(input, message) {
+                let errorSpan = input.nextElementSibling;
+                if (!errorSpan || !errorSpan.classList.contains("error-msg")) {
+                    errorSpan = document.createElement("span");
+                    errorSpan.classList.add("error-msg");
+                    input.insertAdjacentElement("afterend", errorSpan);
+                }
+                errorSpan.textContent = "* " + message;
+            }
 
-    function clearError(input) {
-        let errorSpan = input.nextElementSibling;
-        if (errorSpan && errorSpan.classList.contains("error-msg")) {
-            errorSpan.textContent = "";
-        }
-    }
+            function clearError(input) {
+                let errorSpan = input.nextElementSibling;
+                if (errorSpan && errorSpan.classList.contains("error-msg")) {
+                    errorSpan.textContent = "";
+                }
+            }
 
-    // Regex: tên phải viết hoa chữ cái đầu mỗi từ
-    const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
+            // Regex: tên phải viết hoa chữ cái đầu mỗi từ
+            const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
 
-    // Regex: số điện thoại 10 số, bắt đầu bằng 01-09
-    const phoneRegex = /^(0[1-9])[0-9]{8}$/;
+            // Regex: số điện thoại 10 số, bắt đầu bằng 01-09
+            const phoneRegex = /^(0[1-9])[0-9]{8}$/;
 
-    nameInput.addEventListener("input", () => {
-        if (!nameRegex.test(nameInput.value.trim())) {
-            showError(nameInput, "Tên phải viết hoa chữ cái đầu mỗi từ và không chứa số.");
-        } else {
-            clearError(nameInput);
-        }
-    });
+            nameInput.addEventListener("input", () => {
+                if (!nameRegex.test(nameInput.value.trim())) {
+                    showError(nameInput, "Tên phải viết hoa chữ cái đầu mỗi từ và không chứa số.");
+                } else {
+                    clearError(nameInput);
+                }
+            });
 
-    phoneInput.addEventListener("input", () => {
-        if (!phoneRegex.test(phoneInput.value.trim())) {
-            showError(phoneInput, "Số điện thoại phải đủ 10 số và bắt đầu từ 01-09.");
-        } else {
-            clearError(phoneInput);
-        }
-    });
-});
-// booking flow
+            phoneInput.addEventListener("input", () => {
+                if (!phoneRegex.test(phoneInput.value.trim())) {
+                    showError(phoneInput, "Số điện thoại phải đủ 10 số và bắt đầu từ 01-09.");
+                } else {
+                    clearError(phoneInput);
+                }
+            });
+        });
+        // booking flow
 
-$(document).ready(function(){
+        $(document).ready(function () {
 
-// =======================
-// CHECK LOGIN HEADER
-// =======================
+            // =======================
+            // CHECK LOGIN HEADER
+            // =======================
 
-let loggedUser = localStorage.getItem("loggedInUser");
+            let loggedUser = localStorage.getItem("loggedInUser");
 
-if(loggedUser){
+            if (loggedUser) {
 
-$("#auth-area").html(`
+                $("#auth-area").html(`
 <span style="color: white;">Xin chào, ${loggedUser}</span>
 <a href="#" id="logoutBtn">Logout</a>
 `);
 
-}
+            }
 
 
-// =======================
-// LOGOUT
-// =======================
+            // =======================
+            // LOGOUT
+            // =======================
 
-$(document).on("click","#logoutBtn",function(){
+            $(document).on("click", "#logoutBtn", function () {
 
-localStorage.removeItem("loggedInUser");
-location.reload();
+                localStorage.removeItem("loggedInUser");
+                location.reload();
 
-});
+            });
 
 
-// =======================
-// BOOKING FORM
-// =======================
+            // =======================
+            // BOOKING FORM
+            // =======================
 
-$("#booking-form").submit(function(e){
+            $("#booking-form").submit(function (e) {
 
-e.preventDefault();
+                e.preventDefault();
 
-let loggedUser = localStorage.getItem("loggedInUser");
+                let loggedUser = localStorage.getItem("loggedInUser");
 
-// chưa login
-if(!loggedUser){
+                // chưa login
+                if (!loggedUser) {
 
-$("#loginRequiredModal")
-.css("display","flex")
-.hide()
-.fadeIn();
+                    $("#loginRequiredModal")
+                        .css("display", "flex")
+                        .hide()
+                        .fadeIn();
 
-return;
+                    return;
 
-}
+                }
 
 
-// validate
+                // validate
 
-let name = $("#booking-name").val().trim();
-let phone = $("#booking-phone").val().trim();
-let checkIn = $("#booking-checkin").val();
-let checkOut = $("#booking-checkout").val();
+                let name = $("#booking-name").val().trim();
+                let phone = $("#booking-phone").val().trim();
+                let checkIn = $("#booking-checkin").val();
+                let checkOut = $("#booking-checkout").val();
 
-let nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
-let phoneRegex = /^(0[1-9])[0-9]{8}$/;
+                let nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
+                let phoneRegex = /^(0[1-9])[0-9]{8}$/;
 
-if(!nameRegex.test(name)){
-showErrorModal("Tên phải viết hoa chữ cái đầu mỗi từ");
-return;
-}
+                if (!nameRegex.test(name)) {
+                    showErrorModal("Tên phải viết hoa chữ cái đầu mỗi từ");
+                    return;
+                }
 
-if(!phoneRegex.test(phone)){
-showErrorModal("Số điện thoại phải đủ 10 số");
-return;
-}
+                if (!phoneRegex.test(phone)) {
+                    showErrorModal("Số điện thoại phải đủ 10 số");
+                    return;
+                }
 
-if(checkIn >= checkOut){
-showErrorModal("Ngày check-out phải lớn hơn check-in");
-return;
-}
+                if (checkIn >= checkOut) {
+                    showErrorModal("Ngày check-out phải lớn hơn check-in");
+                    return;
+                }
 
-// tạo booking
+                // tạo booking
 
-let roomData = $("#room-select").val().split("|");
+                let roomData = $("#room-select").val().split("|");
 
-let booking = {
-room: roomData[0],
-price: roomData[1],
-name: name,
-phone: phone,
-checkIn: checkIn,
-checkOut: checkOut,
-guests: $("#booking-guests").val(),
-status:"Chưa thanh toán"
-};
+                let booking = {
+                    room: roomData[0],
+                    price: roomData[1],
+                    name: name,
+                    phone: phone,
+                    checkIn: checkIn,
+                    checkOut: checkOut,
+                    guests: $("#booking-guests").val(),
+                    status: "Chưa thanh toán"
+                };
 
 
-// lưu booking theo user
+                // lưu booking theo user
 
-let bookings = JSON.parse(localStorage.getItem("bookings")) || {};
+                let bookings = JSON.parse(localStorage.getItem("bookings")) || {};
 
-if(!bookings[loggedUser]){
-bookings[loggedUser] = [];
-}
+                if (!bookings[loggedUser]) {
+                    bookings[loggedUser] = [];
+                }
 
-bookings[loggedUser].push(booking);
+                bookings[loggedUser].push(booking);
 
-localStorage.setItem("bookings", JSON.stringify(bookings));
+                localStorage.setItem("bookings", JSON.stringify(bookings));
 
 
-// show success modal
+                // show success modal
 
-$("#bookingSuccessModal")
-.css("display","flex")
-.hide()
-.fadeIn();
+                $("#bookingSuccessModal")
+                    .css("display", "flex")
+                    .hide()
+                    .fadeIn();
 
-});
+            });
 
 
-// =======================
-// LOGIN MODAL
-// =======================
+            // =======================
+            // LOGIN MODAL
+            // =======================
 
-$("#goLogin").click(function(){
+            $("#goLogin").click(function () {
 
-window.location.href="login.html";
+                window.location.href = "login.html";
 
-});
+            });
 
-$("#closeModal").click(function(){
+            $("#closeModal").click(function () {
 
-$("#loginRequiredModal").fadeOut();
+                $("#loginRequiredModal").fadeOut();
 
-});
+            });
 
 
-// =======================
-// SUCCESS MODAL
-// =======================
+            // =======================
+            // SUCCESS MODAL
+            // =======================
 
-$("#goBooking").click(function(){
+            $("#goBooking").click(function () {
 
-window.location.href="booking.html";
+                window.location.href = "booking.html";
 
-});
+            });
 
-$("#closeSuccess").click(function(){
+            $("#closeSuccess").click(function () {
 
-$("#bookingSuccessModal").fadeOut();
+                $("#bookingSuccessModal").fadeOut();
 
-});
-function showErrorModal(message){
-$("#errorMessage").text(message);
-
-$("#errorModal")
-.css("display","flex")
-.hide()
-.fadeIn();
-}
-// close error modal
-$("#closeError , #closeErrorBtn").click(function(){
-$("#errorModal").fadeOut();
-});
-});
-</script>
-<!-- LOGIN REQUIRED MODAL -->
-<div id="loginRequiredModal" class="modal">
-<div class="modal-content">
-<h3>Bạn cần đăng nhập</h3>
-<p>Vui lòng đăng nhập để đặt phòng</p>
-
-<button id="goLogin" class="btn btn-primary">Login</button>
-<button id="closeModal" class="btn btn-danger">Cancel</button>
-
-</div>
-</div>
-<!-- BOOKING SUCCESS MODAL -->
-<div id="bookingSuccessModal" class="modal">
-<div class="modal-content">
-
-<span class="close-x" id="closeSuccess">&times;</span>
-
-<h3>Đặt phòng thành công </h3>
-<p>Phòng của bạn đã được lưu vào hệ thống</p>
-
-<button id="goBooking" class="btn-reserve-custom">
-Xem đặt phòng
-</button>
-
-</div>
-</div>
-<!-- ERROR MODAL -->
-<div id="errorModal" class="modal">
-<div class="modal-content">
-
-<span class="close-x" id="closeError">&times;</span>
-
-<h3>Lỗi</h3>
-<p id="errorMessage"></p>
-
-<button id="closeErrorBtn" class="btn btn-danger">
-Đóng
-</button>
-
-</div>
-</div>
-<style>
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-
-
-justify-content:center;
-align-items:center;
-
-z-index:9999;
-}
-
-.modal-content{
-background:white;
-padding:30px;
-border-radius:8px;
-text-align:center;
-width:350px;
-box-shadow:0 0 20px rgba(0,0,0,0.2);
-}
-
-.modal-content button{
-margin:10px 5px;
-padding:8px 18px;
-cursor:pointer;
-}
-.modal-content{
-position:relative;
-}
-
-.close-x{
-position:absolute;
-top:10px;
-right:15px;
-font-size:22px;
-cursor:pointer;
-font-weight:bold;
-}
-</style>
+            });
+            function showErrorModal(message) {
+                $("#errorMessage").text(message);
+
+                $("#errorModal")
+                    .css("display", "flex")
+                    .hide()
+                    .fadeIn();
+            }
+            // close error modal
+            $("#closeError , #closeErrorBtn").click(function () {
+                $("#errorModal").fadeOut();
+            });
+        });
+    </script>
+    <!-- LOGIN REQUIRED MODAL -->
+    <div id="loginRequiredModal" class="modal">
+        <div class="modal-content">
+            <h3>Bạn cần đăng nhập</h3>
+            <p>Vui lòng đăng nhập để đặt phòng</p>
+
+            <button id="goLogin" class="btn btn-primary">Login</button>
+            <button id="closeModal" class="btn btn-danger">Cancel</button>
+
+        </div>
+    </div>
+    <!-- BOOKING SUCCESS MODAL -->
+    <div id="bookingSuccessModal" class="modal">
+        <div class="modal-content">
+
+            <span class="close-x" id="closeSuccess">&times;</span>
+
+            <h3>Đặt phòng thành công </h3>
+            <p>Phòng của bạn đã được lưu vào hệ thống</p>
+
+            <button id="goBooking" class="btn-reserve-custom">
+                Xem đặt phòng
+            </button>
+
+        </div>
+    </div>
+    <!-- ERROR MODAL -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+
+            <span class="close-x" id="closeError">&times;</span>
+
+            <h3>Lỗi</h3>
+            <p id="errorMessage"></p>
+
+            <button id="closeErrorBtn" class="btn btn-danger">
+                Đóng
+            </button>
+
+        </div>
+    </div>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content button {
+            margin: 10px 5px;
+            padding: 8px 18px;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            position: relative;
+        }
+
+        .close-x {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 22px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
 
 </body>
+
 </html>

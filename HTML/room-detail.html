@@ -54,24 +54,26 @@
     <div class="box-wrapper">
         <div class="booking-box">
             <h2>Khám phá kỳ nghỉ</h2>
-            <form action="rooms.html" method="get" class="booking-form">
-                <input type="date" name="checkin" required>
-                <input type="date" name="checkout" required>
-                <select name="guests">
-                    <option value="">Số khách</option>
-                    <option value="1">1 người</option>
-                    <option value="2">2 người</option>
-                    <option value="3">3 người</option>
-                    <option value="4">4 người</option>
-                </select>
-                <select name="room">
-                    <option value="">Loại phòng</option>
-                    <option value="single">Royal Suite</option>
-                    <option value="double">Executive Suite</option>
-                    <option value="suite">Deluxe Twin</option>
-                </select>
-                <button type="submit">Tìm phòng</button>
-            </form>
+            <div class="booking">
+                <form action="rooms.html" method="get" class="booking-form">
+                    <input type="date" name="checkin" required>
+                    <input type="date" name="checkout" required>
+                    <select name="guests">
+                        <option value="">Số khách</option>
+                        <option value="1">1 người</option>
+                        <option value="2">2 người</option>
+                        <option value="3">3 người</option>
+                        <option value="4">4 người</option>
+                    </select>
+                    <select name="room">
+                        <option value="">Loại phòng</option>
+                        <option value="single">Royal Suite</option>
+                        <option value="double">Executive Suite</option>
+                        <option value="suite">Deluxe Twin</option>
+                    </select>
+                    <button type="submit">Tìm phòng</button>
+                </form>
+            </div>
         </div>
     </div>
     <!-- MAIN CONTENT -->
@@ -226,6 +228,7 @@
             <aside class="right-content">
                 <div class="booking-box-card">
                     <h2>Đặt phòng</h2>
+
                     <form id="booking-form">
                         <div class="input-group">
                             <label for="room-select">Loại phòng</label>

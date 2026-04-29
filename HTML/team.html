@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,141 +8,149 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <title>Our Team - Hotel Booking</title>
 </head>
+
 <body>
 
-<div class="header">
-    <div class="logo">
-        <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
-    </div>
-    <div class="navbar">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About Us</a>
-        <a href="index.html#rooms">Rooms</a>
-        <a href="index.html#facilities">Facilities</a>
-        <a href="news.html">News</a>
-        <a href="index.html#contact">Contact</a>
-    </div>
-    <div class="right">
-        <div class="login">
-            <a href="login.html">Login</a>
-            <a href="signup.html">Sign up</a>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
         </div>
-        <ul class="contact">
-            <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
-            <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>        
-        </ul>   
-    </div>
-</div>
-
-<section class="hero" style="height: 30vh; min-height: 250px; display: flex; align-items: center; justify-content: center; background-color: #0F172A; color: #fff;">
-    <div class="hero-text" style="text-align: center;">
-        <p style="color: #C9A227; font-family: 'Lato', sans-serif; letter-spacing: 2px; text-transform: uppercase;">Những người kiến tạo</p>
-        <h1 style="font-size: 42px; margin-top: 10px; font-family: 'Playfair Display', serif;">Đội Ngũ Của Chúng Tôi</h1>
-    </div>
-</section>
-
-<section class="team-section py-5" style="background-color: #fdfbf7;">
-    <div class="container pb-5">
-        <div class="row text-center mb-5">
-            <div class="col-12">
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #333; text-transform: uppercase;">Ban Quản Trị Dự Án</h2>
-                <p style="color: #666; font-size: 16px; margin-top: 15px;">Đội ngũ phát triển website khách sạn Plazzo Serento 5 sao.</p>
-            </div>
+        <div class="navbar">
+            <a href="index.html">Trang chủ</a>
+            <a href="index.html#about">Về chúng tôi</a>
+            <a href="room-detail.html">Hệ thống phòng</a>
+            <a href="index.html#facilities">Dịch vụ & tiện ích</a>
+            <a href="news.html">Tin tức</a>
+            <a href="#contact">Kết nối</a>
         </div>
-
-        <div class="row g-4">
-            <!-- Thành viên 1: Hà Linh -->
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-img-wrapper">
-                        <img src="../IMAGE/team-linh.png" alt="Nguyễn Lê Hà Linh" class="team-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Nguyễn Lê Hà Linh</h3>
-                        <span class="team-role">Trưởng nhóm / Layout & Navbar</span>
-                        <p>Phụ trách setup cấu trúc toàn bộ dự án, layout nền, Header và Footer.</p>
-                    </div>
-                </div>
+        <div class="right">
+            <div class="login" id="auth-area">
+                <a href="login.html">Đăng nhập</a>
+                <a href="signup.html">Tạo tài khoản</a>
             </div>
-
-            <!-- Thành viên 2: Hải Đăng -->
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-img-wrapper">
-                        <img src="../IMAGE/team-dang.png" alt="Đinh Như Hải Đăng" class="team-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Đinh Như Hải Đăng</h3>
-                        <span class="team-role">Thành viên / Content & Report</span>
-                        <p>Thiết kế HTML trang About, Facilities và tổng hợp làm báo cáo dự án.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Thành viên 3: Minh Anh -->
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-img-wrapper">
-                        <img src="../IMAGE/team-minhanh.png" alt="Nguyễn Ngọc Minh Anh" class="team-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Nguyễn Ngọc Minh Anh</h3>
-                        <span class="team-role">Thành viên / Booking UI</span>
-                        <p>Đảm nhiệm giao diện trang Rooms, Room Detail và Form Booking đặt phòng.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Thành viên 4: Trường Thọ -->
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-img-wrapper">
-                        <img src="../IMAGE/team-tho.png" alt="Trần Trinh Trường Thọ" class="team-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Trần Trinh Trường Thọ</h3>
-                        <span class="team-role">Thành viên / JavaScript Logic</span>
-                        <p>Phụ trách xử lý dữ liệu Form, Validation và lưu trữ LocalStorage.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Thành viên 5: Ngọc Luân -->
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-img-wrapper">
-                        <img src="../IMAGE/team-luan.png" alt="Đào Ngọc Luân" class="team-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Đào Ngọc Luân</h3>
-                        <span class="team-role">Thành viên / JavaScript Logic</span>
-                        <p>Hỗ trợ xử lý thuật toán JavaScript, kiểm tra lỗi và tối ưu hóa hệ thống.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Thành viên 6: Trung Thành -->
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-img-wrapper">
-                        <img src="../IMAGE/Thanh.jpg" alt="Trần Trung Thành" class="team-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Trần Trung Thành</h3>
-                        <span class="team-role">Thành viên / News & Accounts</span>
-                        <p>Xây dựng giao diện trang News, Team, Contact và khung hiển thị Login/Signup.</p>
-                    </div>
-                </div>
-            </div>
-
+            <ul class="contact">
+                <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>
+            </ul>
         </div>
     </div>
-</section>
 
-<footer>
-    <p>© 2026 Hotel Website</p>
-</footer>
+    <section class="hero"
+        style="height: 30vh; min-height: 250px; display: flex; align-items: center; justify-content: center; background-color: #0F172A; color: #fff;">
+        <div class="hero-text" style="text-align: center;">
+            <p style="color: #C9A227; font-family: 'Lato', sans-serif; letter-spacing: 2px; text-transform: uppercase;">
+                Những người kiến tạo</p>
+            <h1 style="font-size: 42px; margin-top: 10px; font-family: 'Playfair Display', serif;">Đội Ngũ Của Chúng Tôi
+            </h1>
+        </div>
+    </section>
 
-<script src="../JS/bootstrap.bundle.min.js"></script>
+    <section class="team-section py-5" style="background-color: #fdfbf7;">
+        <div class="container pb-5">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2
+                        style="font-family: 'Playfair Display', serif; font-size: 32px; color: #333; text-transform: uppercase;">
+                        Ban Quản Trị Dự Án</h2>
+                    <p style="color: #666; font-size: 16px; margin-top: 15px;">Đội ngũ phát triển website khách sạn
+                        Plazzo Serento 5 sao.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Thành viên 1: Hà Linh -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="../IMAGE/team-linh.png" alt="Nguyễn Lê Hà Linh" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3>Nguyễn Lê Hà Linh</h3>
+                            <span class="team-role">Trưởng nhóm / Layout & Navbar</span>
+                            <p>Phụ trách setup cấu trúc toàn bộ dự án, layout nền, Header và Footer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 2: Hải Đăng -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="../IMAGE/team-dang.png" alt="Đinh Như Hải Đăng" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3>Đinh Như Hải Đăng</h3>
+                            <span class="team-role">Thành viên / Content & Report</span>
+                            <p>Thiết kế HTML trang About, Facilities và tổng hợp làm báo cáo dự án.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 3: Minh Anh -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="../IMAGE/team-minhanh.png" alt="Nguyễn Ngọc Minh Anh" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3>Nguyễn Ngọc Minh Anh</h3>
+                            <span class="team-role">Thành viên / Booking UI</span>
+                            <p>Đảm nhiệm giao diện trang Rooms, Room Detail và Form Booking đặt phòng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 4: Trường Thọ -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="../IMAGE/team-tho.png" alt="Trần Trinh Trường Thọ" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3>Trần Trinh Trường Thọ</h3>
+                            <span class="team-role">Thành viên / JavaScript Logic</span>
+                            <p>Phụ trách xử lý dữ liệu Form, Validation và lưu trữ LocalStorage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 5: Ngọc Luân -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="../IMAGE/team-luan.png" alt="Đào Ngọc Luân" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3>Đào Ngọc Luân</h3>
+                            <span class="team-role">Thành viên / JavaScript Logic</span>
+                            <p>Hỗ trợ xử lý thuật toán JavaScript, kiểm tra lỗi và tối ưu hóa hệ thống.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 6: Trung Thành -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="../IMAGE/Thanh.jpg" alt="Trần Trung Thành" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3>Trần Trung Thành</h3>
+                            <span class="team-role">Thành viên / News & Accounts</span>
+                            <p>Xây dựng giao diện trang News, Team, Contact và khung hiển thị Login/Signup.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Hotel Website</p>
+    </footer>
+
+    <script src="../JS/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

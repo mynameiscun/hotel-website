@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Playfair Display', serif;
+    margin: 0;
 }
 
 body {
@@ -227,6 +228,10 @@ body {
     margin-top: 50px;
 }
 
+.booking-box-card h2 {
+    text-align: center;
+}
+
 .booking-box-card h3 {
     text-align: center;
     margin-bottom: 30px;
@@ -244,7 +249,6 @@ body {
     font-size: 22px;
     font-weight: 800;
     color: #000;
-    text-transform: uppercase;
     margin-bottom: 5px;
 }
 

@@ -183,3 +183,46 @@ section {
     scroll-margin-top: 150px;
     /*khi click vào nav, section sẽ không bị che bởi header */
 }
+.rules-body {
+            background-color: #f8f9fa; /* Nền sáng để nổi bật văn bản như web mẫu */
+            min-height: 100vh;
+            padding-top: 100px;
+            color: #333;
+        }
+        /* Mặc định ẩn tất cả các section */
+        .content-section {
+            display: none;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+        /* Chỉ hiện section nào có class active */
+        .content-section.active {
+            display: block;
+        }
+        .section-title {
+            color: #b8926a;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #b8926a;
+            padding-bottom: 10px;
+        }
+        b { color: #0d2142; }
+        footer {
+    background: #222;
+    color: white;
+    padding: 25px;
+}
+
+#footer-bottom {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    height: auto;
+    text-align: center;
+}
+.container{
+    font-size: 18px;
+}

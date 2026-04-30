@@ -8,6 +8,7 @@ body {
     margin: 0;
 }
 
+/* HEADER*/
 .header {
     background: #2C2C2C;
     display: flex;
@@ -106,7 +107,6 @@ body {
 .navbar a:hover {
     color: #f2b544;
 }
-
 
 /* hero */
 

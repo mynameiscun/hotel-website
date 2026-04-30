@@ -87,7 +87,7 @@ body {
 
 .navbar {
     display: flex;
-    gap: 30x;
+    gap: 30px;
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;

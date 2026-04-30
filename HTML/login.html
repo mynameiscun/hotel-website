@@ -3,94 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <script src="../JS/jquery-4.0.0.min.js"></script>
     <link rel="stylesheet" href="../CSS/login.css">
+    <title>ĐĂNG NHẬP</title>
+    
 </head>
 <body>
     <!-- LOGIN PAGE -->
 <section class="auth-container">
   <div class="auth-card">
-    <h2>Login</h2>
+    <h2>Đăng nhập</h2>
     <form id="login-form">
       <div class="input-group">
-        <label>Username</label>
+        <label>Tên đăng nhập</label>
         <input type="text" id="login-username" placeholder="Enter your username" required>
       </div>
       <div class="input-group">
-        <label>Password</label>
+        <label>Mật khẩu</label>
         <input type="password" id="login-password" placeholder="Enter your password" required>
       </div>
-      <button type="submit" class="btn-auth">Login</button>
-      <p class="switch-auth">Don't have an account? <a href="signup.html">Sign up</a></p>
+      <button type="submit" class="btn-auth">Đăng nhập</button>
+      <p class="switch-auth">Bạn chưa có tài khoản? <a href="signup.html">Đăng ký ngay</a></p>
     </form>
   </div>
 </section>
-<script src="../JS/jquery-4.0.0.min.js"></script>
-<script>
-$(document).ready(function(){
-
-$("#login-form").submit(function(e){
-
-e.preventDefault();
-
-let username = $("#login-username").val().trim();
-let password = $("#login-password").val().trim();
-
-// lấy user
-let users = JSON.parse(localStorage.getItem("users")) || [];
-
-// tìm user
-let user = users.find(u => 
-u.username === username && 
-u.password === password
-);
-
-if(!user){
-
-$("#errorModal").css("display","flex").hide().fadeIn();
-
-return;
-}
-
-// lưu user login
-localStorage.setItem("loggedInUser", username);
-
-// hiện modal
-$("#loginModal").css("display","flex").hide().fadeIn();
-
-});
 
 
-// nút về home
-$("#goHome").click(function(){
-
-window.location.href="index.html";
-
-});
-
-
-// nút X đóng modal
-$(".close-modal").click(function(){
-
-$("#loginModal").fadeOut();
-
-});
-
-
-// click ngoài modal
-$(window).click(function(e){
-
-if($(e.target).is("#loginModal")){
-$("#loginModal").fadeOut();
-}
-
-});
-$("#closeError,.close-error").click(function(){
-$("#errorModal").fadeOut();
-});
-});
-
-</script>
 
 <!-- LOGIN SUCCESS MODAL -->
 <div id="loginModal" class="modal">
@@ -118,6 +56,6 @@ $("#errorModal").fadeOut();
 
   </div>
 </div>
-
+<script src="../JS/login.js"></script>
 </body>
 </html>

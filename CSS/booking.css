@@ -198,3 +198,20 @@ top:10px;
 cursor:pointer;
 font-size:20px;
 }
+/* Chỉ thêm đoạn này để căn giữa modal */
+.modal {
+    display: none; 
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+.modal-content {
+    position: relative; 
+    margin: auto;            /* Đảm bảo hộp nội dung nằm chính giữa */
+    animation: zoomIn 0.3s ease; 
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

@@ -165,8 +165,8 @@ localStorage.setItem("bookings",JSON.stringify(bookings));
 renderList();
 
 $(".booking-card[data-index='"+selectedIndex+"']").click();
-
-$("#successModal").fadeIn();
+// Hiển thị thông báo căn giữa
+    $("#successModal").css("display", "block").fadeIn();
 
 });
 

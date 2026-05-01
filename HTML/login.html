@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../JS/jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="../CSS/login.css">
+    <title>ĐĂNG NHẬP</title>
+    
+</head>
+<body>
+    <!-- LOGIN PAGE -->
+<section class="auth-container">
+  <div class="auth-card">
+    <h2>Đăng nhập</h2>
+    <form id="login-form">
+      <div class="input-group">
+        <label>Tên đăng nhập</label>
+        <input type="text" id="login-username" placeholder="Enter your username" required>
+      </div>
+      <div class="input-group">
+        <label>Mật khẩu</label>
+        <input type="password" id="login-password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn-auth">Đăng nhập</button>
+      <p class="switch-auth">Bạn chưa có tài khoản? <a href="signup.html">Đăng ký ngay</a></p>
+    </form>
+  </div>
+</section>
+
+
+
+<!-- LOGIN SUCCESS MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close-modal">&times;</span>
+
+    <h3>Đăng nhập thành công</h3>
+    <p>Chuyển về trang chủ</p>
+
+    <button id="goHome">Về trang chủ</button>
+
+  </div>
+</div>
+<!-- LOGIN ERROR MODAL -->
+<div id="errorModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close-error">&times;</span>
+
+    <h3 style="color:red;">Đăng nhập thất bại</h3>
+    <p>Sai username hoặc password</p>
+
+    <button id="closeError">OK</button>
+
+  </div>
+</div>
+<script src="../JS/login.js"></script>
+</body>
+</html>

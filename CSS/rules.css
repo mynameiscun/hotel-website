@@ -1,0 +1,139 @@
+/*
+LINH
+*/
+* {
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    margin: 0;
+}
+
+/* HEADER*/
+.custom-header {
+    background: #2C2C2C;
+    padding: 0 40px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* LOGO */
+.logo-img {
+    height: 70px;
+}
+
+/* MENU CHÍNH */
+.menu-center .nav-link {
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.menu-center .nav-link:hover {
+    color: #f2b544;
+}
+
+.login-btn {
+    text-decoration: none;
+    padding: 8px 22px;
+    border: 2px solid #e0a61f;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 20px;
+    color: #ffffff;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.login-btn:hover {
+    background-color: #e0a61f;
+    color: white;
+    transform: scale(1.05);
+}
+
+.social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-list img {
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.social-list img:hover {
+    transform: scale(1.2);
+}
+.content-section {
+    scroll-margin-top: 100px !important;
+}
+/* --HERO BANNER-- */
+.hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("../IMAGE/banner.png");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-text h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 20px;
+}
+
+.box-wrapper {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 991px) {
+    .custom-header {
+        padding: 10px 20px;
+    }
+
+    .menu-center {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .menu-center .nav-link {
+        margin: 6px 0;
+    }
+
+    .header-right {
+        flex-direction: column;
+        margin-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .login-area {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .login-btn {
+        width: 180px;
+        text-align: center;
+    }
+
+    .social-list {
+        justify-content: center;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
+}

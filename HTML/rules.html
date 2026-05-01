@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-   <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
             <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img">
@@ -30,16 +30,16 @@
                     <a class="nav-link" href="../HTML/index.html">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Về chúng tôi</a>
+                    <a class="nav-link" href="index.html#about">Về chúng tôi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#rooms">Hệ thống phòng</a>
+                    <a class="nav-link" href="index.html#rooms">Hệ thống phòng</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#facilities">Dịch vụ & tiện ích</a>
+                    <a class="nav-link" href="index.html#facilities">Dịch vụ & tiện ích</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#news">Tin tức</a>
+                    <a class="nav-link" href="index.html#news">Tin tức</a>
                 </li>
             </ul>
             <div class="header-right d-flex align-items-center gap-3">
@@ -71,38 +71,14 @@
             <p>Nâng tầm hành trình của bạn cùng chúng tôi</p>
         </div>
     </section>
-    <div class="box-wrapper">
-        <div class="booking-box">
-            <h2>Khám phá kỳ nghỉ</h2>
-            <form action="rooms.html" method="get" class="booking-form">
-                <input type="date" name="checkin" required>
-                <input type="date" name="checkout" required>
-                <select name="guests">
-                    <option value="">Số khách</option>
-                    <option value="1">1 người</option>
-                    <option value="2">2 người</option>
-                    <option value="3">3 người</option>
-                    <option value="4">4 người</option>
-                </select>
-                <select name="room">
-                    <option value="">Loại phòng</option>
-                    <option value="single">Royal Suite</option>
-                    <option value="double">Executive Suite</option>
-                    <option value="suite">Deluxe Twin</option>
-                </select>
-                <button type="submit">Tìm phòng</button>
-            </form>
-        </div>
-    </div>
-
     <!-- MAIN CONTENT: RULES SECTION -->
     <div class="header" style="background: #0d2142;"> </div>
 
     <div class="rules-body">
         <div class="container">
 
-            <div id="section-chung" class="content-section">
-                <h2 class="section-title">Điều khoản chung</h2>
+            <div id="chung" class="content-section">
+                <h1 class="section-title">Điều khoản chung</h1>
                 <p>Chào mừng Quý khách đến với hệ thống đặt phòng của Plazzo Serento. Bằng việc sử dụng dịch vụ, Quý
                     khách đồng ý với các điều khoản sử dụng hệ thống của chúng tôi...</p>
                 <p>Các điều khoản và quy định này áp dụng cho tất cả khách hàng sử dụng dịch vụ lưu trú và các dịch vụ
@@ -119,7 +95,7 @@
 
             </div>
 
-            <div id="section-quydinh" class="content-section">
+            <div id="quydinh" class="content-section">
                 <h1 class="section-title">Quy định chung</h1>
                 <p style="text-transform: uppercase; font-size: 22px; font-weight: bold;">Quy định lưu trú chung
                     (General Regulations)</p>
@@ -152,7 +128,7 @@
                 </p>
             </div>
 
-            <div id="section-thanhtoan" class="content-section">
+            <div id="thanhtoan" class="content-section">
                 <h2 class="section-title">Quy định về thanh toán</h2>
                 <p><b>1. Hình thức thanh toán:</b>
                 <ul>
@@ -180,7 +156,7 @@
                     không được hoàn lại theo chính sách hủy phòng hiện hành.</p>
             </div>
 
-            <div id="section-xacnhan" class="content-section">
+            <div id="xacnhan" class="content-section">
                 <h2 class="section-title">Xác nhận thông tin đặt phòng</h2>
                 <p><b>1. Xác nhận đặt phòng:</b> Sau khi hoàn tất quá trình đặt phòng, Quý khách sẽ nhận được email hoặc
                     tin nhắn xác nhận từ hệ thống hoặc nhân viên khách sạn. Đây là căn cứ chính thức để đảm bảo việc giữ
@@ -203,7 +179,7 @@
                     định (đối với đặt phòng trực tuyến).</p>
             </div>
 
-            <div id="section-tranhchap" class="content-section">
+            <div id="tranhchap" class="content-section">
                 <h2 class="section-title">Chính sách giải quyết tranh chấp</h2>
                 <p><b>1. Nguyên tắc giải quyết:</b> Mọi tranh chấp phát sinh trong quá trình sử dụng dịch vụ sẽ được ưu
                     tiên giải quyết thông qua thương lượng và hòa giải trên tinh thần hợp tác, tôn trọng quyền lợi của
@@ -218,7 +194,7 @@
                     nội bộ của khách sạn, thỏa thuận giữa các bên và các quy định pháp luật có liên quan.</p>
             </div>
 
-            <div id="section-riengtu" class="content-section">
+            <div id="riengtu" class="content-section">
                 <h2 class="section-title">Chính sách quyền riêng tư</h2>
                 <p><b>1. Cam kết bảo mật thông tin:</b> Khách sạn cam kết bảo mật tuyệt đối thông tin cá nhân của khách
                     hàng và chỉ sử dụng cho mục đích cung cấp dịch vụ và chăm sóc khách hàng</p>
@@ -240,30 +216,7 @@
     <footer id="footer-bottom">
         <p> © 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
     </footer>
-    <!-- JS -->
-    <script>
-        window.onload = function () {
-            // 1. Lấy tham số từ URL (ví dụ: ?section=quydinh)
-            const urlParams = new URLSearchParams(window.location.search);
-            const sectionName = urlParams.get('section');
 
-            // 2. Nếu không có tham số, mặc định hiện "Điều khoản chung"
-            let targetId = "section-chung";
-
-            if (sectionName) {
-                targetId = "section-" + sectionName;
-            }
-
-            // 3. Tìm thẻ div tương ứng và thêm class 'active' để nó hiện ra
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.classList.add('active');
-            } else {
-                // Nếu lỡ link sai, hiện mặc định mục chung
-                document.getElementById('section-chung').classList.add('active');
-            }
-        }
-    </script>
 </body>
 
 </html>

@@ -11,33 +11,58 @@
 
     <title>Trải nghiệm phòng</title>
 </head>
-
-
 <body>
-    <!-- HEADER -->
-    <div class="header">
-        <div class="logo">
-            <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
-        </div>
-        <div class="navbar">
-            <a href="index.html">Trang chủ</a>
-            <a href="index.html#about">Về chúng tôi</a>
-            <a href="room-detail.html">Hệ thống phòng</a>
-            <a href="index.html#facilities">Dịch vụ & tiện ích</a>
-            <a href="promotion.html">Ưu đãi</a>
-            <a href="news.html">Tin tức</a>
-        </div>
-        <div class="right">
-            <div class="login" id="auth-area">
-                <a href="login.html">Đăng nhập</a>
-                <a href="signup.html">Tạo tài khoản</a>
-            </div>
-            <ul class="contact">
-                <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>
+<!-- HEADER -->
+   <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img">
+        </a>
+        <!-- NÚT HAMBURGER -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+            aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html#rooms">Hệ thống phòng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#facilities">Dịch vụ & tiện ích</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#news">Tin tức</a>
+                </li>
             </ul>
+            <div class="header-right d-flex align-items-center gap-3">
+                <div class="login-area d-flex gap-2" id="auth-area">
+                    <a href="login.html" class="login-btn">Đăng nhập</a>
+                    <a href="signup.html" class="login-btn">Tạo tài khoản</a>
+                </div>
+                <ul class="social-list d-flex align-items-center gap-2">
+                    <li>
+                        <a href="#">
+                            <img src="../IMAGE/facebook.png" alt="Facebook">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="../IMAGE/instagram.png" alt="Instagram">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+</nav>
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-text">
@@ -46,12 +71,22 @@
         </div>
     </section>
     <div class="box-wrapper">
-        <div class="booking-box">
-            <h2>Khám phá kỳ nghỉ</h2>
-            <form action="rooms.html" method="get" class="booking-form">
-                <input type="date" name="checkin" required>
-                <input type="date" name="checkout" required>
-                <select name="guests">
+    <div class="booking-box">
+        <h2>Khám phá kỳ nghỉ</h2>
+
+        <form class="booking-form" id="room-search-form">
+            <div>
+                <input type="date" id="search-checkin">
+                <div id="errSearchCheckin" style="color:red; font-size:14px;"></div>
+            </div>
+
+            <div>
+                <input type="date" id="search-checkout">
+                <div id="errSearchCheckout" style="color:red; font-size:14px;"></div>
+            </div>
+
+            <div>
+                <select id="search-guests">
                     <option value="">Số khách</option>
                     <option value="1">1 người</option>
                     <option value="2">2 người</option>
@@ -60,19 +95,13 @@
                     <option value="5">5 người</option>
                     <option value="6">6 người</option>
                 </select>
-                <select name="room">
-                    <option value="">Loại phòng</option>
-                    <option value="single">Royal Suite</option>
-                    <option value="double">Executive Suite</option>
-                    <option value="suite">Deluxe Twin</option>
-                    <option value="suite">President Suite</option>
-                    <option value="suite">Ocean Villa</option>
-                    <option value="suite">Sky Penthouse</option>
-                </select>
-                <button type="submit">Tìm phòng</button>
-            </form>
-        </div>
+                <div id="errSearchGuests" style="color:red; font-size:14px;"></div>
+            </div>
+
+            <button type="button" id="btnRoomSearch">Tìm phòng</button>
+        </form>
     </div>
+</div>
     <!-- MAIN CONTENT -->
     <div class="container detail-page">
         <div class="main-layout-wrapper">
@@ -531,6 +560,8 @@
 
         </div>
     </div>
+    
+    <script src="../JS/bootstrap.bundle.min.js"></script>
     <script src="../JS/rm-detail.js"></script>
 </body>
 

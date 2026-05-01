@@ -1,5 +1,9 @@
-
-        /* HEADER*/
+* {
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+ 
+ /* HEADER*/
 .header {
     background: #2C2C2C;
     display: flex;

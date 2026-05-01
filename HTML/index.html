@@ -13,56 +13,59 @@
 
 <body>
     <!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img">
-        </a>
-        <!-- NÚT HAMBURGER -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-            aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainMenu">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/index.html">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Về chúng tôi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#rooms">Hệ thống phòng</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#facilities">Dịch vụ & tiện ích</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#news">Tin tức</a>
-                </li>
-            </ul>
-            <div class="header-right d-flex align-items-center gap-3">
-                <div class="login-area d-flex gap-2" id="auth-area">
-                    <a href="login.html" class="login-btn">Đăng nhập</a>
-                    <a href="signup.html" class="login-btn">Tạo tài khoản</a>
-                </div>
-                <ul class="social-list d-flex align-items-center gap-2">
-                    <li>
-                        <a href="#">
-                            <img src="../IMAGE/facebook.png" alt="Facebook">
-                        </a>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img">
+            </a>
+            <!-- NÚT HAMBURGER -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang chủ</a>
                     </li>
-
-                    <li>
-                        <a href="#">
-                            <img src="../IMAGE/instagram.png" alt="Instagram">
-                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Về chúng tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rooms">Hệ thống phòng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#facilities">Dịch vụ & tiện ích</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="promotion.html">Ưu đãi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">Tin tức</a>
                     </li>
                 </ul>
+                <div class="header-right d-flex align-items-center gap-3">
+                    <div class="login-area d-flex gap-2" id="auth-area">
+                        <a href="login.html" class="login-btn">Đăng nhập</a>
+                        <a href="signup.html" class="login-btn">Tạo tài khoản</a>
+                    </div>
+                    <ul class="social-list d-flex align-items-center gap-2">
+                        <li>
+                            <a href="#">
+                                <img src="../IMAGE/facebook.png" alt="Facebook">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="../IMAGE/instagram.png" alt="Instagram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-text">
@@ -71,37 +74,37 @@
         </div>
     </section>
     <div class="box-wrapper">
-    <div class="booking-box">
-        <h2>Khám phá kỳ nghỉ</h2>
+        <div class="booking-box">
+            <h2>Khám phá kỳ nghỉ</h2>
 
-        <form action="rooms.html" method="get" class="booking-form" id="search-form">
+            <form action="rooms.html" method="get" class="booking-form" id="search-form">
 
-            <div>
-                <input type="date" name="checkin" id="checkin">
-                <div id="errCheckin" style="color:red; font-size:14px;"></div>
-            </div>
+                <div>
+                    <input type="date" name="checkin" id="checkin">
+                    <div id="errCheckin" style="color:red; font-size:14px;"></div>
+                </div>
 
-            <div>
-                <input type="date" name="checkout" id="checkout">
-                <div id="errCheckout" style="color:red; font-size:14px;"></div>
-            </div>
+                <div>
+                    <input type="date" name="checkout" id="checkout">
+                    <div id="errCheckout" style="color:red; font-size:14px;"></div>
+                </div>
 
-            <div>
-                <select name="guests" id="guests">
-                    <option value="">Số khách</option>
-                    <option value="1">1 người</option>
-                    <option value="2">2 người</option>
-                    <option value="3">3 người</option>
-                    <option value="4">4 người</option>
-                    <option value="5">5 người</option>
-                    <option value="6">6 người</option>
-                </select>
-                <div id="errGuests" style="color:red; font-size:14px;"></div>
-            </div>
-            <button type="button" id="btnSearch">Tìm phòng</button>
-        </form>
+                <div>
+                    <select name="guests" id="guests">
+                        <option value="">Số khách</option>
+                        <option value="1">1 người</option>
+                        <option value="2">2 người</option>
+                        <option value="3">3 người</option>
+                        <option value="4">4 người</option>
+                        <option value="5">5 người</option>
+                        <option value="6">6 người</option>
+                    </select>
+                    <div id="errGuests" style="color:red; font-size:14px;"></div>
+                </div>
+                <button type="button" id="btnSearch">Tìm phòng</button>
+            </form>
+        </div>
     </div>
-</div>
     <!--ABOUT SECTION-->
     <section class="about" id="about">
         <div class="about-title">
@@ -213,86 +216,104 @@
             <a href="room-detail.html">Xem thêm</a>
         </div>
     </section>
-   <!-- FACILITIES SECTION -->
-<section class="facilities" id="facilities">
-    <h2>Tiện ích cao cấp</h2>
 
-    <div class="nav nav-tabs" id="nav-tab">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#restaurant" aria-selected="true">
-            NHÀ HÀNG
-        </button>
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#spa" aria-selected="false">
-            SPA
-        </button>
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pool" aria-selected="false">
-            HỒ BƠI
-        </button>
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gym" aria-selected="false">
-            PHÒNG GYM
-        </button>
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#coffee" aria-selected="false">
-            COFFEE
-        </button>
-    </div>
+    <!-- FACILITIES SECTION --><!--dùng bootstrap data-bs-toggle-->
+    <section class="facilities" id="facilities">
+        <h2>Tiện ích cao cấp</h2>
+        <div class="nav nav-tabs" id="nav-tab">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#restaurant" aria-selected="true">
+                NHÀ HÀNG
+            </button>
+            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#spa" aria-selected="false">
+                SPA
+            </button>
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pool" aria-selected="false">
+                HỒ BƠI
+            </button>
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gym" aria-selected="false">
+                PHÒNG GYM
+            </button>
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#coffee" aria-selected="false">
+                COFFEE
+            </button>
+        </div>
+        </div>
 
-    <div class="tab-content">
-        <div class="tab-pane fade show active" id="restaurant">
-            <div class="img-info">
-                <img src="../IMAGE/restaurant1.png" alt="Restaurant">
-                <img src="../IMAGE/restaurant2.png" alt="Restaurant">
-                <img src="../IMAGE/restaurant3.png" alt="Restaurant">
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="restaurant">
+                <div class="img-info">
+                    <img src="../IMAGE/restaurant1.png" onclick="openFacilities('restaurant', 0)">
+                    <img src="../IMAGE/restaurant2.png" onclick="openFacilities('restaurant', 1)">
+                    <img src="../IMAGE/restaurant3.png" onclick="openFacilities('restaurant', 2)">
+                </div>
+                <div class="moreinfo">
+                    <a href="../HTML/facilities.html">Khám phá thêm</a>
+                </div>
             </div>
-            <div class="moreinfo">
-                <a href="../HTML/facilities.html">Khám phá thêm</a>
+
+            <div class="tab-pane fade" id="spa">
+                <div class="img-info">
+                    <img src="../IMAGE/spa1.png" onclick="openFacilities('spa', 0)">
+                    <img src="../IMAGE/spa2.png" onclick="openFacilities('spa', 1)">
+                    <img src="../IMAGE/spa3.png" onclick="openFacilities('spa', 2)">
+                </div>
+                <div class="moreinfo">
+                    <a href="../HTML/facilities.html">Khám phá thêm</a>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pool">
+                <div class="img-info">
+                    <img src="../IMAGE/pool1.png" onclick="openFacilities('pool', 0)">
+                    <img src="../IMAGE/pool2.png" onclick="openFacilities('pool', 1)">
+                    <img src="../IMAGE/pool3.png" onclick="openFacilities('pool', 2)">
+                </div>
+                <div class="moreinfo">
+                    <a href="../HTML/facilities.html">Khám phá thêm</a>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="gym">
+                <div class="img-info">
+                    <img src="../IMAGE/gym1.png" onclick="openFacilities('gym', 0)">
+                    <img src="../IMAGE/gym2.png" onclick="openFacilities('gym', 1)">
+                    <img src="../IMAGE/gym3.png" onclick="openFacilities('gym', 2)">
+                </div>
+                <div class="moreinfo">
+                    <a href="../HTML/facilities.html">Khám phá thêm</a>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="coffee">
+                <div class="img-info">
+                    <img src="../IMAGE/coffe1.png" onclick="openFacilities('coffee', 0)">
+                    <img src="../IMAGE/coffe2.png" onclick="openFacilities('coffee', 1)">
+                    <img src="../IMAGE/coffe3.png" onclick="openFacilities('coffee', 2)">
+                </div>
+                <div class="moreinfo">
+                    <a href="../HTML/facilities.html">Khám phá thêm</a>
+                </div>
             </div>
         </div>
 
-        <div class="tab-pane fade" id="spa">
-            <div class="img-info">
-                <img src="../IMAGE/spa1.png" alt="SPA">
-                <img src="../IMAGE/spa2.png" alt="SPA">
-                <img src="../IMAGE/spa3.png" alt="SPA">
-            </div>
-            <div class="moreinfo">
-                <a href="../HTML/facilities.html">Khám phá thêm</a>
+        <!-- Bootstrap Modal -->
+        <div id="facilityModal" class="facility-modal">
+            <div class="facility-container">
+
+                <!-- LEFT: IMAGE -->
+                <div class="facility-gallery">
+                    <img id="facilityMainImg">
+                    <div class="thumbs"></div>
+                </div>
+
+                <!-- RIGHT: INFO -->
+                <div class="facility-info">
+                    <span class="close-btn" onclick="closeFacilities()">✕</span>
+                    <h2 id="facilityTitle"></h2>
+                    <p id="facilityText" class="facility-text"></p>
+                </div>
+
             </div>
         </div>
-
-        <div class="tab-pane fade" id="pool">
-            <div class="img-info">
-                <img src="../IMAGE/pool1.png" alt="POOL">
-                <img src="../IMAGE/pool2.png" alt="POOL">
-                <img src="../IMAGE/pool3.png" alt="POOL">
-            </div>
-            <div class="moreinfo">
-                <a href="../HTML/facilities.html">Khám phá thêm</a>
-            </div>
-        </div>
-
-        <div class="tab-pane fade" id="gym">
-            <div class="img-info">
-                <img src="../IMAGE/gym1.png" alt="GYM">
-                <img src="../IMAGE/gym2.png" alt="GYM">
-                <img src="../IMAGE/gym3.png" alt="GYM">
-            </div>
-            <div class="moreinfo">
-                <a href="../HTML/facilities.html">Khám phá thêm</a>
-            </div>
-        </div>
-
-        <div class="tab-pane fade" id="coffee">
-            <div class="img-info">
-                <img src="../IMAGE/coffe1.png" alt="COFFEE SHOP">
-                <img src="../IMAGE/coffe2.png" alt="COFFEE SHOP">
-                <img src="../IMAGE/coffe3.png" alt="COFFEE SHOP">
-            </div>
-            <div class="moreinfo">
-                <a href="../HTML/facilities.html">Khám phá thêm</a>
-            </div>
-        </div>
-
-    </div>
-</section>
+    </section>
     <!-- NEWS SECTION -->
     <section class="news-section" id="news">
         <h2>Tin tức</h2>
@@ -372,6 +393,7 @@
         <p> © 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
     </footer>
     <script src="../JS/index.js"></script>
+    <script src="../JS/facilities.js"></script>
 </body>
 
 </html>

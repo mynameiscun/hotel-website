@@ -12,67 +12,79 @@
 </head>
 
 <body>
-<!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img">
-        </a>
-        <!-- NÚT HAMBURGER -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-            aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainMenu">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/index.html">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#about">Về chúng tôi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#rooms">Hệ thống phòng</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#facilities">Dịch vụ & tiện ích</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#news">Tin tức</a>
-                </li>
-            </ul>
-            <div class="header-right d-flex align-items-center gap-3">
-                <div class="login-area d-flex gap-2" id="auth-area">
-                    <a href="login.html" class="login-btn">Đăng nhập</a>
-                    <a href="signup.html" class="login-btn">Tạo tài khoản</a>
-                </div>
-                <ul class="social-list d-flex align-items-center gap-2">
-                    <li>
-                        <a href="#">
-                            <img src="../IMAGE/facebook.png" alt="Facebook">
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#">
-                            <img src="../IMAGE/instagram.png" alt="Instagram">
-                        </a>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img">
+            </a>
+            <!-- NÚT HAMBURGER -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="room-detail.html">Hệ thống phòng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="promotion.html">Ưu đãi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">Tin tức</a>
                     </li>
                 </ul>
+                <div class="header-right d-flex align-items-center gap-3">
+                    <div class="login-area d-flex gap-2" id="auth-area">
+                        <a href="login.html" class="login-btn">Đăng nhập</a>
+                        <a href="signup.html" class="login-btn">Tạo tài khoản</a>
+                    </div>
+                    <ul class="social-list d-flex align-items-center gap-2">
+                        <li>
+                            <a href="#">
+                                <img src="../IMAGE/facebook.png" alt="Facebook">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="../IMAGE/instagram.png" alt="Instagram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
     <!-- HERO -->
     <section class="hero">
         <div class="hero-text">
-            <h2 class="small-title" style="color: rgb(235, 180, 0);">Plazzo Serento Offers</h2>
-            <h2>Những ưu đãi nổi bật dành riêng cho bạn</h2>
-            <p>
-                Khám phá các gói nghỉ dưỡng, ẩm thực, spa và dịch vụ cao cấp với mức giá ưu đãi.
-                Mỗi chương trình được thiết kế nhằm mang đến trải nghiệm trọn vẹn, tinh tế và đáng nhớ.
-            </p>
+            <p>Exclusive Offers</p>
+            <h1>Ưu Đãi & Khuyến Mãi</h1>
+            <span>Tận hưởng kỳ nghỉ sang trọng với những đặc quyền hấp dẫn tại Plazzo Serento</span>
         </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="promo-intro">
+        <p class="small-title">Plazzo Serento Offers</p>
+        <h2>Những ưu đãi nổi bật dành riêng cho bạn</h2>
+        <p class="intro-desc">
+            Khám phá các gói nghỉ dưỡng, ẩm thực, spa và dịch vụ cao cấp với mức giá ưu đãi.
+            Mỗi chương trình được thiết kế nhằm mang đến trải nghiệm trọn vẹn, tinh tế và đáng nhớ.
+        </p>
     </section>
 
     <!-- FILTER -->
@@ -99,8 +111,8 @@
                     <p class="promo-type">Phòng nghỉ</p>
                     <h3>Ưu đãi President Suite cuối tuần</h3>
                     <p>
-                        President Suite mở ra một kỳ nghỉ cuối tuần trọn vẹn, nơi không gian sang trọng và tầm nhìn toàn
-                        cảnh thành phố hòa cùng những đặc quyền nghỉ dưỡng tinh tế.
+                        Trải nghiệm President Suite cho kỳ nghỉ cuối tuần đẳng cấp, nơi sự sang trọng được nâng tầm,
+                        mở ra đặc quyền tận hưởng những dịch vụ nghỉ dưỡng cao cấp đi kèm.
                     </p>
 
                     <div class="promo-info">
@@ -131,7 +143,6 @@
                     <p>
                         Lựa chọn Deluxe Twin, bạn được mở lối đến những liệu trình Spa thư giãn chuyên sâu, giúp tái
                         tạo năng lượng và mang lại sự cân bằng trọn vẹn cho cơ thể và tâm trí.
-                    </p>
                     </p>
 
                     <div class="promo-info">
@@ -182,7 +193,7 @@
                     <p class="promo-type">Gia đình</p>
                     <h3>Kỳ nghỉ gia đình trọn gói</h3>
                     <p>
-                        Sky Penthouse mang đến kỳ nghỉ gia đình trọn vẹn, mở ra những trải nghiệm giải trí và
+                        Sky Penthouse mang đến kỳ nghỉ gia đình trọn vẹn,mở ra những trải nghiệm giải trí và
                         tiện ích đặc biệt dành riêng cho các thành viên trong suốt thời gian lưu trú.
                     </p>
 
@@ -208,8 +219,8 @@
                     <p class="promo-type">Phòng nghỉ</p>
                     <h3>Ưu đãi Ocean Villa</h3>
                     <p>
-                        Ocean Villa là lựa chọn hoàn hảo cho kỳ nghỉ dưỡng riêng tư,
-                        với hồ bơi vô cực hướng biển và lối đi trực tiếp xuống đại dương.
+                        Khi chọn Ocean Villa, bạn không chỉ tận hưởng không gian nghỉ dưỡng riêng tư hướng biển, mà còn
+                        được mở rộng trải nghiệm với những đặc quyền nghỉ dưỡng cao cấp đi kèm.
                     </p>
 
                     <div class="promo-info">
@@ -217,7 +228,7 @@
                         <span>🏨 Ocean Villa</span>
                     </div>
 
-                    <div class="promo-bottom">
+                    <div class="promo-bottom promo-bottom1">
                         <div>
                             <span class="old-price">1.800.000 VNĐ</span>
                             <strong>1.440.000 VNĐ</strong>

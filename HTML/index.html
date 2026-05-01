@@ -8,6 +8,7 @@
     <script src="../JS/jquery-4.0.0.min.js"></script>
     <script src="../JS/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/facilities-modal.css">
     <title>Khách sạn Plazzo Serento</title>
 </head>
 
@@ -205,25 +206,25 @@
             </button>
         </div>
         </div>
-        </footer>
-        <script src="../JS/index.js"></script>
+
 
         <div class="tab-content">
             <div class="tab-pane fade show active" id="restaurant">
                 <div class="img-info">
-                    <img src="../IMAGE/restaurant1.png" alt="Restaurant">
-                    <img src="../IMAGE/restaurant2.png" alt="Restaurant">
-                    <img src="../IMAGE/restaurant3.png" alt="Restaurant">
+                    <img src="../IMAGE/restaurant1.png" onclick="openFacilities('restaurant', 0)">
+                    <img src="../IMAGE/restaurant2.png" onclick="openFacilities('restaurant', 1)">
+                    <img src="../IMAGE/restaurant3.png" onclick="openFacilities('restaurant', 2)">
                 </div>
                 <div class="moreinfo">
                     <a href="../HTML/facilities.html">Khám phá thêm</a>
                 </div>
             </div>
+            
             <div class="tab-pane fade" id="spa">
                 <div class="img-info">
-                    <img src="../IMAGE/spa1.png" alt="SPA">
-                    <img src="../IMAGE/spa2.png" alt="SPA">
-                    <img src="../IMAGE/spa3.png" alt="SPA">
+                    <img src="../IMAGE/spa1.png" onclick="openFacilities('spa', 0)">
+<img src="../IMAGE/spa2.png" onclick="openFacilities('spa', 1)">
+<img src="../IMAGE/spa3.png" onclick="openFacilities('spa', 2)">
                 </div>
                 <div class="moreinfo">
                     <a href="../HTML/facilities.html">Khám phá thêm</a>
@@ -231,9 +232,9 @@
             </div>
             <div class="tab-pane fade" id="pool">
                 <div class="img-info">
-                    <img src="../IMAGE/pool1.png" alt="POOL">
-                    <img src="../IMAGE/pool2.png" alt="POOL">
-                    <img src="../IMAGE/pool3.png" alt="POOL">
+                    <img src="../IMAGE/pool1.png" onclick="openFacilities('pool', 0)">
+<img src="../IMAGE/pool2.png" onclick="openFacilities('pool', 1)">
+<img src="../IMAGE/pool3.png" onclick="openFacilities('pool', 2)">
                 </div>
                 <div class="moreinfo">
                     <a href="../HTML/facilities.html">Khám phá thêm</a>
@@ -241,9 +242,9 @@
             </div>
             <div class="tab-pane fade" id="gym">
                 <div class="img-info">
-                    <img src="../IMAGE/gym1.png" alt="GYM">
-                    <img src="../IMAGE/gym2.png" alt="GYM">
-                    <img src="../IMAGE/gym3.png" alt="GYM">
+                    <img src="../IMAGE/gym1.png" onclick="openFacilities('gym', 0)">
+<img src="../IMAGE/gym2.png" onclick="openFacilities('gym', 1)">
+<img src="../IMAGE/gym3.png" onclick="openFacilities('gym', 2)">
                 </div>
                 <div class="moreinfo">
                     <a href="../HTML/facilities.html">Khám phá thêm</a>
@@ -251,15 +252,35 @@
             </div>
             <div class="tab-pane fade" id="coffee">
                 <div class="img-info">
-                    <img src="../IMAGE/coffe1.png" alt="COFFEE SHOP">
-                    <img src="../IMAGE/coffe2.png" alt="COFFEE SHOP">
-                    <img src="../IMAGE/coffe3.png" alt="COFFEE SHOP">
+                    <img src="../IMAGE/coffe1.png" onclick="openFacilities('coffee', 0)">
+<img src="../IMAGE/coffe2.png" onclick="openFacilities('coffee', 1)">
+<img src="../IMAGE/coffe3.png" onclick="openFacilities('coffee', 2)">
                 </div>
                 <div class="moreinfo">
                     <a href="../HTML/facilities.html">Khám phá thêm</a>
                 </div>
             </div>
         </div>
+    
+    <!-- Bootstrap Modal -->
+     <div id="facilityModal" class="facility-modal">
+    <div class="facility-container">
+        
+        <!-- LEFT: IMAGE -->
+        <div class="facility-gallery">
+            <img id="facilityMainImg">
+            <div class="thumbs"></div>
+        </div>
+
+        <!-- RIGHT: INFO -->
+        <div class="facility-info">
+            <span class="close-btn" onclick="closeFacilities()">✕</span>
+            <h2 id="facilityTitle"></h2>
+            <p id="facilityText" class="facility-text"></p>
+        </div>
+
+    </div>
+</div>
     <!-- NEWS SECTION -->
     <section class="news-section" id="news">
         <h2>Tin tức</h2>
@@ -339,6 +360,7 @@
         <p> © 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
     </footer>
     <script src="../JS/index.js"></script>
+    <script src="../JS/facilities.js"></script>
 </body>
 
 </html>

@@ -1,40 +1,40 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-let user = localStorage.getItem("loggedInUser");
+    let user = localStorage.getItem("loggedInUser");
 
-if(!user){
-window.location.href="login.html";
-return;
-}
+    if (!user) {
+        window.location.href = "login.html";
+        return;
+    }
 
-let bookings = JSON.parse(localStorage.getItem("bookings")) || {};
-let userBookings = bookings[user] || [];
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || {};
+    let userBookings = bookings[user] || [];
 
-let selectedIndex = null;
+    let selectedIndex = null;
 
-let currentPage = 0;
-let perPage = 3;
+    let currentPage = 0;
+    let perPage = 3;
 
 
 
-/* render list */
+    /* render list */
 
-function renderList(){
+    function renderList() {
 
-$("#booking-list").html("");
+        $("#booking-list").html("");
 
-let start = currentPage * perPage;
-let end = start + perPage;
+        let start = currentPage * perPage;
+        let end = start + perPage;
 
-let pageItems = userBookings.slice(start,end);
+        let pageItems = userBookings.slice(start, end);
 
-pageItems.forEach((b,index)=>{
+        pageItems.forEach((b, index) => {
 
-let realIndex = start + index;
+            let realIndex = start + index;
 
-let paidClass = b.status=="Đã thanh toán" ? "booking-paid" : "";
+            let paidClass = b.status == "Đã thanh toán" ? "booking-paid" : "";
 
-$("#booking-list").append(`
+            $("#booking-list").append(`
 
 <div class="booking-card ${paidClass}" data-index="${realIndex}">
 
@@ -46,53 +46,53 @@ $("#booking-list").append(`
 
 `);
 
-});
+        });
 
-}
+    }
 
-renderList();
-
-
-
-/* pagination */
-
-$("#next").click(function(){
-
-if((currentPage+1)*perPage < userBookings.length){
-currentPage++;
-renderList();
-}
-
-});
-
-$("#prev").click(function(){
-
-if(currentPage>0){
-currentPage--;
-renderList();
-}
-
-});
+    renderList();
 
 
 
-/* click booking */
+    /* pagination */
 
-$(document).on("click",".booking-card",function(){
+    $("#next").click(function () {
 
-$(".booking-card").removeClass("selected");
+        if ((currentPage + 1) * perPage < userBookings.length) {
+            currentPage++;
+            renderList();
+        }
 
-$(this).addClass("selected");
+    });
 
-selectedIndex = $(this).data("index");
+    $("#prev").click(function () {
 
-let b = userBookings[selectedIndex];
+        if (currentPage > 0) {
+            currentPage--;
+            renderList();
+        }
 
-let badge = b.status=="Đã thanh toán" 
-? '<span class="badge-paid">Paid</span>' 
-: '<span class="badge-pending">Pending</span>';
+    });
 
-$("#booking-detail").html(`
+
+
+    /* click booking */
+
+    $(document).on("click", ".booking-card", function () {
+
+        $(".booking-card").removeClass("selected");
+
+        $(this).addClass("selected");
+
+        selectedIndex = $(this).data("index");
+
+        let b = userBookings[selectedIndex];
+
+        let badge = b.status == "Đã thanh toán"
+            ? '<span class="badge-paid">Paid</span>'
+            : '<span class="badge-pending">Pending</span>';
+
+        $("#booking-detail").html(`
 
 <div class="detail-card">
 
@@ -131,7 +131,7 @@ $("#booking-detail").html(`
 <div>Total Price</div>
 
 <div class="price">
-${parseInt(b.price).toLocaleString()} VNĐ
+${Number(b.totalPrice || 0).toLocaleString('vi-VN')} VNĐ
 </div>
 
 <br>
@@ -144,39 +144,39 @@ ${badge}
 
 `);
 
-});
+    });
 
 
 
-/* confirm payment */
+    /* confirm payment */
 
-$("#confirmPayment").click(function(){
+    $("#confirmPayment").click(function () {
 
-if(selectedIndex==null) return;
+        if (selectedIndex == null) return;
 
-if(userBookings[selectedIndex].status=="Đã thanh toán") return;
+        if (userBookings[selectedIndex].status == "Đã thanh toán") return;
 
-userBookings[selectedIndex].status="Đã thanh toán";
+        userBookings[selectedIndex].status = "Đã thanh toán";
 
-bookings[user]=userBookings;
+        bookings[user] = userBookings;
 
-localStorage.setItem("bookings",JSON.stringify(bookings));
+        localStorage.setItem("bookings", JSON.stringify(bookings));
 
-renderList();
+        renderList();
 
-$(".booking-card[data-index='"+selectedIndex+"']").click();
-// Hiển thị thông báo căn giữa
-    $("#successModal").css("display", "block").fadeIn();
+        $(".booking-card[data-index='" + selectedIndex + "']").click();
+        // Hiển thị thông báo căn giữa
+        $("#successModal").css("display", "block").fadeIn();
 
-});
+    });
 
 
 
-$(".close,#okBtn").click(function(){
+    $(".close,#okBtn").click(function () {
 
-$("#successModal").fadeOut();
+        $("#successModal").fadeOut();
 
-});
+    });
 
 
 });

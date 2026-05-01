@@ -54,14 +54,21 @@
                     <option value="2">2 người</option>
                     <option value="3">3 người</option>
                     <option value="4">4 người</option>
+                    <option value="5">5 người</option>
+                    <option value="6">6 người</option>
                 </select>
                 <select name="room">
                     <option value="">Loại phòng</option>
                     <option value="single">Royal Suite</option>
                     <option value="double">Executive Suite</option>
                     <option value="suite">Deluxe Twin</option>
+                    <option value="suite">President Suite</option>
+                    <option value="suite">Ocean Villa</option>
+                    <option value="suite">Sky Penthouse</option>
                 </select>
-                <button type="submit">Tìm phòng</button>
+                <a href="room-detail.html">
+                    <button type="button">Tìm phòng</button>
+                </a>
             </form>
         </div>
     </div>
@@ -113,7 +120,7 @@
                             <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>28m²</span>
                         </div>
                         <div class="info-item">
-                            <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Giường King cao cấp</span>
+                            <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Giường Đôi</span>
                         </div>
                         <div class="info-item">
                             <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 khách</span>
@@ -136,7 +143,7 @@
                             <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>45m²</span>
                         </div>
                         <div class="info-item">
-                            <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Giường Queen cao cấp</span>
+                            <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Giường Đôi</span>
                         </div>
                         <div class="info-item">
                             <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 khách</span>
@@ -159,10 +166,10 @@
                             <img src="../IMAGE/dien_tich.svg" alt="Area"> <span>60m²</span>
                         </div>
                         <div class="info-item">
-                            <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>2 giường đơn</span>
+                            <img src="../IMAGE/loai-giuong.svg" alt="Bed"> <span>Giường Đôi</span>
                         </div>
                         <div class="info-item">
-                            <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>2 khách</span>
+                            <img src="../IMAGE/so-nguoi.svg" alt="People"> <span>4 khách</span>
                         </div>
                     </div>
                     <div class="room-footer">
@@ -171,6 +178,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="moreinfo">
+            <a href="room-detail.html">Xem thêm</a>
         </div>
     </section>
     <!-- FACILITIES SECTION --><!--dùng bootstrap data-bs-toggle-->
@@ -193,10 +203,10 @@
                 COFFEE
             </button>
         </div>
-    </div>
-</footer>
-<script src="../JS/facilities.js"></script>
-<script src="../JS/index.js"></script>
+        </div>
+        </footer>
+        <script src="../JS/facilities.js"></script>
+        <script src="../JS/index.js"></script>
 
         <div class="tab-content">
             <div class="tab-pane fade show active" id="restaurant">
@@ -328,16 +338,16 @@
                 </div>
             </div>
             <div class="footer-col">
-    <h4>ĐIỀU KHOẢN & QUY ĐỊNH</h4>
-    <ul class="footer-links">
-        <li><a href="rules.html?section=chung">Điều khoản chung</a></li>
-        <li><a href="rules.html?section=quydinh">Quy định chung</a></li>
-        <li><a href="rules.html?section=thanhtoan">Quy định về thanh toán</a></li>
-        <li><a href="rules.html?section=xacnhan">Quy định về xác nhận thông tin</a></li>
-        <li><a href="rules.html?section=tranhchap">Chính sách giải quyết tranh chấp</a></li>
-        <li><a href="rules.html?section=riengtu">Chính sách quyền riêng tư</a></li>
-    </ul>
-</div>
+                <h4>ĐIỀU KHOẢN & QUY ĐỊNH</h4>
+                <ul class="footer-links">
+                    <li><a href="rules.html?section=chung">Điều khoản chung</a></li>
+                    <li><a href="rules.html?section=quydinh">Quy định chung</a></li>
+                    <li><a href="rules.html?section=thanhtoan">Quy định về thanh toán</a></li>
+                    <li><a href="rules.html?section=xacnhan">Quy định về xác nhận thông tin</a></li>
+                    <li><a href="rules.html?section=tranhchap">Chính sách giải quyết tranh chấp</a></li>
+                    <li><a href="rules.html?section=riengtu">Chính sách quyền riêng tư</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
     <!-- FOOTER -->
@@ -350,4 +360,5 @@
     <script src="../JS/facilities.js"></script>
     <script src="../JS/index.js"></script>
 </body>
+
 </html>

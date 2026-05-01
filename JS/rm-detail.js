@@ -47,13 +47,46 @@ document.addEventListener("DOMContentLoaded", function () {
 // booking flow
 
 $(document).ready(function () {
+    $("#loadMoreRoomsBtn").click(function () {
+
+        $(".hidden-room").slice(0, 2).slideDown(300);
+
+        $(".hidden-room").slice(0, 2).removeClass("hidden-room");
+
+        if ($(".hidden-room").length === 0) {
+            $("#loadMoreRoomsBtn").fadeOut();
+        }
+
+    });
     // Logic tính tổng tiền
     const roomSelect = document.getElementById('room-select');
+    const guestsSelect =
+        document.getElementById('booking-guests');
     const checkInInput = document.getElementById('booking-checkin');
     const checkOutInput = document.getElementById('booking-checkout');
     const totalPriceSpan = document.getElementById('total-price');
     const displayPriceSpan = document.getElementById('display-price');
+    function updateGuestOptions() {
 
+        const roomData =
+            roomSelect.value.split("|");
+
+        const capacity =
+            Number(roomData[2]);
+
+        guestsSelect.innerHTML = "";
+
+        for (let i = 1; i <= capacity; i++) {
+
+            guestsSelect.innerHTML += `
+            <option value="${i}">
+                ${i} người
+            </option>
+        `;
+
+        }
+
+    }
     function calculateTotal() {
         const checkIn = checkInInput.value;
         const checkOut = checkOutInput.value;
@@ -103,7 +136,10 @@ $(document).ready(function () {
     }
 
     // Lắng nghe sự kiện thay đổi trên các ô nhập liệu
-    roomSelect.addEventListener('change', calculateTotal);
+    roomSelect.addEventListener('change', function () {
+        calculateTotal();
+        updateGuestOptions();
+    });
     checkInInput.addEventListener('change', calculateTotal);
     checkOutInput.addEventListener('change', calculateTotal);
 
@@ -131,6 +167,7 @@ $(document).ready(function () {
 
     }
     calculateTotal();
+    updateGuestOptions();
 });
 
 // =======================

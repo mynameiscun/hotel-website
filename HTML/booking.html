@@ -1,93 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+<<<<<<< Updated upstream
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="../JS/jquery-4.0.0.min.js"></script>
 <link rel="stylesheet" href="../CSS/booking.css">
 
 <title>Thanh toán</title>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+    <script src="../JS/jquery-4.0.0.min.js"></script>
 
+    <title>Booking</title>
+>>>>>>> Stashed changes
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+        }
+
+<<<<<<< Updated upstream
 
 
 </style>
+=======
+        /* layout */
+
+        .booking-container {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        /* LEFT */
+
+        .booking-left {
+            width: 28%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-height: 600px;
+        }
+
+        .booking-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .booking-card:hover {
+            background: #f8f8f8;
+        }
+
+        .selected {
+            border: 2px solid #b89b5e;
+        }
+
+        .booking-paid {
+            border-left: 5px solid green;
+            background: #f4fff4;
+            color: green;
+            font-weight: bold;
+        }
+
+
+        /* pagination */
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .page-btn {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .page-btn:hover {
+            background: #b89b5e;
+            color: white;
+        }
+
+
+
+        /* CENTER */
+
+        .booking-center {
+            width: 25%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .booking-center img {
+            width: 250px;
+            margin: 20px 0;
+        }
+
+
+
+        /* RIGHT */
+
+        .booking-right {
+            width: 47%;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .detail-title {
+            color: #777;
+        }
+
+        .price-box {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 10px;
+        }
+
+        .price {
+            font-size: 26px;
+            font-weight: bold;
+            color: #b89b5e;
+        }
+
+        .badge-paid {
+            background: green;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .badge-pending {
+            background: orange;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+
+        /* button */
+
+        .btn-payment {
+            width: 100%;
+            padding: 12px;
+            background: #b89b5e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn-payment:hover {
+            background: #a6884f;
+        }
+
+
+        /* modal */
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 350px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+>>>>>>> Stashed changes
 
 </head>
 
 <body>
 
-<div class="booking-container">
+    <div class="booking-container">
 
-<!-- LEFT -->
+        <!-- LEFT -->
 
-<div class="booking-left">
+        <div class="booking-left">
 
+<<<<<<< Updated upstream
 <h2>Đơn đặt phòng của bạn</h2>
+=======
+            <h2>Your Reservations</h2>
+>>>>>>> Stashed changes
 
-<div id="booking-list"></div>
+            <div id="booking-list"></div>
 
-<div class="pagination">
+            <div class="pagination">
 
+<<<<<<< Updated upstream
 <div class="page-btn" id="prev">Trước</div>
 <div class="page-btn" id="next">Tiếp theo</div>
+=======
+                <div class="page-btn" id="prev">Prev</div>
+                <div class="page-btn" id="next">Next</div>
+>>>>>>> Stashed changes
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- CENTER QR -->
+        <!-- CENTER QR -->
 
-<div class="booking-center">
+        <div class="booking-center">
 
+<<<<<<< Updated upstream
 <h3>Quét mã để thanh toán</h3>
+=======
+            <h3>Scan to Pay</h3>
+>>>>>>> Stashed changes
 
-<img src="../IMAGE/qr.jpg">
+            <img src="../IMAGE/qr.jpg">
 
+<<<<<<< Updated upstream
 <button id="confirmPayment" class="btn-payment">
 Xác nhận thanh toán
 </button>
+=======
+            <button id="confirmPayment" class="btn-payment">
+                Confirm Payment
+            </button>
+>>>>>>> Stashed changes
 
-</div>
+        </div>
 
 
-<!-- RIGHT DETAIL -->
+        <!-- RIGHT DETAIL -->
 
-<div class="booking-right">
+        <div class="booking-right">
 
+<<<<<<< Updated upstream
 <h2>Chi tiết đặt phòng</h2>
+=======
+            <h2>Booking Details</h2>
+>>>>>>> Stashed changes
 
-<div id="booking-detail">
+            <div id="booking-detail">
 
-<p>Chọn đơn hàng bên trái</p>
+                <p>Chọn đơn hàng bên trái</p>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 
-<!-- MODAL -->
+    <!-- MODAL -->
 
-<div class="modal" id="successModal">
+    <div class="modal" id="successModal">
 
-<div class="modal-content">
+        <div class="modal-content">
 
-<span class="close">&times;</span>
+            <span class="close">&times;</span>
 
-<h3>Thanh toán thành công</h3>
+            <h3>Thanh toán thành công</h3>
 
-<p>Cảm ơn bạn đã đặt phòng</p>
+            <p>Cảm ơn bạn đã đặt phòng</p>
 
-<button class="btn-payment" id="okBtn">OK</button>
+            <button class="btn-payment" id="okBtn">OK</button>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
+<<<<<<< Updated upstream
 <script src="../JS/booking.js"></script>
+=======
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            let user = localStorage.getItem("loggedInUser");
+
+            if (!user) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            let bookings = JSON.parse(localStorage.getItem("bookings")) || {};
+            let userBookings = bookings[user] || [];
+
+            let selectedIndex = null;
+
+            let currentPage = 0;
+            let perPage = 3;
+
+
+
+            /* render list */
+
+            function renderList() {
+
+                $("#booking-list").html("");
+
+                let start = currentPage * perPage;
+                let end = start + perPage;
+
+                let pageItems = userBookings.slice(start, end);
+
+                pageItems.forEach((b, index) => {
+
+                    let realIndex = start + index;
+
+                    let paidClass = b.status == "Đã thanh toán" ? "booking-paid" : "";
+
+                    $("#booking-list").append(`
+
+<div class="booking-card ${paidClass}" data-index="${realIndex}">
+
+<h4>${b.room}</h4>
+<p>${b.checkIn} → ${b.checkOut}</p>
+<p>${b.status}</p>
+
+</div>
+
+`);
+
+                });
+
+            }
+
+            renderList();
+
+
+
+            /* pagination */
+
+            $("#next").click(function () {
+
+                if ((currentPage + 1) * perPage < userBookings.length) {
+                    currentPage++;
+                    renderList();
+                }
+
+            });
+
+            $("#prev").click(function () {
+
+                if (currentPage > 0) {
+                    currentPage--;
+                    renderList();
+                }
+
+            });
+
+
+
+            /* click booking */
+
+            $(document).on("click", ".booking-card", function () {
+
+                $(".booking-card").removeClass("selected");
+
+                $(this).addClass("selected");
+
+                selectedIndex = $(this).data("index");
+
+                let b = userBookings[selectedIndex];
+
+                let badge = b.status == "Đã thanh toán"
+                    ? '<span class="badge-paid">Paid</span>'
+                    : '<span class="badge-pending">Pending</span>';
+
+                $("#booking-detail").html(`
+
+<div class="detail-card">
+
+<div class="detail-row">
+<div class="detail-title">Room</div>
+<div>${b.room}</div>
+</div>
+
+<div class="detail-row">
+<div class="detail-title">Guest</div>
+<div>${b.name}</div>
+</div>
+
+<div class="detail-row">
+<div class="detail-title">Phone</div>
+<div>${b.phone}</div>
+</div>
+
+<div class="detail-row">
+<div class="detail-title">Check In</div>
+<div>${b.checkIn}</div>
+</div>
+
+<div class="detail-row">
+<div class="detail-title">Check Out</div>
+<div>${b.checkOut}</div>
+</div>
+
+<div class="detail-row">
+<div class="detail-title">Guests</div>
+<div>${b.guests}</div>
+</div>
+
+<div class="price-box">
+
+<div>Total Price</div>
+
+<div class="price">
+${Number(b.totalPrice || 0).toLocaleString('vi-VN')} VNĐ
+</div>
+
+<br>
+
+${badge}
+
+</div>
+
+</div>
+
+`);
+
+            });
+
+
+
+            /* confirm payment */
+
+            $("#confirmPayment").click(function () {
+
+                if (selectedIndex == null) return;
+
+                if (userBookings[selectedIndex].status == "Đã thanh toán") return;
+
+                userBookings[selectedIndex].status = "Đã thanh toán";
+
+                bookings[user] = userBookings;
+
+                localStorage.setItem("bookings", JSON.stringify(bookings));
+
+                renderList();
+
+                $(".booking-card[data-index='" + selectedIndex + "']").click();
+
+                $("#successModal").fadeIn();
+
+            });
+
+
+
+            $(".close,#okBtn").click(function () {
+
+                $("#successModal").fadeOut();
+
+            });
+
+
+        });
+
+    </script>
+
+>>>>>>> Stashed changes
 </body>
+
 </html>

@@ -24,6 +24,7 @@
             <a href="index.html#about">Về chúng tôi</a>
             <a href="room-detail.html">Hệ thống phòng</a>
             <a href="index.html#facilities">Dịch vụ & tiện ích</a>
+            <a href="promotion.html">Ưu đãi</a>
             <a href="news.html">Tin tức</a>
         </div>
         <div class="right">
@@ -420,12 +421,13 @@
                         <div class="input-group">
                             <label for="room-select">Loại phòng</label>
                             <select class="real-input" id="room-select">
-                                <option value="Royal Suite|500000|2">Royal Suite</option>
-                                <option value="Executive Suite|800000|2">Executive Suite</option>
-                                <option value="Deluxe Twin|1000000|4">Deluxe Twin</option>
-                                <option value="President Suite|1500000|4">President Suite</option>
-                                <option value="Ocean Villa|1800000|6">Ocean Villa</option>
-                                <option value="Sky Penthouse|2200000|6">Sky Penthouse</option>
+                                <!-- Dạng: Tên | Giá bán | Sức chứa | Giá gốc -->
+                                <option value="Royal Suite|500000|2|500000">Royal Suite</option>
+                                <option value="Deluxe Twin|800000|4|800000">Deluxe Twin</option>
+                                <option value="Executive Suite|1000000|4|1000000">Executive Suite</option>
+                                <option value="President Suite|1050000|4|1500000">President Suite</option>
+                                <option value="Ocean Villa|1440000|6|1800000">Ocean Villa</option>
+                                <option value="Sky Penthouse|2200000|6|2200000">Sky Penthouse</option>
                             </select>
                         </div>
 
@@ -455,10 +457,17 @@
                             </select>
                         </div>
                         <div class="price-row-custom">
-                            <span class="price-label">Giá phòng</span>
-                            <div class="price-val-custom">
-                                <span class="amount" id="display-price">500,000</span>
-                                <span class="unit">VNĐ</span>
+                            <span class="price-label">Giá phòng:</span>
+                            <div class="price-val-custom" style="text-align: right;">
+                                <div style="line-height: 1.2;">
+                                    <!-- Giá hiện tại (đã giảm) -->
+                                    <span style="display: block; font-weight: bold;">
+                                        <span class="amount" id="display-price">0</span>
+                                        <span class="unit">VNĐ</span>
+                                    </span>
+                                    <!-- Giá cũ (bị gạch) - Mặc định ẩn -->
+                                    <del id="old-price" style="color: #888; font-size: 0.85em; display: none;"></del>
+                                </div>
                             </div>
                         </div>
                         <div class="price-row-custom">

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ưu đãi & Khuyến mãi</title>
+
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/promotion.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
+        </div>
+
+        <div class="navbar">
+            <a href="index.html">Trang chủ</a>
+            <a href="index.html#about">Về chúng tôi</a>
+            <a href="room-detail.html">Hệ thống phòng</a>
+            <a href="index.html#facilities">Dịch vụ & tiện ích</a>
+            <a href="promotion.html">Ưu đãi</a>
+            <a href="news.html">Tin tức</a>
+        </div>
+
+        <div class="right">
+            <div class="login" id="auth-area">
+                <a href="login.html">Đăng nhập</a>
+                <a href="signup.html">Tạo tài khoản</a>
+            </div>
+
+            <ul class="contact">
+                <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <p>Exclusive Offers</p>
+            <h1>Ưu Đãi & Khuyến Mãi</h1>
+            <span>Tận hưởng kỳ nghỉ sang trọng với những đặc quyền hấp dẫn tại Plazzo Serento</span>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="promo-intro">
+        <p class="small-title">Plazzo Serento Offers</p>
+        <h2>Những ưu đãi nổi bật dành riêng cho bạn</h2>
+        <p class="intro-desc">
+            Khám phá các gói nghỉ dưỡng, ẩm thực, spa và dịch vụ cao cấp với mức giá ưu đãi.
+            Mỗi chương trình được thiết kế nhằm mang đến trải nghiệm trọn vẹn, tinh tế và đáng nhớ.
+        </p>
+    </section>
+
+    <!-- FILTER -->
+    <section class="promo-filter">
+        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="room">Phòng nghỉ</button>
+        <button class="filter-btn" data-filter="spa">Spa</button>
+        <button class="filter-btn" data-filter="food">Ẩm thực</button>
+        <button class="filter-btn" data-filter="family">Gia đình</button>
+    </section>
+
+    <!-- PROMOTION LIST -->
+    <section class="promotion-section">
+        <div class="promotion-container">
+
+            <!-- CARD 1 -->
+            <div class="promo-card" data-category="room">
+                <div class="promo-img">
+                    <img src="../IMAGE/room4.png" alt="President Suite Offer">
+                    <span class="promo-badge">-30%</span>
+                </div>
+
+                <div class="promo-content">
+                    <p class="promo-type">Phòng nghỉ</p>
+                    <h3>Ưu đãi President Suite cuối tuần</h3>
+                    <p>
+                        President Suite mang đến trải nghiệm nghỉ dưỡng đỉnh cao với
+                        không gian sang trọng, phòng khách riêng biệt và tầm nhìn toàn cảnh thành phố.
+                    </p>
+
+                    <div class="promo-info">
+                        <span>⏰ Đến 30.06.2026</span>
+                        <span>🏨 President Suite</span>
+                    </div>
+
+                    <div class="promo-bottom">
+                        <div>
+                            <span class="old-price">1.500.000 VNĐ</span>
+                            <strong>1.050.000 VNĐ</strong>
+                        </div>
+                        <a href="room-detail.html#president-suite">Đặt ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="promo-card" data-category="spa">
+                <div class="promo-img">
+                    <img src="../IMAGE/spa1.png" alt="Spa Offer">
+                    <span class="promo-badge">Hot</span>
+                </div>
+
+                <div class="promo-content">
+                    <p class="promo-type">Spa</p>
+                    <h3>Gói thư giãn Spa cao cấp</h3>
+                    <p>
+                        Trải nghiệm liệu trình chăm sóc cơ thể chuyên sâu,
+                        giúp phục hồi năng lượng sau những ngày làm việc căng thẳng.
+                    </p>
+
+                    <div class="promo-info">
+                        <span>⏰ Đến 15.07.2026</span>
+                        <span>💆 Spa & Therapy</span>
+                    </div>
+
+                    <div class="promo-bottom">
+                        <div>
+                            <span class="old-price">900.000 VNĐ</span>
+                            <strong>650.000 VNĐ</strong>
+                        </div>
+                        <a href="index.html#facilities">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="promo-card" data-category="food">
+                <div class="promo-img">
+                    <img src="../IMAGE/restaurant1.png" alt="Restaurant Offer">
+                    <span class="promo-badge">Combo</span>
+                </div>
+
+                <div class="promo-content">
+                    <p class="promo-type">Ẩm thực</p>
+                    <h3>Set Dinner lãng mạn cho 2 người</h3>
+                    <p>
+                        Thưởng thức bữa tối sang trọng trong không gian nhà hàng cao cấp,
+                        phù hợp cho các buổi hẹn hò, kỷ niệm hoặc dịp đặc biệt.
+                    </p>
+
+                    <div class="promo-info">
+                        <span>⏰ Áp dụng mỗi tối</span>
+                        <span>🍽 Nhà hàng</span>
+                    </div>
+
+                    <div class="promo-bottom">
+                        <div>
+                            <span class="old-price">1.200.000 VNĐ</span>
+                            <strong>899.000 VNĐ</strong>
+                        </div>
+                        <a href="index.html#facilities">Khám phá</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="promo-card" data-category="family">
+                <div class="promo-img">
+                    <img src="../IMAGE/pool1.png" alt="Family Offer">
+                    <span class="promo-badge">Family</span>
+                </div>
+
+                <div class="promo-content">
+                    <p class="promo-type">Gia đình</p>
+                    <h3>Kỳ nghỉ gia đình trọn gói</h3>
+                    <p>
+                        Gói nghỉ dưỡng dành cho gia đình bao gồm phòng Deluxe Twin,
+                        bữa sáng, vé hồ bơi và khu vui chơi dành cho trẻ em.
+                    </p>
+
+                    <div class="promo-info">
+                        <span>⏰ Đến 31.08.2026</span>
+                        <span>👨‍👩‍👧‍👦 Gia đình</span>
+                    </div>
+
+                    <div class="promo-bottom">
+                        <div>
+                            <span class="old-price">2.000.000 VNĐ</span>
+                            <strong>1.499.000 VNĐ</strong>
+                        </div>
+                        <a href="room-detail.html#deluxe-twin">Đặt ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="promo-card" data-category="room">
+                <div class="promo-img">
+                    <img src="../IMAGE/room5.png" alt="Ocean Villa Offer">
+                    <span class="promo-badge">-20%</span>
+                </div>
+
+                <div class="promo-content">
+                    <p class="promo-type">Phòng nghỉ</p>
+                    <h3>Ưu đãi Ocean Villa</h3>
+                    <p>
+                        Ocean Villa là lựa chọn hoàn hảo cho kỳ nghỉ dưỡng riêng tư,
+                        với hồ bơi vô cực hướng biển và lối đi trực tiếp xuống đại dương.
+                    </p>
+
+                    <div class="promo-info">
+                        <span>⏰ Đến 20.07.2026</span>
+                        <span>💼 Business Trip</span>
+                    </div>
+
+                    <div class="promo-bottom">
+                        <div>
+                            <span class="old-price">1.800.000 VNĐ</span>
+                            <strong>1.440.000 VNĐ</strong>
+                        </div>
+                        <a href="room-detail.html#ocean-villa">Đặt ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="promo-card" data-category="food">
+                <div class="promo-img">
+                    <img src="../IMAGE/coffee1.png" alt="Coffee Offer">
+                    <span class="promo-badge">New</span>
+                </div>
+
+                <div class="promo-content">
+                    <p class="promo-type">Ẩm thực</p>
+                    <h3>Afternoon Tea tại Coffee Lounge</h3>
+                    <p>
+                        Thưởng thức trà chiều thanh lịch cùng bánh ngọt cao cấp
+                        trong không gian yên tĩnh, sang trọng và tinh tế.
+                    </p>
+
+                    <div class="promo-info">
+                        <span>⏰ 14:00 - 17:00</span>
+                        <span>☕ Coffee Lounge</span>
+                    </div>
+
+                    <div class="promo-bottom">
+                        <div>
+                            <span class="old-price">450.000 VNĐ</span>
+                            <strong>299.000 VNĐ</strong>
+                        </div>
+                        <a href="index.html#facilities">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="promo-cta">
+        <div class="promo-cta-box">
+            <p>Need Assistance?</p>
+            <h2>Bạn cần tư vấn gói ưu đãi phù hợp?</h2>
+            <span>
+                Đội ngũ Plazzo Serento luôn sẵn sàng hỗ trợ bạn lựa chọn kỳ nghỉ hoàn hảo.
+            </span>
+            <a href="contact.html">Liên hệ ngay</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div id="footer-bottom">
+            <p>© 2026 Hotel Website</p>
+            <a href="team.html" style="color: #ccc; text-decoration: none; font-size: 13px;">
+                Thành viên
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const promoCards = document.querySelectorAll(".promo-card");
+
+        filterButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                filterButtons.forEach(function (btn) {
+                    btn.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                const filterValue = button.getAttribute("data-filter");
+
+                promoCards.forEach(function (card) {
+                    const cardCategory = card.getAttribute("data-category");
+
+                    if (filterValue === "all" || filterValue === cardCategory) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

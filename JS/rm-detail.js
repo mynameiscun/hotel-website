@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // booking flow
 
 $(document).ready(function () {
+    // hiển thị phòng ẩn
     $("#loadMoreRoomsBtn").click(function () {
 
         $(".hidden-room").slice(0, 2).slideDown(300);
@@ -58,6 +59,25 @@ $(document).ready(function () {
         }
 
     });
+    // scroll đến phòng đang bị ẩn
+    const hash = window.location.hash;
+
+    if (hash) {
+        const targetRoom = $(hash);
+
+        if (targetRoom.length) {
+            // hiện phòng ẩn
+            if (targetRoom.hasClass("hidden-room")) {
+                targetRoom.removeClass("hidden-room").css("display", "block");
+            }
+            // cuộn tới vị trí
+            const offsetTop = targetRoom.offset().top - 80;
+
+            $('html, body').stop().animate({
+                scrollTop: offsetTop
+            }, 50); // số càng nhỏ càng mượt
+        }
+    }
     // Logic tính tổng tiền
     const roomSelect = document.getElementById('room-select');
     const guestsSelect =
@@ -90,12 +110,21 @@ $(document).ready(function () {
     function calculateTotal() {
         const checkIn = checkInInput.value;
         const checkOut = checkOutInput.value;
+        const roomData = roomSelect.value.split("|");
+        const currentPrice = Number(roomData[1]);  // giá bán hiện tại
+        const originalPrice = Number(roomData[3]); // giá gốc mới thêm
 
-        const pricePerNight =
-            Number(roomSelect.value.split("|")[1]);
+        // cập nhật giá hiện tại
+        displayPriceSpan.innerText = currentPrice.toLocaleString('vi-VN');
 
-        displayPriceSpan.innerText =
-            pricePerNight.toLocaleString('vi-VN');
+        // nếu giá gốc > giá bán thì mới hiện gạch ngang
+        const oldPriceSpan = document.getElementById('old-price');
+        if (originalPrice > currentPrice) {
+            oldPriceSpan.innerText = originalPrice.toLocaleString('vi-VN') + " VNĐ";
+            oldPriceSpan.style.display = "block";
+        } else {
+            oldPriceSpan.style.display = "none";
+        }
 
         // chưa chọn ngày
         if (!checkIn || !checkOut) {
@@ -121,7 +150,7 @@ $(document).ready(function () {
 
         }
 
-        const total = diffDays * pricePerNight;
+        const total = diffDays * currentPrice;
 
         totalPriceSpan.innerText =
             total.toLocaleString('vi-VN');

@@ -32,7 +32,7 @@ body {
 .right {
     display: flex;
     gap: 10px;
-    flex: 2;
+    flex: 3;
     justify-content: flex-end;
     /* minh anh thêm để phần tử sát về phải */
 }

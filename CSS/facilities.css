@@ -204,6 +204,13 @@ section {
             grid-column: span 2; /* Ảnh đầu tiên to hơn */
             height: 485px;
         }
+        /* 2 ảnh nhỏ phía dưới */
+.facility-img-group img:not(:first-child) {
+    width: 100%;
+    height: 180px; /* Cố định để 2 ảnh luôn bằng nhau */
+    object-fit: cover;
+    border-radius: 12px;
+}
 
         .facility-content {
             flex: 1;
@@ -235,3 +242,15 @@ section {
             text-decoration: none;
             font-weight: bold;
         }
+        footer {
+    background: #222;
+    color: white;
+    padding: 25px;
+}
+
+#footer-bottom {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    height: auto;
+    text-align: center;
+}

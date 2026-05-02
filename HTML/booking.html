@@ -1,90 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
     <script src="../JS/jquery-4.0.0.min.js"></script>
     <script src="../JS/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../CSS/booking.css">
+    <link rel="stylesheet" href="../CSS/booking.css" />
     <title>Thanh toán</title>
-
-</head>
-
-<body>
-
+  </head>
+  <body>
     <div class="booking-container">
-
-        <!-- LEFT -->
-
-        <div class="booking-left">
-
-            <h2>Đơn đặt phòng của bạn</h2>
-
-            <div id="booking-list"></div>
-
-            <div class="pagination">
-
-                <div class="page-btn" id="prev">Trước</div>
-                <div class="page-btn" id="next">Tiếp theo</div>
-
-            </div>
-
+      <!-- LEFT -->
+      <div class="booking-left">
+        <h2>Đơn đặt phòng của bạn</h2>
+        <div id="booking-list"></div>
+        <div class="pagination">
+          <div class="page-btn" id="prev">Trước</div>
+          <div class="page-btn" id="next">Tiếp theo</div>
         </div>
+      </div>
 
+      <!-- CENTER QR -->
+      <div class="booking-center">
+        <h3>Quét mã để thanh toán</h3>
+        <img src="../IMAGE/qr.jpg" />
+        <button id="confirmPayment" class="btn-payment">
+          Xác nhận thanh toán
+        </button>
+      </div>
 
-        <!-- CENTER QR -->
-
-        <div class="booking-center">
-
-            <h3>Quét mã để thanh toán</h3>
-
-            <img src="../IMAGE/qr.jpg">
-
-            <button id="confirmPayment" class="btn-payment">
-                Xác nhận thanh toán
-            </button>
-
+      <!-- RIGHT DETAIL -->
+      <div class="booking-right">
+        <h2>Chi tiết đặt phòng</h2>
+        <div id="booking-detail">
+          <p>Chọn đơn hàng bên trái</p>
         </div>
-
-
-        <!-- RIGHT DETAIL -->
-
-        <div class="booking-right">
-
-            <h2>Chi tiết đặt phòng</h2>
-
-            <div id="booking-detail">
-
-                <p>Chọn đơn hàng bên trái</p>
-
-            </div>
-
-        </div>
-
+      </div>
     </div>
 
-
     <!-- MODAL -->
-
     <div class="modal" id="successModal">
-
-        <div class="modal-content">
-
-            <span class="close">&times;</span>
-
-            <h3>Thanh toán thành công</h3>
-
-            <p>Cảm ơn bạn đã đặt phòng</p>
-
-            <button class="btn-payment" id="okBtn">OK</button>
-
-        </div>
-
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Thanh toán thành công</h3>
+        <p>Cảm ơn bạn đã đặt phòng</p>
+        <button class="btn-payment" id="okBtn">OK</button>
+      </div>
     </div>
 
     <script src="../JS/booking.js"></script>
-</body>
-
+  </body>
 </html>

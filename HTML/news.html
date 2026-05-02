@@ -1,296 +1,478 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
     <title>Tin tức</title>
     <script src="../JS/main.js"></script>
-</head>
+  </head>
 
-<body>
-
-    <div class="header">
-        <div class="logo">
-            <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
-        </div>
-        <div class="navbar">
-            <a href="index.html">Trang chủ</a>
-            <a href="index.html#about">Về chúng tôi</a>
-            <a href="room-detail.html">Hệ thống phòng</a>
-            <a href="index.html#facilities">Dịch vụ & tiện ích</a>
-            <a href="promotion.html">Ưu đãi</a>
-            <a href="news.html">Tin tức</a>
-        </div>
-        <div class="right">
-            <div class="login" id="auth-area">
-                <a href="login.html">Đăng nhập</a>
-                <a href="signup.html">Tạo tài khoản</a>
+  <body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
+        </a>
+        <!-- NÚT HAMBURGER -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="room-detail.html">Hệ thống phòng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="promotion.html">Ưu đãi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">Tin tức</a>
+            </li>
+          </ul>
+          <div class="header-right d-flex align-items-center gap-3">
+            <div class="login-area d-flex gap-2" id="auth-area">
+              <a href="login.html" class="login-btn">Đăng nhập</a>
+              <a href="signup.html" class="login-btn">Tạo tài khoản</a>
             </div>
-            <ul class="contact">
-                <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>
-            </ul>
-        </div>
-    </div>
+            <ul class="social-list d-flex align-items-center gap-2">
+              <li>
+                <a href="#">
+                  <img src="../IMAGE/facebook.png" alt="Facebook" />
+                </a>
+              </li>
 
-    <section class="hero"
-        style="height: 40vh; min-height: 300px; display: flex; align-items: center; justify-content: center; background-color: #0F172A; color: #fff;">
-        <div class="hero-text" style="text-align: center;">
-            <h1>Tin tức & Cập nhật khách sạn</h1>
-            <p style="color: #C9A227;">Cập nhật những thông tin mới nhất và các hoạt động nổi bật tại Plazzo Serento</p>
+              <li>
+                <a href="#">
+                  <img src="../IMAGE/instagram.png" alt="Instagram" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </nav>
+    <section
+      class="hero"
+      style="
+        height: 40vh;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0f172a;
+        color: #fff;
+      "
+    >
+      <div class="hero-text" style="text-align: center">
+        <h1>Tin tức & Cập nhật khách sạn</h1>
+        <p style="color: #c9a227">
+          Cập nhật những thông tin mới nhất và các hoạt động nổi bật tại Plazzo
+          Serento
+        </p>
+      </div>
     </section>
     <section class="featured-news">
-        <h2 class="section-title">Tin Tức Nổi Bật</h2>
+      <h2 class="section-title">Tin Tức Nổi Bật</h2>
 
-        <div class="container-fluid">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4">
+            <a
+              href="news-detail.html?id=news1"
+              style="text-decoration: none; display: block; height: 100%"
+            >
+              <div class="news-main-card">
+                <img src="../IMAGE/news (2).webp" alt="Main News" />
+                <div class="news-content">
+                  <h3>
+                    MÂM CỖ TẾT 3 MIỀN - NÉT ĐẸP VĂN HÓA SUM VẦY TRONG NGÀY ĐẦU
+                    NĂM...
+                  </h3>
+                  <p class="news-desc">
+                    Mâm cỗ Tết 3 miền Bắc - Trung - Nam mang những nét đặc trưng
+                    riêng về hương vị, cách bày biện và ý nghĩa văn hóa. Khám
+                    phá trọn vẹn mâm cỗ...
+                  </p>
+                  <span class="btn-readmore">Xem thêm &raquo;</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
             <div class="row">
-
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <a href="news-detail.html?id=news1" style="text-decoration: none; display: block; height: 100%;">
-                        <div class="news-main-card">
-                            <img src="../IMAGE/news (2).webp" alt="Main News">
-                            <div class="news-content">
-                                <h3>MÂM CỖ TẾT 3 MIỀN - NÉT ĐẸP VĂN HÓA SUM VẦY TRONG NGÀY ĐẦU NĂM...</h3>
-                                <p class="news-desc">Mâm cỗ Tết 3 miền Bắc - Trung - Nam mang những nét đặc trưng riêng
-                                    về hương vị, cách bày biện và ý nghĩa văn hóa. Khám phá trọn vẹn mâm cỗ...</p>
-                                <span class="btn-readmore">Xem thêm &raquo;</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-6 col-md-12">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 mb-4">
-                            <a href="news-detail.html?id=news2"
-                                style="text-decoration: none; display: block; height: 100%;">
-                                <div class="news-sub-card">
-                                    <img src="../IMAGE/news (10).jpg" alt="Sub News 1">
-                                    <div class="news-content">
-                                        <h4>Món ăn ngày Tết truyền thống Việt Nam: Hương vị sum vầy...</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 mb-4">
-                            <a href="news-detail.html?id=news3"
-                                style="text-decoration: none; display: block; height: 100%;">
-                                <div class="news-sub-card">
-                                    <img src="../IMAGE/news (11).jpg" alt="Sub News 2">
-                                    <div class="news-content">
-                                        <h4>Ăn gì ở Sa Pa? Top đặc sản Sa Pa nhất định phải thử khi lên...</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 mb-4">
-                            <a href="news-detail.html?id=news4"
-                                style="text-decoration: none; display: block; height: 100%;">
-                                <div class="news-sub-card">
-                                    <img src="../IMAGE/news (9).jpg" alt="Sub News 3">
-                                    <div class="news-content">
-                                        <h4>Bánh xu xê Bắc Ninh - Đặc sản trăm năm gắn liền văn hóa...</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 mb-4">
-                            <a href="news-detail.html?id=news5"
-                                style="text-decoration: none; display: block; height: 100%;">
-                                <div class="news-sub-card">
-                                    <img src="../IMAGE/news (8).jpg" alt="Sub News 4">
-                                    <div class="news-content">
-                                        <h4>Top 16 đặc sản Bắc Ninh ngon trứ danh nhất định phải thử...</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+              <div class="col-md-6 col-sm-6 mb-4">
+                <a
+                  href="news-detail.html?id=news2"
+                  style="text-decoration: none; display: block; height: 100%"
+                >
+                  <div class="news-sub-card">
+                    <img src="../IMAGE/news (10).jpg" alt="Sub News 1" />
+                    <div class="news-content">
+                      <h4>
+                        Món ăn ngày Tết truyền thống Việt Nam: Hương vị sum
+                        vầy...
+                      </h4>
                     </div>
-                </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6 col-sm-6 mb-4">
+                <a
+                  href="news-detail.html?id=news3"
+                  style="text-decoration: none; display: block; height: 100%"
+                >
+                  <div class="news-sub-card">
+                    <img src="../IMAGE/news (11).jpg" alt="Sub News 2" />
+                    <div class="news-content">
+                      <h4>
+                        Ăn gì ở Sa Pa? Top đặc sản Sa Pa nhất định phải thử khi
+                        lên...
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6 col-sm-6 mb-4">
+                <a
+                  href="news-detail.html?id=news4"
+                  style="text-decoration: none; display: block; height: 100%"
+                >
+                  <div class="news-sub-card">
+                    <img src="../IMAGE/news (9).jpg" alt="Sub News 3" />
+                    <div class="news-content">
+                      <h4>
+                        Bánh xu xê Bắc Ninh - Đặc sản trăm năm gắn liền văn
+                        hóa...
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6 col-sm-6 mb-4">
+                <a
+                  href="news-detail.html?id=news5"
+                  style="text-decoration: none; display: block; height: 100%"
+                >
+                  <div class="news-sub-card">
+                    <img src="../IMAGE/news (8).jpg" alt="Sub News 4" />
+                    <div class="news-content">
+                      <h4>
+                        Top 16 đặc sản Bắc Ninh ngon trứ danh nhất định phải
+                        thử...
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <section class="news-filter-section">
-        <div class="news-filter-container">
-            <!-- data-filter="all" sẽ hiển thị tất cả -->
-            <button class="filter-btn active" data-filter="all">Tất cả</button>
-            <button class="filter-btn" data-filter="event">Sự kiện</button>
-            <button class="filter-btn" data-filter="promo">Ưu đãi & Khuyến mãi</button>
-            <button class="filter-btn" data-filter="cuisine">Ẩm thực & Dịch vụ</button>
-        </div>
+      <div class="news-filter-container">
+        <!-- data-filter="all" sẽ hiển thị tất cả -->
+        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="event">Sự kiện</button>
+        <button class="filter-btn" data-filter="promo">
+          Ưu đãi & Khuyến mãi
+        </button>
+        <button class="filter-btn" data-filter="cuisine">
+          Ẩm thực & Dịch vụ
+        </button>
+      </div>
     </section>
     <section class="latest-news">
-        <h2 class="section-title">LATEST NEWS</h2>
+      <h2 class="section-title">LATEST NEWS</h2>
 
-        <div class="container-fluid" id="news-list">
-
-            <div class="latest-news-item" data-category="event">
-                <div class="latest-news-img">
-                    <img src="../IMAGE/news (7).jpg" alt="News Image">
-                </div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">14.03.2026</div>
-                    <h3 class="latest-news-title">TỔNG KẾT SỰ KIỆN THƯỜNG NIÊN GM ANNUAL MEETING 2026</h3>
-                    <p class="latest-news-desc">Sự kiện quy tụ Ban Giám đốc toàn hệ thống, tổng kết thành tựu, định
-                        hướng chiến lược mới và lan tỏa tinh thần "Đổi mới tư duy - Chinh phục thử thách".</p>
-                    <a href="news-detail.html?id=news6" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item" data-category="event">
-                <div class="latest-news-img">
-                    <img src="../IMAGE/news (6).jpg" alt="News Image">
-                </div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">11.03.2026</div>
-                    <h3 class="latest-news-title">KHÔNG KHÍ TẾT SẮC XUÂN LAN TỎA TẠI HỆ THỐNG KHÁCH SẠN</h3>
-                    <p class="latest-news-desc">Khám phá không khí Tết tại hệ thống khách sạn với không gian trang trí
-                        đậm sắc xuân Tây Bắc, nhiều góc check-in rực rỡ và trải nghiệm văn hóa độc đáo.</p>
-                    <a href="news-detail.html?id=news7" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item" data-category="promo">
-                <div class="latest-news-img"><img src="../IMAGE/news (5).jpg" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">08.03.2026</div>
-                    <h3 class="latest-news-title">CHƯƠNG TRÌNH TRI ÂN ĐẶC BIỆT NHÂN NGÀY QUỐC TẾ PHỤ NỮ</h3>
-                    <p class="latest-news-desc">Dành tặng những món quà ý nghĩa và ưu đãi đặc biệt cho phái đẹp khi nghỉ
-                        dưỡng và sử dụng dịch vụ spa trong tuần lễ tri ân.</p>
-                    <a href="news-detail.html?id=news8" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-            <div class="latest-news-item" data-category="cuisine">
-                <div class="latest-news-img"><img src="../IMAGE/news (2).webp" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">01.03.2026</div>
-                    <h3 class="latest-news-title">RA MẮT THỰC ĐƠN MÙA XUÂN TẠI NHÀ HÀNG CAO CẤP</h3>
-                    <p class="latest-news-desc">Trải nghiệm tinh hoa ẩm thực với thực đơn mới do bếp trưởng chuẩn bị,
-                        kết hợp nguyên liệu tươi mới và phong cách chế biến hiện đại.</p>
-                    <a href="news-detail.html?id=news9" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-            <div class="latest-news-item" data-category="event">
-                <div class="latest-news-img"><img src="../IMAGE/spa1.png" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">25.02.2026</div>
-                    <h3 class="latest-news-title">KHAI TRƯƠNG KHU VỰC THƯ GIÃN VÀ TRỊ LIỆU SPA MỚI</h3>
-                    <p class="latest-news-desc">Nâng tầm trải nghiệm nghỉ dưỡng của bạn với khu vực spa vừa được nâng
-                        cấp, mang lại không gian thư giãn tuyệt đối.</p>
-                    <a href="news-detail.html?id=news10" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item hidden-news" data-category="event">
-                <div class="latest-news-img"><img src="../IMAGE/pool1.png" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">20.02.2026</div>
-                    <h3 class="latest-news-title">BỮA TIỆC BỂ BƠI SÔI ĐỘNG CHÀO HÈ 2026</h3>
-                    <p class="latest-news-desc">Cùng hòa mình vào âm nhạc DJ sôi động, thưởng thức cocktail tuyệt hảo
-                        tại hồ bơi vô cực của chúng tôi.</p>
-                    <a href="news-detail.html?id=news11" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item hidden-news" data-category="event">
-                <div class="latest-news-img"><img src="../IMAGE/room1.png" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">15.02.2026</div>
-                    <h3 class="latest-news-title">GIẢI THƯỞNG KHÁCH SẠN ĐƯỢC YÊU THÍCH NHẤT NĂM</h3>
-                    <p class="latest-news-desc">Tự hào nhận giải thưởng do tạp chí du lịch danh tiếng bình chọn dựa trên
-                        đánh giá tích cực của du khách.</p>
-                    <a href="news-detail.html?id=news12" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-            <div class="latest-news-item hidden-news" data-category="promo">
-                <div class="latest-news-img"><img src="../IMAGE/room2.png" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">10.02.2026</div>
-                    <h3 class="latest-news-title">ƯU ĐÃI ĐẶT PHÒNG SỚM - ĐÓN HÈ RỰC RỠ GIẢM ĐẾN 30%</h3>
-                    <p class="latest-news-desc">Lên kế hoạch cho kỳ nghỉ dưỡng mùa hè ngay từ bây giờ để nhận mức giá ưu
-                        đãi hấp dẫn nhất cùng nhiều đặc quyền tiện ích đi kèm.</p>
-                    <a href="news-detail.html?id=news13" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item hidden-news" data-category="promo">
-                <div class="latest-news-img"><img src="../IMAGE/news (4).jpg" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">02.02.2026</div>
-                    <h3 class="latest-news-title">COMBO NGHỈ DƯỠNG CUỐI TUẦN DÀNH CHO CẶP ĐÔI</h3>
-                    <p class="latest-news-desc">Hâm nóng tình cảm với gói nghỉ dưỡng lãng mạn 2 ngày 1 đêm, tặng kèm bữa
-                        tối nến và rượu vang thượng hạng tại không gian riêng tư.</p>
-                    <a href="news-detail.html?id=news14" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item hidden-news" data-category="event">
-                <div class="latest-news-img"><img src="../IMAGE/news (1).webp" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">28.01.2026</div>
-                    <h3 class="latest-news-title">ĐÊM NHẠC ACOUSTIC DƯỚI ÁNH SAO TẠI SKY BAR</h3>
-                    <p class="latest-news-desc">Thả mình vào không gian âm nhạc mộc mạc, thưởng thức những ly cocktail
-                        signature và ngắm nhìn toàn cảnh thành phố về đêm.</p>
-                    <a href="news-detail.html?id=news15" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item hidden-news" data-category="event">
-                <div class="latest-news-img"><img src="../IMAGE/news (3).jpg" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">22.01.2026</div>
-                    <h3 class="latest-news-title">WORKSHOP TRANG TRÍ BÁNH KEM NGHỆ THUẬT DÀNH CHO BÉ</h3>
-                    <p class="latest-news-desc">Một hoạt động cuối tuần bổ ích giúp các thiên thần nhỏ thỏa sức sáng tạo
-                        và mang về những chiếc bánh ngọt ngào do chính tay mình làm.</p>
-                    <a href="news-detail.html?id=news16" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item hidden-news" data-category="cuisine">
-                <div class="latest-news-img"><img src="../IMAGE/news (2).jpg" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">15.01.2026</div>
-                    <h3 class="latest-news-title">THƯỞNG THỨC TIỆC TRÀ CHIỀU KIỂU ANH CHUẨN HOÀNG GIA</h3>
-                    <p class="latest-news-desc">Trải nghiệm nét văn hóa quý tộc với set trà thanh tao cùng tháp bánh
-                        ngọt tinh tế được phục vụ trong không gian sảnh chờ sang trọng.</p>
-                    <a href="news-detail.html?id=news17" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
-
-            <div class="latest-news-item hidden-news" data-category="cuisine">
-                <div class="latest-news-img"><img src="../IMAGE/news (1).jpg" alt="News Image"></div>
-                <div class="latest-news-content">
-                    <div class="latest-news-date">08.01.2026</div>
-                    <h3 class="latest-news-title">KHÁM PHÁ BỘ SƯU TẬP RƯỢU VANG THƯỢNG HẠNG TẠI LOUNGE</h3>
-                    <p class="latest-news-desc">Khách sạn tự hào ra mắt hầm rượu vang với hơn 200 nhãn chai đẳng cấp đến
-                        từ các vùng trồng nho nổi tiếng nhất thế giới.</p>
-                    <a href="news-detail.html?id=news18" class="latest-news-readmore">XEM THÊM</a>
-                </div>
-            </div>
+      <div class="container-fluid" id="news-list">
+        <div class="latest-news-item" data-category="event">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (7).jpg" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">14.03.2026</div>
+            <h3 class="latest-news-title">
+              TỔNG KẾT SỰ KIỆN THƯỜNG NIÊN GM ANNUAL MEETING 2026
+            </h3>
+            <p class="latest-news-desc">
+              Sự kiện quy tụ Ban Giám đốc toàn hệ thống, tổng kết thành tựu,
+              định hướng chiến lược mới và lan tỏa tinh thần "Đổi mới tư duy -
+              Chinh phục thử thách".
+            </p>
+            <a href="news-detail.html?id=news6" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
         </div>
 
-        <div class="load-more-container">
-            <button id="loadMoreBtn" class="btn-load-more">XEM THÊM TIN TỨC</button>
+        <div class="latest-news-item" data-category="event">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (6).jpg" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">11.03.2026</div>
+            <h3 class="latest-news-title">
+              KHÔNG KHÍ TẾT SẮC XUÂN LAN TỎA TẠI HỆ THỐNG KHÁCH SẠN
+            </h3>
+            <p class="latest-news-desc">
+              Khám phá không khí Tết tại hệ thống khách sạn với không gian trang
+              trí đậm sắc xuân Tây Bắc, nhiều góc check-in rực rỡ và trải nghiệm
+              văn hóa độc đáo.
+            </p>
+            <a href="news-detail.html?id=news7" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
         </div>
+
+        <div class="latest-news-item" data-category="promo">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (5).jpg" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">08.03.2026</div>
+            <h3 class="latest-news-title">
+              CHƯƠNG TRÌNH TRI ÂN ĐẶC BIỆT NHÂN NGÀY QUỐC TẾ PHỤ NỮ
+            </h3>
+            <p class="latest-news-desc">
+              Dành tặng những món quà ý nghĩa và ưu đãi đặc biệt cho phái đẹp
+              khi nghỉ dưỡng và sử dụng dịch vụ spa trong tuần lễ tri ân.
+            </p>
+            <a href="news-detail.html?id=news8" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+        <div class="latest-news-item" data-category="cuisine">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (2).webp" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">01.03.2026</div>
+            <h3 class="latest-news-title">
+              RA MẮT THỰC ĐƠN MÙA XUÂN TẠI NHÀ HÀNG CAO CẤP
+            </h3>
+            <p class="latest-news-desc">
+              Trải nghiệm tinh hoa ẩm thực với thực đơn mới do bếp trưởng chuẩn
+              bị, kết hợp nguyên liệu tươi mới và phong cách chế biến hiện đại.
+            </p>
+            <a href="news-detail.html?id=news9" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+        <div class="latest-news-item" data-category="event">
+          <div class="latest-news-img">
+            <img src="../IMAGE/spa1.png" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">25.02.2026</div>
+            <h3 class="latest-news-title">
+              KHAI TRƯƠNG KHU VỰC THƯ GIÃN VÀ TRỊ LIỆU SPA MỚI
+            </h3>
+            <p class="latest-news-desc">
+              Nâng tầm trải nghiệm nghỉ dưỡng của bạn với khu vực spa vừa được
+              nâng cấp, mang lại không gian thư giãn tuyệt đối.
+            </p>
+            <a href="news-detail.html?id=news10" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+
+        <div class="latest-news-item hidden-news" data-category="event">
+          <div class="latest-news-img">
+            <img src="../IMAGE/pool1.png" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">20.02.2026</div>
+            <h3 class="latest-news-title">
+              BỮA TIỆC BỂ BƠI SÔI ĐỘNG CHÀO HÈ 2026
+            </h3>
+            <p class="latest-news-desc">
+              Cùng hòa mình vào âm nhạc DJ sôi động, thưởng thức cocktail tuyệt
+              hảo tại hồ bơi vô cực của chúng tôi.
+            </p>
+            <a href="news-detail.html?id=news11" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+
+        <div class="latest-news-item hidden-news" data-category="event">
+          <div class="latest-news-img">
+            <img src="../IMAGE/room1.png" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">15.02.2026</div>
+            <h3 class="latest-news-title">
+              GIẢI THƯỞNG KHÁCH SẠN ĐƯỢC YÊU THÍCH NHẤT NĂM
+            </h3>
+            <p class="latest-news-desc">
+              Tự hào nhận giải thưởng do tạp chí du lịch danh tiếng bình chọn
+              dựa trên đánh giá tích cực của du khách.
+            </p>
+            <a href="news-detail.html?id=news12" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+        <div class="latest-news-item hidden-news" data-category="promo">
+          <div class="latest-news-img">
+            <img src="../IMAGE/room2.png" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">10.02.2026</div>
+            <h3 class="latest-news-title">
+              ƯU ĐÃI ĐẶT PHÒNG SỚM - ĐÓN HÈ RỰC RỠ GIẢM ĐẾN 30%
+            </h3>
+            <p class="latest-news-desc">
+              Lên kế hoạch cho kỳ nghỉ dưỡng mùa hè ngay từ bây giờ để nhận mức
+              giá ưu đãi hấp dẫn nhất cùng nhiều đặc quyền tiện ích đi kèm.
+            </p>
+            <a href="news-detail.html?id=news13" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+
+        <div class="latest-news-item hidden-news" data-category="promo">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (4).jpg" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">02.02.2026</div>
+            <h3 class="latest-news-title">
+              COMBO NGHỈ DƯỠNG CUỐI TUẦN DÀNH CHO CẶP ĐÔI
+            </h3>
+            <p class="latest-news-desc">
+              Hâm nóng tình cảm với gói nghỉ dưỡng lãng mạn 2 ngày 1 đêm, tặng
+              kèm bữa tối nến và rượu vang thượng hạng tại không gian riêng tư.
+            </p>
+            <a href="news-detail.html?id=news14" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+
+        <div class="latest-news-item hidden-news" data-category="event">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (1).webp" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">28.01.2026</div>
+            <h3 class="latest-news-title">
+              ĐÊM NHẠC ACOUSTIC DƯỚI ÁNH SAO TẠI SKY BAR
+            </h3>
+            <p class="latest-news-desc">
+              Thả mình vào không gian âm nhạc mộc mạc, thưởng thức những ly
+              cocktail signature và ngắm nhìn toàn cảnh thành phố về đêm.
+            </p>
+            <a href="news-detail.html?id=news15" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+
+        <div class="latest-news-item hidden-news" data-category="event">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (3).jpg" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">22.01.2026</div>
+            <h3 class="latest-news-title">
+              WORKSHOP TRANG TRÍ BÁNH KEM NGHỆ THUẬT DÀNH CHO BÉ
+            </h3>
+            <p class="latest-news-desc">
+              Một hoạt động cuối tuần bổ ích giúp các thiên thần nhỏ thỏa sức
+              sáng tạo và mang về những chiếc bánh ngọt ngào do chính tay mình
+              làm.
+            </p>
+            <a href="news-detail.html?id=news16" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+
+        <div class="latest-news-item hidden-news" data-category="cuisine">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (2).jpg" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">15.01.2026</div>
+            <h3 class="latest-news-title">
+              THƯỞNG THỨC TIỆC TRÀ CHIỀU KIỂU ANH CHUẨN HOÀNG GIA
+            </h3>
+            <p class="latest-news-desc">
+              Trải nghiệm nét văn hóa quý tộc với set trà thanh tao cùng tháp
+              bánh ngọt tinh tế được phục vụ trong không gian sảnh chờ sang
+              trọng.
+            </p>
+            <a href="news-detail.html?id=news17" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+
+        <div class="latest-news-item hidden-news" data-category="cuisine">
+          <div class="latest-news-img">
+            <img src="../IMAGE/news (1).jpg" alt="News Image" />
+          </div>
+          <div class="latest-news-content">
+            <div class="latest-news-date">08.01.2026</div>
+            <h3 class="latest-news-title">
+              KHÁM PHÁ BỘ SƯU TẬP RƯỢU VANG THƯỢNG HẠNG TẠI LOUNGE
+            </h3>
+            <p class="latest-news-desc">
+              Khách sạn tự hào ra mắt hầm rượu vang với hơn 200 nhãn chai đẳng
+              cấp đến từ các vùng trồng nho nổi tiếng nhất thế giới.
+            </p>
+            <a href="news-detail.html?id=news18" class="latest-news-readmore"
+              >XEM THÊM</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="load-more-container">
+        <button id="loadMoreBtn" class="btn-load-more">XEM THÊM TIN TỨC</button>
+      </div>
     </section>
     <section class="contact-section" id="contact">
-        <h2>Need Help With Your Booking?</h2>
-        <p>Our team is ready to assist you anytime.</p>
-        <a href="contact.html" class="contact-btn">Contact Us</a>
+      <h2>Need Help With Your Booking?</h2>
+      <p>Our team is ready to assist you anytime.</p>
+      <a href="contact.html" class="contact-btn">Contact Us</a>
     </section>
 
     <footer id="footer-bottom">
-        <p> © 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
+      <p>© 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
     </footer>
 
     <script src="../JS/bootstrap.bundle.min.js"></script>
-</body>
-
+  </body>
 </html>

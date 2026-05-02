@@ -185,18 +185,76 @@ $(document).ready(function () {
     checkInInput.addEventListener('input', function () {
         checkOutInput.setAttribute('min', this.value);
     });
-    const savedForm =
-        JSON.parse(sessionStorage.getItem("bookingForm"));
+    $("#btnSearch").click(function () {
+    let kq1 = checkNgayDi();
+    let kq2 = checkNgayVe();
+    let kq3 = checkRequired("#guests", "#errGuests", "Vui lòng chọn số khách");
+
+    if (kq1 && kq2 && kq3) {
+        let checkin = $("#checkin").val();
+        let checkout = $("#checkout").val();
+        let guests = $("#guests").val();
+
+        window.location.href =
+            "room-detail.html?checkin=" + checkin +
+            "&checkout=" + checkout +
+            "&guests=" + guests;
+    }
+});
+// LINH - lấy dữ liệu từ thanh tìm kiếm trang index qua URL
+const urlParams = new URLSearchParams(window.location.search);
+let searchCheckin = urlParams.get("checkin");
+let searchCheckout = urlParams.get("checkout");
+let searchGuests = urlParams.get("guests");
+
+// LINH - nếu đi từ thanh tìm kiếm thì lọc phòng theo số khách
+if (searchCheckin && searchCheckout && searchGuests) {
+
+    // LINH - điền ngày vào form đặt phòng
+    checkInInput.value = searchCheckin;
+    checkOutInput.value = searchCheckout;
+
+    // LINH - lọc phòng: phòng phải đủ sức chứa số khách đã chọn
+    $(".room-item").each(function () {
+        let capacity = Number($(this).data("capacity"));
+
+        if (capacity >= Number(searchGuests)) {
+            $(this).removeClass("hidden-room").show();
+        } else {
+            $(this).hide();
+        }
+    });
+    $("#loadMoreRoomsBtn").hide();
+
+    // LINH - lấy phòng đầu tiên đang hiện để tự chọn vào khung đặt phòng
+    let firstVisibleRoom = $(".room-item:visible").first();
+
+    if (firstVisibleRoom.length) {
+        let roomName = firstVisibleRoom.data("room");
+
+        $("#room-select option").each(function () {
+            if ($(this).text().trim() === roomName) {
+                roomSelect.value = $(this).val();
+            }
+        });
+    }
+    updateGuestOptions();
+    guestsSelect.value = searchGuests;
+    calculateTotal();
+}
+else {
+    const savedForm = JSON.parse(sessionStorage.getItem("bookingForm"));
 
     if (savedForm) {
-
         roomSelect.value = savedForm.room;
         checkInInput.value = savedForm.checkIn;
         checkOutInput.value = savedForm.checkOut;
-
     }
-    calculateTotal();
+
     updateGuestOptions();
+    calculateTotal();
+}
+    
 });
 
 // =======================
@@ -358,6 +416,118 @@ function showErrorModal(message) {
         .fadeIn();
 }
 // close error modal
-$("#closeError , #closeErrorBtn").click(function () {
-    $("#errorModal").fadeOut();
+// LINH - tìm kiếm trực tiếp bên trang room-detail
+$(document).ready(function () {
+
+    function checkSearchRequired(idInput, idErr, message) {
+        let val = $(idInput).val().trim();
+
+        if (val === "") {
+            $(idErr).text(message);
+            return false;
+        }
+
+        $(idErr).text("");
+        return true;
+    }
+
+    function checkSearchNgayDi() {
+        let ngayDiVal = $("#search-checkin").val();
+
+        if (ngayDiVal === "") {
+            $("#errSearchCheckin").text("Vui lòng chọn ngày đi");
+            return false;
+        }
+
+        let ngayDi = new Date(ngayDiVal + "T00:00:00");
+
+        let homNay = new Date();
+        homNay.setHours(0, 0, 0, 0);
+
+        let ngayToiThieu = new Date(homNay);
+        ngayToiThieu.setDate(ngayToiThieu.getDate() + 1);
+
+        if (ngayDi < ngayToiThieu) {
+            $("#errSearchCheckin").text("Ngày đi phải sau ngày hiện tại ít nhất 1 ngày");
+            return false;
+        }
+
+        $("#errSearchCheckin").text("");
+        return true;
+    }
+
+    function checkSearchNgayVe() {
+        let ngayDiVal = $("#search-checkin").val();
+        let ngayVeVal = $("#search-checkout").val();
+
+        if (ngayVeVal === "") {
+            $("#errSearchCheckout").text("Vui lòng chọn ngày về");
+            return false;
+        }
+
+        if (ngayDiVal === "") {
+            $("#errSearchCheckout").text("Vui lòng chọn ngày đi trước");
+            return false;
+        }
+
+        let ngayDi = new Date(ngayDiVal + "T00:00:00");
+        let ngayVe = new Date(ngayVeVal + "T00:00:00");
+
+        if (ngayVe < ngayDi) {
+            $("#errSearchCheckout").text("Ngày về không được trước ngày đi");
+            return false;
+        }
+
+        $("#errSearchCheckout").text("");
+        return true;
+    }
+
+    $("#btnRoomSearch").click(function () {
+        let kq1 = checkSearchNgayDi();
+        let kq2 = checkSearchNgayVe();
+        let kq3 = checkSearchRequired("#search-guests", "#errSearchGuests", "Vui lòng chọn số khách");
+
+        if (kq1 && kq2 && kq3) {
+            let checkin = $("#search-checkin").val();
+            let checkout = $("#search-checkout").val();
+            let guests = Number($("#search-guests").val());
+
+            // LINH - điền ngày vào khung đặt phòng bên phải
+            $("#booking-checkin").val(checkin);
+            $("#booking-checkout").val(checkout);
+
+            // LINH - lọc phòng: phòng phải đủ sức chứa số khách
+            $(".room-item").each(function () {
+                let capacity = Number($(this).data("capacity"));
+
+                if (capacity >= guests) {
+                    $(this).removeClass("hidden-room").show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            // LINH - sau khi lọc thì ẩn nút xem thêm
+            $("#loadMoreRoomsBtn").hide();
+
+            // LINH - chọn phòng đầu tiên đang hiện để tự đổ vào form đặt phòng
+            let firstVisibleRoom = $(".room-item:visible").first();
+
+            if (firstVisibleRoom.length) {
+                let roomName = firstVisibleRoom.data("room");
+
+                $("#room-select option").each(function () {
+                    if ($(this).text().trim() === roomName) {
+                        $("#room-select").val($(this).val());
+                    }
+                });
+                document.getElementById("room-select").dispatchEvent(new Event("change"));
+                $("#booking-guests").val(guests);
+                document.getElementById("booking-checkout").dispatchEvent(new Event("change"));
+
+
+            }
+        }
+    });
+
 });

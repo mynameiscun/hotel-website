@@ -3,24 +3,6 @@
     font-family: 'Playfair Display', serif;
 }
  
- /* HEADER*/
-.header {
-    background: #2C2C2C;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    padding: 0 40px;
-    margin: auto;
-    z-index: 1000;
-    /* fix việc bị section khác đè lên */
-}
-
-.header a {
-    color: #ffffff;
-    font-weight: 600;
-}
 .hero {
     background:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -155,60 +137,37 @@ section {
     height: 70px;
 }
 
-.navbar {
+.facility-detail-section {
+    padding: 80px 10%;
     display: flex;
-    gap: 30px;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-    flex: 0 0 auto;
-    text-transform: uppercase;
-    margin: 0 10px;
+    align-items: center;
+    gap: 50px;
 }
 
-.navbar a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: 0.3s;
+/* Đảo ngược vị trí ảnh và chữ cho các phần số chẵn */
+.facility-detail-section:nth-child(even) {
+    flex-direction: row-reverse;
+    background-color: #fdfcf9;
 }
 
-.navbar a:hover {
-    color: #f2b544;
+.facility-img-group {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
+.facility-img-group img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
 
-        .facility-detail-section {
-            padding: 80px 10%;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        /* Đảo ngược vị trí ảnh và chữ cho các phần số chẵn */
-        .facility-detail-section:nth-child(even) {
-            flex-direction: row-reverse;
-            background-color: #fdfcf9;
-        }
-
-        .facility-img-group {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .facility-img-group img {
-            width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        .facility-img-group img:first-child {
-            grid-column: span 2; /* Ảnh đầu tiên to hơn */
-            height: 485px;
-        }
-        /* 2 ảnh nhỏ phía dưới */
+.facility-img-group img:first-child {
+    grid-column: span 2; /* Ảnh đầu tiên to hơn */
+    height: 485px;
+}
+    /* 2 ảnh nhỏ phía dưới */
 .facility-img-group img:not(:first-child) {
     width: 100%;
     height: 180px; /* Cố định để 2 ảnh luôn bằng nhau */

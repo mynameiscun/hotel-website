@@ -1,74 +1,55 @@
+$(document).ready(function () {
+  $("#signup-form").submit(function (e) {
+    e.preventDefault();
 
- 
-$(document).ready(function(){
+    let name = $("#signup-name").val().trim();
+    let email = $("#signup-email").val().trim();
+    let username = $("#signup-username").val().trim();
+    let password = $("#signup-password").val().trim();
 
-$("#signup-form").submit(function(e){
+    // lấy users
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-e.preventDefault();
+    // check username trùng
+    let exist = users.find((user) => user.username === username);
 
-let name = $("#signup-name").val().trim();
-let email = $("#signup-email").val().trim();
-let username = $("#signup-username").val().trim();
-let password = $("#signup-password").val().trim();
+    if (exist) {
+      alert("Username đã tồn tại");
+      return;
+    }
 
+    // tạo user
+    let newUser = {
+      name: name,
+      email: email,
+      username: username,
+      password: password,
+    };
 
-// lấy users
-let users = JSON.parse(localStorage.getItem("users")) || [];
+    // push user
+    users.push(newUser);
 
-// check username trùng
-let exist = users.find(user => user.username === username);
+    // save
+    localStorage.setItem("users", JSON.stringify(users));
 
-if(exist){
-alert("Username đã tồn tại");
-return;
-}
+    // HIỂN THỊ MODAL SAU KHI SUCCESS
+    $("#signupModal").css("display", "flex").hide().fadeIn();
+  });
 
+  // nút login
+  $("#goLogin").click(function () {
+    window.location.href = "login.html";
+  });
 
-// tạo user
-let newUser = {
-name:name,
-email:email,
-username:username,
-password:password
-};
+  // nút X đóng modal
+  $(".close-modal").click(function () {
+    $("#signupModal").fadeOut();
+  });
 
-// push user
-users.push(newUser);
-
-// save
-localStorage.setItem("users", JSON.stringify(users));
-
-
-// HIỂN THỊ MODAL SAU KHI SUCCESS
-$("#signupModal").css("display","flex").hide().fadeIn();
-
+  // click ngoài modal đóng
+  $(window).click(function (e) {
+    if ($(e.target).is("#signupModal")) {
+      $("#signupModal").fadeOut();
+    }
+  });
 });
-
-
-// nút login
-$("#goLogin").click(function(){
-
-window.location.href="login.html";
-
-});
-
-
-// nút X đóng modal
-$(".close-modal").click(function(){
-
-$("#signupModal").fadeOut();
-
-});
-
-
-// click ngoài modal đóng
-$(window).click(function(e){
-
-if($(e.target).is("#signupModal")){
-$("#signupModal").fadeOut();
-}
-
-});
-
-});
-

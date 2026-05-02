@@ -1,537 +1,665 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
     <script src="../JS/jquery-4.0.0.min.js"></script>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/rm-detail-style.css">
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/rm-detail-style.css" />
 
     <title>Trải nghiệm phòng</title>
-</head>
+  </head>
 
-
-<body>
+  <body>
     <!-- HEADER -->
-    <div class="header">
-        <div class="logo">
-            <a href="index.html"><img src="../IMAGE/logo.png" alt="Hotel Logo"></a>
-        </div>
-        <div class="navbar">
-            <a href="index.html">Trang chủ</a>
-            <a href="index.html#about">Về chúng tôi</a>
-            <a href="room-detail.html">Hệ thống phòng</a>
-            <a href="index.html#facilities">Dịch vụ & tiện ích</a>
-            <a href="promotion.html">Ưu đãi</a>
-            <a href="news.html">Tin tức</a>
-        </div>
-        <div class="right">
-            <div class="login" id="auth-area">
-                <a href="login.html">Đăng nhập</a>
-                <a href="signup.html">Tạo tài khoản</a>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
+        </a>
+        <!-- NÚT HAMBURGER -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="room-detail.html">Hệ thống phòng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="promotion.html">Ưu đãi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">Tin tức</a>
+            </li>
+          </ul>
+          <div class="header-right d-flex align-items-center gap-3">
+            <div class="login-area d-flex gap-2" id="auth-area">
+              <a href="login.html" class="login-btn">Đăng nhập</a>
+              <a href="signup.html" class="login-btn">Tạo tài khoản</a>
             </div>
-            <ul class="contact">
-                <li><a href="#"><img src="../IMAGE/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="../IMAGE/instagram.png" alt="Instagram"></a></li>
+            <ul class="social-list d-flex align-items-center gap-2">
+              <li>
+                <a href="#">
+                  <img src="../IMAGE/facebook.png" alt="Facebook" />
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <img src="../IMAGE/instagram.png" alt="Instagram" />
+                </a>
+              </li>
             </ul>
+          </div>
         </div>
-    </div>
+      </div>
+    </nav>
     <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <div class="hero-text">
-            <h1>Thông tin phòng</h1>
-            <p>Trải nghiệm đẳng cấp</p>
-        </div>
+      <div class="hero-text">
+        <h1>Thông tin phòng</h1>
+        <p>Trải nghiệm đẳng cấp</p>
+      </div>
     </section>
     <div class="box-wrapper">
-        <div class="booking-box">
-            <h2>Khám phá kỳ nghỉ</h2>
-            <form action="rooms.html" method="get" class="booking-form">
-                <input type="date" name="checkin" required>
-                <input type="date" name="checkout" required>
-                <select name="guests">
-                    <option value="">Số khách</option>
-                    <option value="1">1 người</option>
-                    <option value="2">2 người</option>
-                    <option value="3">3 người</option>
-                    <option value="4">4 người</option>
-                    <option value="5">5 người</option>
-                    <option value="6">6 người</option>
-                </select>
-                <select name="room">
-                    <option value="">Loại phòng</option>
-                    <option value="single">Royal Suite</option>
-                    <option value="double">Executive Suite</option>
-                    <option value="suite">Deluxe Twin</option>
-                    <option value="suite">President Suite</option>
-                    <option value="suite">Ocean Villa</option>
-                    <option value="suite">Sky Penthouse</option>
-                </select>
-                <button type="submit">Tìm phòng</button>
-            </form>
-        </div>
+      <div class="booking-box">
+        <h2>Khám phá kỳ nghỉ</h2>
+
+        <form class="booking-form" id="room-search-form">
+          <div>
+            <input type="date" id="search-checkin" />
+            <div
+              id="errSearchCheckin"
+              style="color: red; font-size: 14px"
+            ></div>
+          </div>
+
+          <div>
+            <input type="date" id="search-checkout" />
+            <div
+              id="errSearchCheckout"
+              style="color: red; font-size: 14px"
+            ></div>
+          </div>
+
+          <div>
+            <select id="search-guests">
+              <option value="">Số khách</option>
+              <option value="1">1 người</option>
+              <option value="2">2 người</option>
+              <option value="3">3 người</option>
+              <option value="4">4 người</option>
+              <option value="5">5 người</option>
+              <option value="6">6 người</option>
+            </select>
+            <div id="errSearchGuests" style="color: red; font-size: 14px"></div>
+          </div>
+
+          <button type="button" id="btnRoomSearch">Tìm phòng</button>
+        </form>
+      </div>
     </div>
     <!-- MAIN CONTENT -->
     <div class="container detail-page">
-        <div class="main-layout-wrapper">
-            <!-- DETAILS PART -->
-            <div class="left-content">
-                <section class="room-item" id="royal-suite" data-room="Royal Suite" data-capacity="2">
-                    <div class="image-gallery-top">
-                        <div class="main-img"><img src="../IMAGE/room1.png" alt="Royal Suite"></div>
-                        <div class="sub-imgs">
-                            <img src="../IMAGE/room1.1.png" alt="Royal Detail 1">
-                            <img src="../IMAGE/room1.2.png" alt="Royal Detail 2">
-                        </div>
-                    </div>
-
-                    <div class="room-header">
-                        <div class="title-row">
-                            <h1>Royal Suite</h1>
-                            <span class="rating">★ 4.5</span>
-                        </div>
-                        <p class="location">📍 Plazzo Serento Luxury Resort, Da Nang City</p>
-                        <p class="desc">
-                            Royal Suite mang đến trải nghiệm nghỉ dưỡng xa hoa với hồ bơi riêng,
-                            không gian mở hướng biển và dịch vụ quản gia 24/7 dành cho khách lưu trú cao cấp.
-                        </p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Tiện nghi cao cấp</h3>
-                        <ul class="grid-list">
-                            <li>🛏️ Giường Đôi: 1</li>
-                            <li>🧺 Giặt riêng: 1</li>
-                            <li>🧊 Mini Bar: Cao cấp</li>
-                            <li>🛏️ Phòng khách: 1</li>
-                            <li>🍳 Bếp nhỏ: 1</li>
-                            <li>📶 Wifi: Tốc độ cao</li>
-                            <li>🚿 Jacuzzi: 1</li>
-                            <li>❄️ Điều hòa: 4</li>
-                            <li>🏊 Hồ bơi riêng: 1</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Thông tin khách sạn</h3>
-                        <ul class="grid-list">
-                            <li>🕒 Nhận phòng: 14:00</li>
-                            <li>🕒 Trả phòng: 12:00</li>
-                            <li>🅿️ Bãi đỗ xe: Miễn phí</li>
-                            <li>📶 Wifi: Miễn phí toàn khách sạn</li>
-                            <li>🏋️ Phòng gym: 24/7</li>
-                            <li>🏊 Hồ bơi vô cực: Có</li>
-                            <li>🍽️ Nhà hàng cao cấp: Có</li>
-                            <li>🚭 Hút thuốc: Không</li>
-                            <li>🔞 Độ tuổi tối thiểu: 18</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="room-item" id="executive-suite" data-room="Executive Suite" data-capacity="2">
-                    <div class="image-gallery-top">
-                        <div class="main-img"><img src="../IMAGE/room2.png" alt="Executive Suite"></div>
-                        <div class="sub-imgs">
-                            <img src="../IMAGE/room2.1.png" alt="Exec Detail 1">
-                            <img src="../IMAGE/room2.2.png" alt="Exec Detail 2">
-                        </div>
-                    </div>
-
-                    <div class="room-header">
-                        <div class="title-row">
-                            <h1>Executive Suite</h1>
-                            <span class="rating">★ 4.8</span>
-                        </div>
-                        <p class="location">📍 Plazzo Serento Luxury Resort, Da Nang City</p>
-                        <p class="desc">
-                            Executive Suite được thiết kế dành cho khách yêu thích sự hiện đại,
-                            kết hợp hoàn hảo giữa không gian làm việc riêng tư và nghỉ dưỡng sang trọng.
-                        </p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>💎 Tiện nghi cao cấp</h3>
-                        <ul class="grid-list">
-                            <li>🛏️ Giường Đôi: 1</li>
-                            <li>🖥️ Không gian làm việc: 1</li>
-                            <li>🧊 Tủ lạnh: 1</li>
-                            <li>☕ Máy pha cà phê: 1</li>
-                            <li>🍳 Lò vi sóng: 1</li>
-                            <li>📶 Wifi riêng: Tốc độ cao</li>
-                            <li>🚿 Phòng tắm đứng: 1</li>
-                            <li>❄️ Điều hòa trung tâm</li>
-                            <li>🏋️ Phòng gym: 24/7</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Thông tin khách sạn</h3>
-                        <ul class="grid-list">
-                            <li>🕒 Nhận phòng: 14:00</li>
-                            <li>🕒 Trả phòng: 12:00</li>
-                            <li>🅿️ Bãi đỗ xe: Miễn phí</li>
-                            <li>📶 Wifi: Miễn phí toàn khách sạn</li>
-                            <li>🏋️ Phòng gym: 24/7</li>
-                            <li>🏊 Hồ bơi vô cực: Có</li>
-                            <li>🍽️ Nhà hàng cao cấp: Có</li>
-                            <li>🚭 Hút thuốc: Không</li>
-                            <li>🔞 Độ tuổi tối thiểu: 18</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="room-item" id="deluxe-twin" data-room="Deluxe Twin" data-capacity="4">
-                    <div class="image-gallery-top">
-                        <div class="main-img"><img src="../IMAGE/room3.png" alt="Deluxe Twin"></div>
-                        <div class="sub-imgs">
-                            <img src="../IMAGE/room3.1.png" alt="Deluxe Detail 1">
-                            <img src="../IMAGE/room3.2.png" alt="Deluxe Detail 2">
-                        </div>
-                    </div>
-
-                    <div class="room-header">
-                        <div class="title-row">
-                            <h1>Deluxe Twin</h1>
-                            <span class="rating">★ 5</span>
-                        </div>
-                        <p class="location">📍 Plazzo Serento Luxury Resort, Da Nang City</p>
-                        <p class="desc">
-                            Deluxe Twin sở hữu không gian rộng rãi cùng hai giường riêng biệt,
-                            phù hợp cho gia đình nhỏ hoặc nhóm bạn tận hưởng kỳ nghỉ thoải mái bên bờ biển.
-                        </p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Tiện nghi cao cấp</h3>
-                        <ul class="grid-list">
-                            <li>🛏️ Giường Đôi: 2</li>
-                            <li>🧺 Dịch vụ giặt ủi: Có</li>
-                            <li>🧊 Tủ lạnh: 1</li>
-                            <li>📺 Smart TV: 1</li>
-                            <li>🧼 Bộ đồ dùng cá nhân: Đầy đủ</li>
-                            <li>📶 Wifi miễn phí</li>
-                            <li>🚿 Bồn tắm: 1</li>
-                            <li>❄️ Điều hòa: 1</li>
-                            <li>🏖️ Lối ra biển: Có</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Thông tin khách sạn</h3>
-                        <ul class="grid-list">
-                            <li>🕒 Nhận phòng: 14:00</li>
-                            <li>🕒 Trả phòng: 12:00</li>
-                            <li>🅿️ Bãi đỗ xe: Miễn phí</li>
-                            <li>📶 Wifi: Miễn phí toàn khách sạn</li>
-                            <li>🏋️ Phòng gym: 24/7</li>
-                            <li>🏊 Hồ bơi vô cực: Có</li>
-                            <li>🍽️ Nhà hàng cao cấp: Có</li>
-                            <li>🚭 Hút thuốc: Không</li>
-                            <li>🔞 Độ tuổi tối thiểu: 18</li>
-                        </ul>
-                    </div>
-                </section>
-                <!-- ROOM 4 -->
-                <section class="room-item hidden-room" id="president-suite" data-room="President Suite"
-                    data-capacity="4">
-                    <div class="image-gallery-top">
-                        <div class="main-img">
-                            <img src="../IMAGE/room4.png" alt="President Suite">
-                        </div>
-
-                        <div class="sub-imgs">
-                            <img src="../IMAGE/room4.1.png" alt="President Detail 1">
-                            <img src="../IMAGE/room4.2.png" alt="President Detail 2">
-                        </div>
-                    </div>
-
-                    <div class="room-header">
-                        <div class="title-row">
-                            <h1>President Suite</h1>
-                            <span class="rating">★ 4.9</span>
-                        </div>
-
-                        <p class="location">📍 Plazzo Serento Luxury Resort, Da Nang City</p>
-
-                        <p class="desc">
-                            President Suite mang đến trải nghiệm nghỉ dưỡng đỉnh cao với
-                            không gian sang trọng, phòng khách riêng biệt và tầm nhìn toàn cảnh thành phố.
-                        </p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Tiện nghi cao cấp</h3>
-
-                        <ul class="grid-list">
-                            <li>🛏️ Giường đôi cao cấp: 2</li>
-                            <li>🛁 Bồn tắm đá cẩm thạch</li>
-                            <li>📺 Smart TV 85 inch</li>
-                            <li>☕ Quầy bar mini cao cấp</li>
-                            <li>📶 Wifi tốc độ cao</li>
-                            <li>🚿 Phòng tắm riêng</li>
-                            <li>❄️ Điều hòa trung tâm</li>
-                            <li>🏙️ View toàn thành phố</li>
-                        </ul>
-                    </div>
-                    <div class="info-card">
-                        <h3>Thông tin khách sạn</h3>
-                        <ul class="grid-list">
-                            <li>🕒 Nhận phòng: 14:00</li>
-                            <li>🕒 Trả phòng: 12:00</li>
-                            <li>🅿️ Bãi đỗ xe: Miễn phí</li>
-                            <li>📶 Wifi: Miễn phí toàn khách sạn</li>
-                            <li>🏋️ Phòng gym: 24/7</li>
-                            <li>🏊 Hồ bơi vô cực: Có</li>
-                            <li>🍽️ Nhà hàng cao cấp: Có</li>
-                            <li>🚭 Hút thuốc: Không</li>
-                            <li>🔞 Độ tuổi tối thiểu: 18</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- ROOM 5 -->
-                <section class="room-item hidden-room" id="ocean-villa" data-room="Ocean Villa" data-capacity="6">
-                    <div class="image-gallery-top">
-                        <div class="main-img">
-                            <img src="../IMAGE/room5.png" alt="Ocean Villa">
-                        </div>
-
-                        <div class="sub-imgs">
-                            <img src="../IMAGE/room5.1.png" alt="Ocean Villa Detail 1">
-                            <img src="../IMAGE/room5.2.png" alt="Ocean Villa Detail 2">
-                        </div>
-                    </div>
-
-                    <div class="room-header">
-                        <div class="title-row">
-                            <h1>Ocean Villa</h1>
-                            <span class="rating">★ 5.0</span>
-                        </div>
-
-                        <p class="location">📍 Plazzo Serento Luxury Resort, Da Nang City</p>
-
-                        <p class="desc">
-                            Ocean Villa là lựa chọn hoàn hảo cho kỳ nghỉ dưỡng riêng tư,
-                            với hồ bơi vô cực hướng biển và lối đi trực tiếp xuống đại dương.
-                        </p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Tiện nghi cao cấp</h3>
-
-                        <ul class="grid-list">
-                            <li>🛏️ Giường đôi:3</li>
-                            <li>🏊 Hồ bơi riêng</li>
-                            <li>🍷 Mini Bar cao cấp</li>
-                            <li>🌊 View biển 180°</li>
-                            <li>📶 Wifi miễn phí</li>
-                            <li>🚿 Phòng tắm ngoài trời</li>
-                            <li>☀️ Ban công tắm nắng</li>
-                            <li>🛶 Lối xuống biển riêng</li>
-                        </ul>
-                    </div>
-                    <div class="info-card">
-                        <h3>Thông tin khách sạn</h3>
-                        <ul class="grid-list">
-                            <li>🕒 Nhận phòng: 14:00</li>
-                            <li>🕒 Trả phòng: 12:00</li>
-                            <li>🅿️ Bãi đỗ xe: Miễn phí</li>
-                            <li>📶 Wifi: Miễn phí toàn khách sạn</li>
-                            <li>🏋️ Phòng gym: 24/7</li>
-                            <li>🏊 Hồ bơi vô cực: Có</li>
-                            <li>🍽️ Nhà hàng cao cấp: Có</li>
-                            <li>🚭 Hút thuốc: Không</li>
-                            <li>🔞 Độ tuổi tối thiểu: 18</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- ROOM 6 -->
-                <section class="room-item hidden-room" id="sky-penthouse" data-room="Sky Penthouse" data-capacity="6">
-                    <div class="image-gallery-top">
-                        <div class="main-img">
-                            <img src="../IMAGE/room6.png" alt="Sky Penthouse">
-                        </div>
-
-                        <div class="sub-imgs">
-                            <img src="../IMAGE/room6.1.png" alt="Sky Penthouse Detail 1">
-                            <img src="../IMAGE/room6.2.png" alt="Sky Penthouse Detail 2">
-                        </div>
-                    </div>
-
-                    <div class="room-header">
-                        <div class="title-row">
-                            <h1>Sky Penthouse</h1>
-                            <span class="rating">★ 4.8</span>
-                        </div>
-
-                        <p class="location">📍 Plazzo Serento Luxury Resort, Da Nang City</p>
-
-                        <p class="desc">
-                            Sky Penthouse nổi bật với thiết kế hiện đại,
-                            không gian mở và cửa kính toàn cảnh nhìn ra skyline thành phố.
-                        </p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Tiện nghi cao cấp</h3>
-
-                        <ul class="grid-list">
-                            <li>🛏️ Giường đôi: 3</li>
-                            <li>📺 Smart TV</li>
-                            <li>🎮 Khu giải trí riêng</li>
-                            <li>🍳 Bếp mini</li>
-                            <li>📶 Wifi tốc độ cao</li>
-                            <li>🚿 Phòng tắm kính</li>
-                            <li>❄️ Điều hòa tự động</li>
-                            <li>🌆 View skyline</li>
-                        </ul>
-                    </div>
-                    <div class="info-card">
-                        <h3>Thông tin khách sạn</h3>
-                        <ul class="grid-list">
-                            <li>🕒 Nhận phòng: 14:00</li>
-                            <li>🕒 Trả phòng: 12:00</li>
-                            <li>🅿️ Bãi đỗ xe: Miễn phí</li>
-                            <li>📶 Wifi: Miễn phí toàn khách sạn</li>
-                            <li>🏋️ Phòng gym: 24/7</li>
-                            <li>🏊 Hồ bơi vô cực: Có</li>
-                            <li>🍽️ Nhà hàng cao cấp: Có</li>
-                            <li>🚭 Hút thuốc: Không</li>
-                            <li>🔞 Độ tuổi tối thiểu: 18</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- LOAD MORE BUTTON -->
-                <div class="load-more-container">
-                    <button id="loadMoreRoomsBtn" class="btn-load-more">
-                        XEM THÊM PHÒNG
-                    </button>
-                </div>
+      <div class="main-layout-wrapper">
+        <!-- DETAILS PART -->
+        <div class="left-content">
+          <section
+            class="room-item"
+            id="royal-suite"
+            data-room="Royal Suite"
+            data-capacity="2"
+          >
+            <div class="image-gallery-top">
+              <div class="main-img">
+                <img src="../IMAGE/room1.png" alt="Royal Suite" />
+              </div>
+              <div class="sub-imgs">
+                <img src="../IMAGE/room1.1.png" alt="Royal Detail 1" />
+                <img src="../IMAGE/room1.2.png" alt="Royal Detail 2" />
+              </div>
             </div>
-            <!-- BOOKING FORM -->
-            <aside class="right-content">
-                <div class="booking-box-card">
-                    <h2>Đặt phòng</h2>
 
-                    <form id="booking-form">
-                        <div class="input-group">
-                            <label for="room-select">Loại phòng</label>
-                            <select class="real-input" id="room-select">
-                                <!-- Dạng: Tên | Giá bán | Sức chứa | Giá gốc -->
-                                <option value="Royal Suite|500000|2|500000">Royal Suite</option>
-                                <option value="Deluxe Twin|800000|4|800000">Deluxe Twin</option>
-                                <option value="Executive Suite|1000000|4|1000000">Executive Suite</option>
-                                <option value="President Suite|1050000|4|1500000">President Suite</option>
-                                <option value="Ocean Villa|1440000|6|1800000">Ocean Villa</option>
-                                <option value="Sky Penthouse|2200000|6|2200000">Sky Penthouse</option>
-                            </select>
-                        </div>
+            <div class="room-header">
+              <div class="title-row">
+                <h1>Royal Suite</h1>
+                <span class="rating">★ 4.5</span>
+              </div>
+              <p class="location">
+                📍 Plazzo Serento Luxury Resort, Da Nang City
+              </p>
+              <p class="desc">
+                Royal Suite mang đến trải nghiệm nghỉ dưỡng xa hoa với hồ bơi
+                riêng, không gian mở hướng biển và dịch vụ quản gia 24/7 dành
+                cho khách lưu trú cao cấp.
+              </p>
+            </div>
 
-                        <div class="input-group">
-                            <label>Họ và tên</label>
-                            <input type="text" id="booking-name" class="real-input" required>
-                        </div>
+            <div class="info-card">
+              <h3>Tiện nghi cao cấp</h3>
+              <ul class="grid-list">
+                <li>🛏️ Giường Đôi: 1</li>
+                <li>🧺 Giặt riêng: 1</li>
+                <li>🧊 Mini Bar: Cao cấp</li>
+                <li>🛏️ Phòng khách: 1</li>
+                <li>🍳 Bếp nhỏ: 1</li>
+                <li>📶 Wifi: Tốc độ cao</li>
+                <li>🚿 Jacuzzi: 1</li>
+                <li>❄️ Điều hòa: 4</li>
+                <li>🏊 Hồ bơi riêng: 1</li>
+              </ul>
+            </div>
 
-                        <div class="input-group">
-                            <label>Số điện thoại</label>
-                            <input type="tel" id="booking-phone" class="real-input" required>
-                        </div>
+            <div class="info-card">
+              <h3>Thông tin khách sạn</h3>
+              <ul class="grid-list">
+                <li>🕒 Nhận phòng: 14:00</li>
+                <li>🕒 Trả phòng: 12:00</li>
+                <li>🅿️ Bãi đỗ xe: Miễn phí</li>
+                <li>📶 Wifi: Miễn phí toàn khách sạn</li>
+                <li>🏋️ Phòng gym: 24/7</li>
+                <li>🏊 Hồ bơi vô cực: Có</li>
+                <li>🍽️ Nhà hàng cao cấp: Có</li>
+                <li>🚭 Hút thuốc: Không</li>
+                <li>🔞 Độ tuổi tối thiểu: 18</li>
+              </ul>
+            </div>
+          </section>
 
-                        <div class="input-group">
-                            <label>Ngày nhận phòng</label>
-                            <input type="date" id="booking-checkin" class="real-input" required>
-                        </div>
+          <section
+            class="room-item"
+            id="executive-suite"
+            data-room="Executive Suite"
+            data-capacity="2"
+          >
+            <div class="image-gallery-top">
+              <div class="main-img">
+                <img src="../IMAGE/room2.png" alt="Executive Suite" />
+              </div>
+              <div class="sub-imgs">
+                <img src="../IMAGE/room2.1.png" alt="Exec Detail 1" />
+                <img src="../IMAGE/room2.2.png" alt="Exec Detail 2" />
+              </div>
+            </div>
 
-                        <div class="input-group">
-                            <label>Ngày trả phòng</label>
-                            <input type="date" id="booking-checkout" class="real-input" required>
-                        </div>
+            <div class="room-header">
+              <div class="title-row">
+                <h1>Executive Suite</h1>
+                <span class="rating">★ 4.8</span>
+              </div>
+              <p class="location">
+                📍 Plazzo Serento Luxury Resort, Da Nang City
+              </p>
+              <p class="desc">
+                Executive Suite được thiết kế dành cho khách yêu thích sự hiện
+                đại, kết hợp hoàn hảo giữa không gian làm việc riêng tư và nghỉ
+                dưỡng sang trọng.
+              </p>
+            </div>
 
-                        <div class="input-group">
-                            <label>Số khách</label>
-                            <select id="booking-guests" class="real-input">
-                            </select>
-                        </div>
-                        <div class="price-row-custom">
-                            <span class="price-label">Giá phòng:</span>
-                            <div class="price-val-custom" style="text-align: right;">
-                                <div style="line-height: 1.2;">
-                                    <!-- Giá hiện tại (đã giảm) -->
-                                    <span style="display: block; font-weight: bold;">
-                                        <span class="amount" id="display-price">0</span>
-                                        <span class="unit">VNĐ</span>
-                                    </span>
-                                    <!-- Giá cũ (bị gạch) - Mặc định ẩn -->
-                                    <del id="old-price" style="color: #888; font-size: 0.85em; display: none;"></del>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="price-row-custom">
-                            <span class="price-label">TỔNG TIỀN:</span>
-                            <div class="price-val-custom">
-                                <span class="amount" id="total-price">0</span>
-                                <span class="unit">VNĐ</span>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn-reserve-custom">Đặt phòng ngay</button>
-                        <button type="button" class="btn-reserve-custom"
-                            onclick="window.location.href='booking.html'">🛒 Đơn đặt phòng</button>
-                    </form>
-                </div>
-            </aside>
+            <div class="info-card">
+              <h3>💎 Tiện nghi cao cấp</h3>
+              <ul class="grid-list">
+                <li>🛏️ Giường Đôi: 1</li>
+                <li>🖥️ Không gian làm việc: 1</li>
+                <li>🧊 Tủ lạnh: 1</li>
+                <li>☕ Máy pha cà phê: 1</li>
+                <li>🍳 Lò vi sóng: 1</li>
+                <li>📶 Wifi riêng: Tốc độ cao</li>
+                <li>🚿 Phòng tắm đứng: 1</li>
+                <li>❄️ Điều hòa trung tâm</li>
+                <li>🏋️ Phòng gym: 24/7</li>
+              </ul>
+            </div>
 
+            <div class="info-card">
+              <h3>Thông tin khách sạn</h3>
+              <ul class="grid-list">
+                <li>🕒 Nhận phòng: 14:00</li>
+                <li>🕒 Trả phòng: 12:00</li>
+                <li>🅿️ Bãi đỗ xe: Miễn phí</li>
+                <li>📶 Wifi: Miễn phí toàn khách sạn</li>
+                <li>🏋️ Phòng gym: 24/7</li>
+                <li>🏊 Hồ bơi vô cực: Có</li>
+                <li>🍽️ Nhà hàng cao cấp: Có</li>
+                <li>🚭 Hút thuốc: Không</li>
+                <li>🔞 Độ tuổi tối thiểu: 18</li>
+              </ul>
+            </div>
+          </section>
+
+          <section
+            class="room-item"
+            id="deluxe-twin"
+            data-room="Deluxe Twin"
+            data-capacity="4"
+          >
+            <div class="image-gallery-top">
+              <div class="main-img">
+                <img src="../IMAGE/room3.png" alt="Deluxe Twin" />
+              </div>
+              <div class="sub-imgs">
+                <img src="../IMAGE/room3.1.png" alt="Deluxe Detail 1" />
+                <img src="../IMAGE/room3.2.png" alt="Deluxe Detail 2" />
+              </div>
+            </div>
+
+            <div class="room-header">
+              <div class="title-row">
+                <h1>Deluxe Twin</h1>
+                <span class="rating">★ 5</span>
+              </div>
+              <p class="location">
+                📍 Plazzo Serento Luxury Resort, Da Nang City
+              </p>
+              <p class="desc">
+                Deluxe Twin sở hữu không gian rộng rãi cùng hai giường riêng
+                biệt, phù hợp cho gia đình nhỏ hoặc nhóm bạn tận hưởng kỳ nghỉ
+                thoải mái bên bờ biển.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Tiện nghi cao cấp</h3>
+              <ul class="grid-list">
+                <li>🛏️ Giường Đôi: 2</li>
+                <li>🧺 Dịch vụ giặt ủi: Có</li>
+                <li>🧊 Tủ lạnh: 1</li>
+                <li>📺 Smart TV: 1</li>
+                <li>🧼 Bộ đồ dùng cá nhân: Đầy đủ</li>
+                <li>📶 Wifi miễn phí</li>
+                <li>🚿 Bồn tắm: 1</li>
+                <li>❄️ Điều hòa: 1</li>
+                <li>🏖️ Lối ra biển: Có</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Thông tin khách sạn</h3>
+              <ul class="grid-list">
+                <li>🕒 Nhận phòng: 14:00</li>
+                <li>🕒 Trả phòng: 12:00</li>
+                <li>🅿️ Bãi đỗ xe: Miễn phí</li>
+                <li>📶 Wifi: Miễn phí toàn khách sạn</li>
+                <li>🏋️ Phòng gym: 24/7</li>
+                <li>🏊 Hồ bơi vô cực: Có</li>
+                <li>🍽️ Nhà hàng cao cấp: Có</li>
+                <li>🚭 Hút thuốc: Không</li>
+                <li>🔞 Độ tuổi tối thiểu: 18</li>
+              </ul>
+            </div>
+          </section>
+          <!-- ROOM 4 -->
+          <section
+            class="room-item hidden-room"
+            id="president-suite"
+            data-room="President Suite"
+            data-capacity="4"
+          >
+            <div class="image-gallery-top">
+              <div class="main-img">
+                <img src="../IMAGE/room4.png" alt="President Suite" />
+              </div>
+
+              <div class="sub-imgs">
+                <img src="../IMAGE/room4.1.png" alt="President Detail 1" />
+                <img src="../IMAGE/room4.2.png" alt="President Detail 2" />
+              </div>
+            </div>
+
+            <div class="room-header">
+              <div class="title-row">
+                <h1>President Suite</h1>
+                <span class="rating">★ 4.9</span>
+              </div>
+
+              <p class="location">
+                📍 Plazzo Serento Luxury Resort, Da Nang City
+              </p>
+
+              <p class="desc">
+                President Suite mang đến trải nghiệm nghỉ dưỡng đỉnh cao với
+                không gian sang trọng, phòng khách riêng biệt và tầm nhìn toàn
+                cảnh thành phố.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Tiện nghi cao cấp</h3>
+
+              <ul class="grid-list">
+                <li>🛏️ Giường đôi cao cấp: 2</li>
+                <li>🛁 Bồn tắm đá cẩm thạch</li>
+                <li>📺 Smart TV 85 inch</li>
+                <li>☕ Quầy bar mini cao cấp</li>
+                <li>📶 Wifi tốc độ cao</li>
+                <li>🚿 Phòng tắm riêng</li>
+                <li>❄️ Điều hòa trung tâm</li>
+                <li>🏙️ View toàn thành phố</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Thông tin khách sạn</h3>
+              <ul class="grid-list">
+                <li>🕒 Nhận phòng: 14:00</li>
+                <li>🕒 Trả phòng: 12:00</li>
+                <li>🅿️ Bãi đỗ xe: Miễn phí</li>
+                <li>📶 Wifi: Miễn phí toàn khách sạn</li>
+                <li>🏋️ Phòng gym: 24/7</li>
+                <li>🏊 Hồ bơi vô cực: Có</li>
+                <li>🍽️ Nhà hàng cao cấp: Có</li>
+                <li>🚭 Hút thuốc: Không</li>
+                <li>🔞 Độ tuổi tối thiểu: 18</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ROOM 5 -->
+          <section
+            class="room-item hidden-room"
+            id="ocean-villa"
+            data-room="Ocean Villa"
+            data-capacity="6"
+          >
+            <div class="image-gallery-top">
+              <div class="main-img">
+                <img src="../IMAGE/room5.png" alt="Ocean Villa" />
+              </div>
+
+              <div class="sub-imgs">
+                <img src="../IMAGE/room5.1.png" alt="Ocean Villa Detail 1" />
+                <img src="../IMAGE/room5.2.png" alt="Ocean Villa Detail 2" />
+              </div>
+            </div>
+
+            <div class="room-header">
+              <div class="title-row">
+                <h1>Ocean Villa</h1>
+                <span class="rating">★ 5.0</span>
+              </div>
+
+              <p class="location">
+                📍 Plazzo Serento Luxury Resort, Da Nang City
+              </p>
+
+              <p class="desc">
+                Ocean Villa là lựa chọn hoàn hảo cho kỳ nghỉ dưỡng riêng tư, với
+                hồ bơi vô cực hướng biển và lối đi trực tiếp xuống đại dương.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Tiện nghi cao cấp</h3>
+
+              <ul class="grid-list">
+                <li>🛏️ Giường đôi:3</li>
+                <li>🏊 Hồ bơi riêng</li>
+                <li>🍷 Mini Bar cao cấp</li>
+                <li>🌊 View biển 180°</li>
+                <li>📶 Wifi miễn phí</li>
+                <li>🚿 Phòng tắm ngoài trời</li>
+                <li>☀️ Ban công tắm nắng</li>
+                <li>🛶 Lối xuống biển riêng</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Thông tin khách sạn</h3>
+              <ul class="grid-list">
+                <li>🕒 Nhận phòng: 14:00</li>
+                <li>🕒 Trả phòng: 12:00</li>
+                <li>🅿️ Bãi đỗ xe: Miễn phí</li>
+                <li>📶 Wifi: Miễn phí toàn khách sạn</li>
+                <li>🏋️ Phòng gym: 24/7</li>
+                <li>🏊 Hồ bơi vô cực: Có</li>
+                <li>🍽️ Nhà hàng cao cấp: Có</li>
+                <li>🚭 Hút thuốc: Không</li>
+                <li>🔞 Độ tuổi tối thiểu: 18</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ROOM 6 -->
+          <section
+            class="room-item hidden-room"
+            id="sky-penthouse"
+            data-room="Sky Penthouse"
+            data-capacity="6"
+          >
+            <div class="image-gallery-top">
+              <div class="main-img">
+                <img src="../IMAGE/room6.png" alt="Sky Penthouse" />
+              </div>
+
+              <div class="sub-imgs">
+                <img src="../IMAGE/room6.1.png" alt="Sky Penthouse Detail 1" />
+                <img src="../IMAGE/room6.2.png" alt="Sky Penthouse Detail 2" />
+              </div>
+            </div>
+
+            <div class="room-header">
+              <div class="title-row">
+                <h1>Sky Penthouse</h1>
+                <span class="rating">★ 4.8</span>
+              </div>
+
+              <p class="location">
+                📍 Plazzo Serento Luxury Resort, Da Nang City
+              </p>
+
+              <p class="desc">
+                Sky Penthouse nổi bật với thiết kế hiện đại, không gian mở và
+                cửa kính toàn cảnh nhìn ra skyline thành phố.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Tiện nghi cao cấp</h3>
+
+              <ul class="grid-list">
+                <li>🛏️ Giường đôi: 3</li>
+                <li>📺 Smart TV</li>
+                <li>🎮 Khu giải trí riêng</li>
+                <li>🍳 Bếp mini</li>
+                <li>📶 Wifi tốc độ cao</li>
+                <li>🚿 Phòng tắm kính</li>
+                <li>❄️ Điều hòa tự động</li>
+                <li>🌆 View skyline</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Thông tin khách sạn</h3>
+              <ul class="grid-list">
+                <li>🕒 Nhận phòng: 14:00</li>
+                <li>🕒 Trả phòng: 12:00</li>
+                <li>🅿️ Bãi đỗ xe: Miễn phí</li>
+                <li>📶 Wifi: Miễn phí toàn khách sạn</li>
+                <li>🏋️ Phòng gym: 24/7</li>
+                <li>🏊 Hồ bơi vô cực: Có</li>
+                <li>🍽️ Nhà hàng cao cấp: Có</li>
+                <li>🚭 Hút thuốc: Không</li>
+                <li>🔞 Độ tuổi tối thiểu: 18</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- LOAD MORE BUTTON -->
+          <div class="load-more-container">
+            <button id="loadMoreRoomsBtn" class="btn-load-more">
+              XEM THÊM PHÒNG
+            </button>
+          </div>
         </div>
+        <!-- BOOKING FORM -->
+        <aside class="right-content">
+          <div class="booking-box-card">
+            <h2>Đặt phòng</h2>
+
+            <form id="booking-form">
+              <div class="input-group">
+                <label for="room-select">Loại phòng</label>
+                <select class="real-input" id="room-select">
+                  <!-- Dạng: Tên | Giá bán | Sức chứa | Giá gốc -->
+                  <option value="Royal Suite|500000|2|500000">
+                    Royal Suite
+                  </option>
+                  <option value="Deluxe Twin|800000|4|800000">
+                    Deluxe Twin
+                  </option>
+                  <option value="Executive Suite|1000000|4|1000000">
+                    Executive Suite
+                  </option>
+                  <option value="President Suite|1050000|4|1500000">
+                    President Suite
+                  </option>
+                  <option value="Ocean Villa|1440000|6|1800000">
+                    Ocean Villa
+                  </option>
+                  <option value="Sky Penthouse|2200000|6|2200000">
+                    Sky Penthouse
+                  </option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label>Họ và tên</label>
+                <input
+                  type="text"
+                  id="booking-name"
+                  class="real-input"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Số điện thoại</label>
+                <input
+                  type="tel"
+                  id="booking-phone"
+                  class="real-input"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Ngày nhận phòng</label>
+                <input
+                  type="date"
+                  id="booking-checkin"
+                  class="real-input"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Ngày trả phòng</label>
+                <input
+                  type="date"
+                  id="booking-checkout"
+                  class="real-input"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Số khách</label>
+                <select id="booking-guests" class="real-input"></select>
+              </div>
+              <div class="price-row-custom">
+                <span class="price-label">Giá phòng:</span>
+                <div class="price-val-custom" style="text-align: right">
+                  <div style="line-height: 1.2">
+                    <!-- Giá hiện tại (đã giảm) -->
+                    <span style="display: block; font-weight: bold">
+                      <span class="amount" id="display-price">0</span>
+                      <span class="unit">VNĐ</span>
+                    </span>
+                    <!-- Giá cũ (bị gạch) - Mặc định ẩn -->
+                    <del
+                      id="old-price"
+                      style="color: #888; font-size: 0.85em; display: none"
+                    ></del>
+                  </div>
+                </div>
+              </div>
+              <div class="price-row-custom">
+                <span class="price-label">TỔNG TIỀN:</span>
+                <div class="price-val-custom">
+                  <span class="amount" id="total-price">0</span>
+                  <span class="unit">VNĐ</span>
+                </div>
+              </div>
+              <button type="submit" class="btn-reserve-custom">
+                Đặt phòng ngay
+              </button>
+              <button
+                type="button"
+                class="btn-reserve-custom"
+                onclick="window.location.href = 'booking.html'"
+              >
+                🛒 Đơn đặt phòng
+              </button>
+            </form>
+          </div>
+        </aside>
+      </div>
     </div>
     <!-- FOOTER -->
     <footer id="footer-bottom">
-        <p> © 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
+      <p>© 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
     </footer>
     <!-- LOGIN REQUIRED MODAL -->
     <div id="loginRequiredModal" class="modal">
-        <div class="modal-content">
-            <h3>Bạn cần đăng nhập</h3>
-            <p>Vui lòng đăng nhập để đặt phòng</p>
+      <div class="modal-content">
+        <h3>Bạn cần đăng nhập</h3>
+        <p>Vui lòng đăng nhập để đặt phòng</p>
 
-            <button id="goLogin" class="btn btn-primary">Login</button>
-            <button id="closeModal" class="btn btn-danger">Cancel</button>
-
-        </div>
+        <button id="goLogin" class="btn btn-primary">Login</button>
+        <button id="closeModal" class="btn btn-danger">Cancel</button>
+      </div>
     </div>
     <!-- BOOKING SUCCESS MODAL -->
     <div id="bookingSuccessModal" class="modal">
-        <div class="modal-content">
+      <div class="modal-content">
+        <span class="close-x" id="closeSuccess">&times;</span>
 
-            <span class="close-x" id="closeSuccess">&times;</span>
+        <h3>Đặt phòng thành công</h3>
+        <p>Phòng của bạn đã được lưu vào hệ thống</p>
 
-            <h3>Đặt phòng thành công </h3>
-            <p>Phòng của bạn đã được lưu vào hệ thống</p>
-
-            <button id="goBooking" class="btn-reserve-custom">
-                Xem đặt phòng
-            </button>
-
-        </div>
+        <button id="goBooking" class="btn-reserve-custom">Xem đặt phòng</button>
+      </div>
     </div>
     <!-- ERROR MODAL -->
     <div id="errorModal" class="modal">
-        <div class="modal-content">
+      <div class="modal-content">
+        <span class="close-x" id="closeError">&times;</span>
 
-            <span class="close-x" id="closeError">&times;</span>
+        <h3>Lỗi</h3>
+        <p id="errorMessage"></p>
 
-            <h3>Lỗi</h3>
-            <p id="errorMessage"></p>
-
-            <button id="closeErrorBtn" class="btn btn-danger">
-                Đóng
-            </button>
-
-        </div>
+        <button id="closeErrorBtn" class="btn btn-danger">Đóng</button>
+      </div>
     </div>
-    <script src="../JS/rm-detail.js"></script>
-</body>
 
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+    <script src="../JS/rm-detail.js"></script>
+  </body>
 </html>

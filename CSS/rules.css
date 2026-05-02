@@ -43,3 +43,6 @@ footer {
 .container {
   font-size: 18px;
 }
+.content-section{
+  scroll-margin-top: 120px;
+}

@@ -1,73 +1,81 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/news.css">
+    <title>Tin tức</title>
+    
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
-  <script src="../JS/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="../CSS/style.css" />
-  <link rel="stylesheet" href="../CSS/news.css">
-  <title>Tin tức</title>
-
-</head>
-
-<body>
-  <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
-      </a>
-      <!-- NÚT HAMBURGER -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-        aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainMenu">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Trang chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#about">Về chúng tôi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="room-detail.html">Hệ thống phòng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="promotion.html">Ưu đãi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="news.html">Tin tức</a>
-          </li>
-        </ul>
-        <div class="header-right d-flex align-items-center gap-3">
-          <div class="login-area d-flex gap-2" id="auth-area">
-            <a href="login.html" class="login-btn">Đăng nhập</a>
-            <a href="signup.html" class="login-btn">Tạo tài khoản</a>
-          </div>
-          <ul class="social-list d-flex align-items-center gap-2">
-            <li>
-              <a href="#">
-                <img src="../IMAGE/facebook.png" alt="Facebook" />
-              </a>
+  <body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
+        </a>
+        <!-- NÚT HAMBURGER -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Trang chủ</a>
             </li>
-
-            <li>
-              <a href="#">
-                <img src="../IMAGE/instagram.png" alt="Instagram" />
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="room-detail.html">Hệ thống phòng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="promotion.html">Ưu đãi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="news.html">Tin tức</a>
             </li>
           </ul>
+          <div class="header-right d-flex align-items-center gap-3">
+            <div class="login-area d-flex gap-2" id="auth-area">
+              <a href="login.html" class="login-btn">Đăng nhập</a>
+              <a href="signup.html" class="login-btn">Tạo tài khoản</a>
+            </div>
+            <ul class="social-list d-flex align-items-center gap-2">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=100071590012338">
+                  <img src="../IMAGE/facebook.png" alt="Facebook" />
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.instagram.com/plazzo_serento/">
+                  <img src="../IMAGE/instagram.png" alt="Instagram" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <section class="hero" style="
+    </nav>
+    <section
+      class="hero"
+      style="
         height: 40vh;
         min-height: 300px;
         display: flex;
@@ -472,4 +480,56 @@
   <script src="../JS/main.js"></script>
 </body>
 
+        <div class="footer-col">
+          <h4>BẠN CẦN GIÚP ĐỠ?</h4>
+          <ul class="footer-links">
+            <li><a href="#">Quản lý các đặt phòng</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100071590012338">Hỗ trợ</a></li>
+            <li><a href="../HTML/team.html">Đội ngũ chuyên nghiệp</a></li>
+          </ul>
+          <div class="booking-contact">
+            <p>Bạn muốn đặt chỗ?</p>
+            <div class="phone">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              (+84) 38 7312 397
+            </div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>ĐIỀU KHOẢN & QUY ĐỊNH</h4>
+          <ul class="footer-links">
+            <li><a href="rules.html#chung">Điều khoản chung</a></li>
+            <li><a href="rules.html#quydinh">Quy định chung</a></li>
+            <li><a href="rules.html#thanhtoan">Quy định về thanh toán</a></li>
+            <li>
+              <a href="rules.html#xacnhan">Quy định về xác nhận thông tin</a>
+            </li>
+            <li>
+              <a href="rules.html#tranhchap"
+                >Chính sách giải quyết tranh chấp</a
+              >
+            </li>
+            <li><a href="rules.html#riengtu">Chính sách quyền riêng tư</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <footer id="footer-bottom">
+      <p>© 2026 Plazzo Serento Hospitality. All Rights Reserved.</p>
+    </footer>
+    <script src="../JS/main.js"></script>
+  </body>
 </html>

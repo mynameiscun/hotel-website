@@ -1,121 +1,143 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-4.0.0.min.js"></script>
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/rm-detail-style.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
-  <script src="../JS/jquery-4.0.0.min.js"></script>
-  <script src="../JS/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="../CSS/style.css" />
-  <link rel="stylesheet" href="../CSS/rm-detail-style.css" />
+    <title>Trải nghiệm phòng</title>
+  </head>
 
-  <title>Trải nghiệm phòng</title>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
-      </a>
-      <!-- NÚT HAMBURGER -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-        aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainMenu">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Trang chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#about">Về chúng tôi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="room-detail.html">Hệ thống phòng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="promotion.html">Ưu đãi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="news.html">Tin tức</a>
-          </li>
-        </ul>
-        <div class="header-right d-flex align-items-center gap-3">
-          <div class="login-area d-flex gap-2" id="auth-area">
-            <a href="login.html" class="login-btn">Đăng nhập</a>
-            <a href="signup.html" class="login-btn">Tạo tài khoản</a>
-          </div>
-          <ul class="social-list d-flex align-items-center gap-2">
-            <li>
-              <a href="#">
-                <img src="../IMAGE/facebook.png" alt="Facebook" />
-              </a>
+  <body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
+        </a>
+        <!-- NÚT HAMBURGER -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Trang chủ</a>
             </li>
-
-            <li>
-              <a href="#">
-                <img src="../IMAGE/instagram.png" alt="Instagram" />
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="room-detail.html">Hệ thống phòng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="promotion.html">Ưu đãi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">Tin tức</a>
             </li>
           </ul>
+          <div class="header-right d-flex align-items-center gap-3">
+            <div class="login-area d-flex gap-2" id="auth-area">
+              <a href="login.html" class="login-btn">Đăng nhập</a>
+              <a href="signup.html" class="login-btn">Tạo tài khoản</a>
+            </div>
+            <ul class="social-list d-flex align-items-center gap-2">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=100071590012338">
+                  <img src="../IMAGE/facebook.png" alt="Facebook" />
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.instagram.com/plazzo_serento/">
+                  <img src="../IMAGE/instagram.png" alt="Instagram" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Thông tin phòng</h1>
+        <p>Trải nghiệm đẳng cấp</p>
+      </div>
+    </section>
+    <div class="box-wrapper">
+      <div class="booking-box">
+        <h2>Khám phá kỳ nghỉ</h2>
+
+        <form class="booking-form" id="room-search-form">
+          <div>
+            <input type="date" id="search-checkin" />
+            <div
+              id="errSearchCheckin"
+              style="color: red; font-size: 14px"
+            ></div>
+          </div>
+
+          <div>
+            <input type="date" id="search-checkout" />
+            <div
+              id="errSearchCheckout"
+              style="color: red; font-size: 14px"
+            ></div>
+          </div>
+
+          <div>
+            <select id="search-guests">
+              <option value="">Số khách</option>
+              <option value="1">1 người</option>
+              <option value="2">2 người</option>
+              <option value="3">3 người</option>
+              <option value="4">4 người</option>
+              <option value="5">5 người</option>
+              <option value="6">6 người</option>
+            </select>
+            <div id="errSearchGuests" style="color: red; font-size: 14px"></div>
+          </div>
+
+          <button type="button" id="btnRoomSearch">Tìm phòng</button>
+        </form>
+      </div>
     </div>
-  </nav>
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <div class="hero-text">
-      <h1>Thông tin phòng</h1>
-      <p>Trải nghiệm đẳng cấp</p>
-    </div>
-  </section>
-  <div class="box-wrapper">
-    <div class="booking-box">
-      <h2>Khám phá kỳ nghỉ</h2>
-
-      <form class="booking-form" id="room-search-form">
-        <div>
-          <input type="date" id="search-checkin" />
-          <div id="errSearchCheckin" style="color: red; font-size: 14px"></div>
-        </div>
-
-        <div>
-          <input type="date" id="search-checkout" />
-          <div id="errSearchCheckout" style="color: red; font-size: 14px"></div>
-        </div>
-
-        <div>
-          <select id="search-guests">
-            <option value="">Số khách</option>
-            <option value="1">1 người</option>
-            <option value="2">2 người</option>
-            <option value="3">3 người</option>
-            <option value="4">4 người</option>
-            <option value="5">5 người</option>
-            <option value="6">6 người</option>
-          </select>
-          <div id="errSearchGuests" style="color: red; font-size: 14px"></div>
-        </div>
-
-        <button type="button" id="btnRoomSearch">Tìm phòng</button>
-      </form>
-    </div>
-  </div>
-  <!-- MAIN CONTENT -->
-  <div class="container detail-page">
-    <div class="main-layout-wrapper">
-      <!-- DETAILS PART -->
-      <div class="left-content">
-        <section class="room-item" id="royal-suite" data-room="Royal Suite" data-capacity="2">
-          <div class="image-gallery-top">
-            <div class="main-img">
-              <img src="../IMAGE/room1.png" alt="Royal Suite" />
+    <!-- MAIN CONTENT -->
+    <div class="container detail-page">
+      <div class="main-layout-wrapper">
+        <!-- DETAILS PART -->
+        <div class="left-content">
+          <section
+            class="room-item"
+            id="royal-suite"
+            data-room="Royal Suite"
+            data-capacity="2"
+          >
+            <div class="image-gallery-top">
+              <div class="main-img">
+                <img src="../IMAGE/room1.png" alt="Royal Suite" />
+              </div>
+              <div class="sub-imgs">
+                <img src="../IMAGE/room1.1.png" alt="Royal Detail 1" />
+                <img src="../IMAGE/room1.2.png" alt="Royal Detail 2" />
+              </div>
             </div>
             <div class="sub-imgs">
               <img src="../IMAGE/room1.1.png" alt="Royal Detail 1" />

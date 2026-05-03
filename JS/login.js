@@ -1,64 +1,46 @@
+$(document).ready(function () {
+  $("#login-form").submit(function (e) {
+    e.preventDefault();
+    let username = $("#login-username").val().trim();
+    let password = $("#login-password").val().trim();
 
-$(document).ready(function(){
+    // lấy user
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-$("#login-form").submit(function(e){
+    // tìm user
+    let user = users.find(
+      (u) => u.username === username && u.password === password,
+    );
 
-e.preventDefault();
+    if (!user) {
+      $("#errorModal").css("display", "flex").hide().fadeIn();
+      return;
+    }
 
-let username = $("#login-username").val().trim();
-let password = $("#login-password").val().trim();
+    // lưu user login
+    localStorage.setItem("loggedInUser", username);
 
-// lấy user
-let users = JSON.parse(localStorage.getItem("users")) || [];
+    // hiện modal
+    $("#loginModal").css("display", "flex").hide().fadeIn();
+  });
 
-// tìm user
-let user = users.find(u => 
-u.username === username && 
-u.password === password
-);
+  // nút về home
+  $("#goHome").click(function () {
+    window.location.href = "index.html";
+  });
 
-if(!user){
+  // nút X đóng modal
+  $(".close-modal").click(function () {
+    $("#loginModal").fadeOut();
+  });
 
-$("#errorModal").css("display","flex").hide().fadeIn();
-
-return;
-}
-
-// lưu user login
-localStorage.setItem("loggedInUser", username);
-
-// hiện modal
-$("#loginModal").css("display","flex").hide().fadeIn();
-
+  // click ngoài modal
+  $(window).click(function (e) {
+    if ($(e.target).is("#loginModal")) {
+      $("#loginModal").fadeOut();
+    }
+  });
+  $("#closeError,.close-error").click(function () {
+    $("#errorModal").fadeOut();
+  });
 });
-
-
-// nút về home
-$("#goHome").click(function(){
-
-window.location.href="index.html";
-
-});
-
-
-// nút X đóng modal
-$(".close-modal").click(function(){
-
-$("#loginModal").fadeOut();
-
-});
-
-
-// click ngoài modal
-$(window).click(function(e){
-
-if($(e.target).is("#loginModal")){
-$("#loginModal").fadeOut();
-}
-
-});
-$("#closeError,.close-error").click(function(){
-$("#errorModal").fadeOut();
-});
-});
-

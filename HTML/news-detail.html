@@ -1,79 +1,71 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
-    <script src="../JS/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../CSS/style.css" />
-    <title>Hotel Booking</title>
-  </head>
 
-  <body>
-    <!-- HEADER -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
-        </a>
-        <!-- NÚT HAMBURGER -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainMenu"
-          aria-controls="mainMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainMenu">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Trang chủ</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+  <script src="../JS/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <title>Hotel Booking</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
+      </a>
+      <!-- NÚT HAMBURGER -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+        aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="room-detail.html">Hệ thống phòng</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="promotion.html">Ưu đãi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="news.html">Tin tức</a>
+          </li>
+        </ul>
+        <div class="header-right d-flex align-items-center gap-3">
+          <div class="login-area d-flex gap-2" id="auth-area">
+            <a href="login.html" class="login-btn">Đăng nhập</a>
+            <a href="signup.html" class="login-btn">Tạo tài khoản</a>
+          </div>
+          <ul class="social-list d-flex align-items-center gap-2">
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100071590012338">
+                <img src="../IMAGE/facebook.png" alt="Facebook" />
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#about">Về chúng tôi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="room-detail.html">Hệ thống phòng</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="facilities.html">Dịch vụ & tiện ích</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="promotion.html">Ưu đãi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="news.html">Tin tức</a>
+
+            <li>
+              <a href="https://www.instagram.com/plazzo_serento/">
+                <img src="../IMAGE/instagram.png" alt="Instagram" />
+              </a>
             </li>
           </ul>
-          <div class="header-right d-flex align-items-center gap-3">
-            <div class="login-area d-flex gap-2" id="auth-area">
-              <a href="login.html" class="login-btn">Đăng nhập</a>
-              <a href="signup.html" class="login-btn">Tạo tài khoản</a>
-            </div>
-            <ul class="social-list d-flex align-items-center gap-2">
-              <li>
-                <a href="https://www.facebook.com/profile.php?id=100071590012338">
-                  <img src="../IMAGE/facebook.png" alt="Facebook" />
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.instagram.com/plazzo_serento/">
-                  <img src="../IMAGE/instagram.png" alt="Instagram" />
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
-    </nav>
-    <section
-      class="hero"
-      style="
+    </div>
+  </nav>
+  <section class="hero" style="
         height: 25vh;
         min-height: 200px;
         display: flex;
@@ -81,11 +73,9 @@
         justify-content: center;
         background-color: #0f172a;
         color: #fff;
-      "
-    >
-      <div class="hero-text" style="text-align: center">
-        <p
-          style="
+      ">
+    <div class="hero-text" style="text-align: center">
+      <p style="
             color: #c9a227;
             font-family: &quot;Lato&quot;, sans-serif;
             letter-spacing: 2px;

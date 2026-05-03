@@ -1,77 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
-    <link rel="stylesheet" href="../CSS/style.css" />
-    <title>Đội ngũ chuyên nghiệp</title>
-  </head>
 
-  <body>
-    <!-- HEADER -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
-        </a>
-        <!-- NÚT HAMBURGER -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainMenu"
-          aria-controls="mainMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainMenu">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
-            <li class="nav-item">
-              <a class="nav-link" href="../HTML/index.html">Trang chủ</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <title>Đội ngũ chuyên nghiệp</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-header sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="../IMAGE/logo.png" alt="Hotel Logo" class="logo-img" />
+      </a>
+      <!-- NÚT HAMBURGER -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+        aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 menu-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../HTML/index.html">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">Về chúng tôi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#rooms">Hệ thống phòng</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#facilities">Dịch vụ & tiện ích</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#news">Tin tức</a>
+          </li>
+        </ul>
+        <div class="header-right d-flex align-items-center gap-3">
+          <div class="login-area d-flex gap-2" id="auth-area">
+            <a href="login.html" class="login-btn">Đăng nhập</a>
+            <a href="signup.html" class="login-btn">Tạo tài khoản</a>
+          </div>
+          <ul class="social-list d-flex align-items-center gap-2">
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100071590012338">
+                <img src="../IMAGE/facebook.png" alt="Facebook" />
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#about">Về chúng tôi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#rooms">Hệ thống phòng</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#facilities"
-                >Dịch vụ & tiện ích</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#news">Tin tức</a>
+
+            <li>
+              <a href="https://www.instagram.com/plazzo_serento/">
+                <img src="../IMAGE/instagram.png" alt="Instagram" />
+              </a>
             </li>
           </ul>
-          <div class="header-right d-flex align-items-center gap-3">
-            <div class="login-area d-flex gap-2" id="auth-area">
-              <a href="login.html" class="login-btn">Đăng nhập</a>
-              <a href="signup.html" class="login-btn">Tạo tài khoản</a>
-            </div>
-            <ul class="social-list d-flex align-items-center gap-2">
-              <li>
-                <a href="https://www.facebook.com/profile.php?id=100071590012338">
-                  <img src="../IMAGE/facebook.png" alt="Facebook" />
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.instagram.com/plazzo_serento/">
-                  <img src="../IMAGE/instagram.png" alt="Instagram" />
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
-    </nav>
-    <section
-      class="hero"
-      style="
+    </div>
+  </nav>
+  <section class="hero" style="
         height: 30vh;
         min-height: 250px;
         display: flex;
@@ -144,8 +134,8 @@
               <h3>Nguyễn Lê Hà Linh</h3>
               <span class="team-role">Thành viên</span>
               <p>
-                Phụ trách xây dựng cấu trúc tổng thể dự án, thiết kế layout nền, Header, Footer và giao diện trang chủ
-                index.html, logic thanh Booking trên trang chủ.
+                Phụ trách setup cấu trúc toàn bộ dự án, layout nền, Header và
+                Footer,làm báo cáo dự án.
               </p>
             </div>
           </div>
@@ -160,7 +150,8 @@
               <h3>Nguyễn Ngọc Minh Anh</h3>
               <span class="team-role">Thành viên</span>
               <p>
-                Phụ trách thiết kế giao diện và xây dựng chức năng cho các trang Room Detail và Promotion
+                Đảm nhiệm giao diện trang Room Detail và Form Booking đặt
+                phòng, làm slide báo cáo.
               </p>
             </div>
           </div>
@@ -176,8 +167,8 @@
               <h3>Trần Trinh Trường Thọ</h3>
               <span class="team-role">Thành viên</span>
               <p>
-                Phụ trách thiết kế giao diện và xử lý Validation cho các trang Booking, Sign up, Log in; đồng thời xây
-                dựng Validation cho form đặt phòng tại trang Room Detail.
+                Phụ trách xử lý dữ liệu Form, Validation và lưu trữ
+                LocalStorage.
               </p>
             </div>
           </div>
@@ -209,8 +200,7 @@
             <div class="team-info">
               <h3>Trần Trung Thành</h3>
               <span class="team-role">Thành viên</span>
-              <p>Phụ trách thiết kế giao diện và xây dựng chức năng cho các trang
-                News và News Detail, Team</p>
+              <p>Xây dựng giao diện trang News,New Details, Team, Contact.</p>
             </div>
           </div>
         </div>

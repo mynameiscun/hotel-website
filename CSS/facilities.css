@@ -178,6 +178,7 @@ section {
         .facility-content {
             flex: 1;
             padding: 5px 0;
+            scroll-margin-top: 100px;
         }
 
         .facility-content h2 {
@@ -257,4 +258,16 @@ section {
     text-transform: uppercase;
     font-family: "Lato", Arial, sans-serif;
     letter-spacing: 0.5px;
+}
+.facility-img-group img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tạo hiệu ứng mượt */
+}
+
+.facility-img-group img:hover {
+    transform: scale(1.02); /* Phóng to nhẹ 2% */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Đổ bóng nhẹ */
+    cursor: pointer;
 }

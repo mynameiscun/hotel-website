@@ -84,7 +84,7 @@ $(document).ready(function () {
                     </div>
                 
                     <div class="detail-row">
-                        <div class="detail-title">Guests</div>
+                        <div class="detail-title">Số lượng khách</div>
                         <div>${b.guests}</div>
                     </div>
                 

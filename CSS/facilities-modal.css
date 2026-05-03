@@ -18,8 +18,8 @@ right:0;
 
 .facility-container{
     background:white;
-    width:1000px;
-    height: 600px;
+    width: 1250px;
+    height: 750px;
     padding:25px;
     border-radius:10px;
     display:flex;
@@ -58,6 +58,7 @@ width:100px;
 height: 65px;
 border-radius:5px;
 cursor:pointer;
+
 }
 
 .facility-info{

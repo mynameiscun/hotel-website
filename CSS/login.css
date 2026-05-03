@@ -1,109 +1,332 @@
-
-        .auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  background: url('hotel-bg.jpg') center/cover no-repeat;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
 }
 
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* GIỮ NGUYÊN CLASS auth-container, nhưng thay đổi cách hiển thị nền ngoài */
+.auth-container {
+    position: relative; /* THÊM MỚI: để ::before và ::after bám theo container */
+    min-height: 100vh;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;   /* THÊM MỚI: tránh ảnh blur bị tràn */
+}
+
+/* THÊM MỚI: ảnh nền ngoài màn hình */
+.auth-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url("../IMAGE/login.png") 40% center / cover no-repeat;
+    filter: blur(5px);
+    transform: scale(1.03);
+    z-index: 0;
+}
+
+/* THÊM MỚI: lớp phủ tối bên ngoài để nhìn sang hơn */
+.auth-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 12, 6, 0.45);
+    z-index: 1;
+}
+
+/* GIỮ NGUYÊN CLASS auth-card, nhưng thay đổi style cho giống hình mẫu */
 .auth-card {
-  background: rgba(255,255,255,0.95);
-  padding: 30px;
-  border-radius: 8px;
-  width: 350px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 2;
+
+    width: 420px;          /* SỬA: nhỏ lại từ 470px -> 420px */
+    padding: 26px 36px;    /* SỬA: giảm padding để khung gọn hơn */
+    border-radius: 20px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(30, 20, 15, 0.72), rgba(30, 20, 15, 0.78)),
+        url("../IMAGE/login.jpg") center center / cover no-repeat;
+
+    border: 1px solid rgba(224, 166, 31, 0.75);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        inset 0 0 45px rgba(255, 255, 255, 0.08);
 }
 
+/* THÊM MỚI: lớp kính mờ trong card */
+.auth-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(45, 30, 25, 0.22);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+/* THÊM MỚI: đưa tất cả nội dung trong card nổi lên trên lớp phủ */
+.auth-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* THÊM MỚI: phần logo phía trên */
+.hotel-logo {
+    text-align: center;
+    color: #d6aa4f;
+    margin-bottom: 18px;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 8px;
+    border: 1px solid #d6aa4f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+    font-weight: bold;
+    color: #d6aa4f;
+}
+
+.hotel-logo {
+    text-align: center;
+    color: #d6aa4f;
+    margin-bottom: 10px;
+}
+
+/* SỬA: khung logo vừa hơn, không cần viền tròn nếu dùng logo thật */
+.logo-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 6px;
+
+    border: none;
+    border-radius: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* THÊM: bắt ảnh logo nằm gọn trong khung */
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* SỬA: chữ PLAZZO SERENTO sát logo hơn */
+.hotel-logo p {
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+/* SỬA: sao nhỏ lại một chút */
+.stars {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* GIỮ NGUYÊN selector h2, nhưng thay đổi màu/kích thước */
 .auth-card h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+    text-align: center;
+    color: #ffffff;
+    font-size: 34px;   /* SỬA: từ 42px xuống 34px */
+    margin-bottom: 10px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
 }
 
+/* THÊM MỚI: đường trang trí */
+.decor-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    color: #d6aa4f;
+}
+
+/* THÊM MỚI: đường kẻ trái/phải */
+.decor-line span {
+    width: 95px;
+    height: 1px;
+    background: rgba(214, 170, 79, 0.6);
+}
+
+/* THÊM MỚI: ký hiệu ở giữa */
+.decor-line i {
+    font-style: normal;
+    font-size: 18px;
+}
+
+/* THÊM MỚI: khoảng cách cho đường dưới */
+.bottom-line {
+    margin: 24px 0 18px;
+}
+
+/* GIỮ NGUYÊN CLASS input-group, chỉ chỉnh khoảng cách */
 .input-group {
-  margin-bottom: 15px;
+    margin-bottom: 18px;  
 }
 
+/* GIỮ NGUYÊN label, nhưng đổi màu trắng */
 .input-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* THÊM MỚI: khung bọc input để đặt icon */
+.input-wrap {
+    position: relative;
+}
+
+/* THÊM MỚI: icon trong input */
+.input-icon {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d6aa4f;
+    font-size: 18px;
+    z-index: 2;
+}
+
+/* GIỮ NGUYÊN input, nhưng thay đổi style cho giống mẫu */
 .input-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
+    width: 100%;
+    height: 52px;           /* SỬA: từ 58px xuống 52px */
+    padding: 0 16px 0 18px; 
+    border: 1px solid rgba(214, 170, 79, 0.85);
+    border-radius: 10px;
+    outline: none;
+    background: rgba(20, 15, 12, 0.38);
+    color: #ffffff;
+    font-size: 16px;
 }
 
+/* THÊM MỚI: màu placeholder */
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+/* THÊM MỚI: hiệu ứng khi bấm vào input */
+.input-group input:focus {
+    border-color: #ffd86b;
+    box-shadow: 0 0 0 3px rgba(214, 170, 79, 0.2);
+}
+
+/* GIỮ NGUYÊN CLASS btn-auth, nhưng đổi style nút */
 .btn-auth {
-  width: 100%;
-  padding: 12px;
-  background: #b89b5e; /* màu vàng sang trọng */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
+    width: 100%;
+    height: 52px;       /* SỬA: từ 58px xuống 52px */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #c9952f, #f3d56b, #c9952f);
+    color: #2b1d0f;
+    font-size: 17px;    /* SỬA: nhỏ hơn một chút */
+    font-weight: bold;
+    transition: 0.3s;
 }
 
+/* THAY ĐỔI: hover nút đẹp hơn */
 .btn-auth:hover {
-  background: #a07f3f;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(224, 166, 31, 0.35);
 }
 
+/* GIỮ NGUYÊN CLASS switch-auth, nhưng đổi màu */
 .switch-auth {
-  text-align: center;
-  margin-top: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 17px;
 }
 
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-
-justify-content:center;
-align-items:center;
-
-z-index:9999;
+/* GIỮ NGUYÊN link đăng ký, đổi màu vàng */
+.switch-auth a {
+    color: #ffd86b;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.modal-content{
-background:white;
-padding:25px;
-border-radius:8px;
-text-align:center;
-width:350px;
-position:relative;
+.switch-auth a:hover {
+    text-decoration: underline;
 }
 
-.close-modal{
-position:absolute;
-top:10px;
-right:15px;
-font-size:22px;
-cursor:pointer;
-font-weight:bold;
+/* GIỮ NGUYÊN MODAL: logic JS vẫn dùng display none/flex */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0; /* THAY ĐỔI: viết gọn thay cho top/left/width/height */
+    background: rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-.modal-content button{
-margin-top:15px;
-padding:10px 20px;
-background:#b89b5e;
-color:white;
-border:none;
-cursor:pointer;
+/* GIỮ NGUYÊN modal-content, chỉ làm đẹp hơn */
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 350px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
-.close-error{
-position:absolute;
-top:10px;
-right:15px;
-font-size:22px;
-cursor:pointer;
-font-weight:bold;
+
+/* GIỮ NGUYÊN class đóng modal */
+.close-modal,
+.close-error {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* GIỮ NGUYÊN button trong modal, chỉ chỉnh bo góc */
+.modal-content button {
+    margin-top: 18px;
+    padding: 11px 25px;
+    background: #b89b5e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* THÊM MỚI: responsive cho màn hình nhỏ */
+@media (max-width: 600px) {
+    .auth-card {
+        width: 90%;
+        padding: 30px 25px;
+    }
+
+    .auth-card h2 {
+        font-size: 34px;
+    }
+
+    .decor-line span {
+        width: 65px;
+    }
 }

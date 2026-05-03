@@ -1,101 +1,287 @@
-
-        .auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  background: url('hotel-bg.jpg') center/cover no-repeat;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
 }
 
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* NỀN NGOÀI */
+.auth-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ẢNH NỀN BLUR */
+.auth-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../IMAGE/login.png") center center / cover no-repeat;
+    filter: blur(5px);
+    transform: scale(1.04);
+    z-index: 0;
+}
+
+/* LỚP PHỦ TỐI */
+.auth-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 12, 6, 0.50);
+    z-index: 1;
+}
+
+/* KHUNG ĐĂNG KÝ - NHỎ GỌN */
 .auth-card {
-  background: rgba(255,255,255,0.95);
-  padding: 30px;
-  border-radius: 8px;
-  width: 350px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 2;
+
+    width: 360px;
+    padding: 20px 30px 22px;
+    border-radius: 18px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(32, 20, 14, 0.76), rgba(32, 20, 14, 0.82)),
+        url("../IMAGE/login.jpg") center center / cover no-repeat;
+
+    border: 1px solid rgba(224, 166, 31, 0.8);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.45),
+        inset 0 0 35px rgba(255, 255, 255, 0.06);
 }
 
+/* LỚP KÍNH MỜ TRONG CARD */
+.auth-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(35, 20, 15, 0.22);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+/* ĐƯA NỘI DUNG NỔI LÊN */
+.auth-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* LOGO */
+.hotel-logo {
+    text-align: center;
+    color: #d6aa4f;
+    margin-bottom: 8px;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    opacity: 0.65;
+}
+
+.hotel-logo p {
+    font-size: 13px;
+    letter-spacing: 1.8px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.stars {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #d6aa4f;
+}
+
+/* TIÊU ĐỀ */
 .auth-card h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
 }
 
+/* ĐƯỜNG TRANG TRÍ */
+.decor-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: #d6aa4f;
+}
+
+.decor-line span {
+    width: 72px;
+    height: 1px;
+    background: rgba(214, 170, 79, 0.65);
+}
+
+.decor-line i {
+    font-style: normal;
+    font-size: 16px;
+}
+
+.bottom-line {
+    margin: 16px 0 12px;
+}
+
+/* INPUT */
 .input-group {
-  margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .input-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 7px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.input-wrap {
+    position: relative;
 }
 
 .input-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid rgba(214, 170, 79, 0.88);
+    border-radius: 9px;
+    outline: none;
+    background: rgba(20, 15, 12, 0.38);
+    color: #ffffff;
+    font-size: 14px;
 }
 
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.input-group input:focus {
+    border-color: #ffd86b;
+    box-shadow: 0 0 0 3px rgba(214, 170, 79, 0.20);
+}
+
+/* NÚT ĐĂNG KÝ */
 .btn-auth {
-  width: 100%;
-  padding: 12px;
-  background: #b89b5e; /* màu vàng sang trọng */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #c9952f, #f3d56b, #c9952f);
+    color: #2b1d0f;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .btn-auth:hover {
-  background: #a07f3f;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(224, 166, 31, 0.35);
 }
 
+/* LINK ĐĂNG NHẬP */
 .switch-auth {
-  text-align: center;
-  margin-top: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
 }
 
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-
-justify-content:center;
-align-items:center;
-
-z-index:9999;
+.switch-auth a {
+    color: #ffd86b;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.modal-content{
-background:white;
-padding:25px;
-border-radius:8px;
-text-align:center;
-width:350px;
-position:relative;
+.switch-auth a:hover {
+    text-decoration: underline;
 }
 
-.close-modal{
-position:absolute;
-top:10px;
-right:15px;
-font-size:22px;
-cursor:pointer;
-font-weight:bold;
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-.modal-content button{
-margin-top:15px;
-padding:10px 20px;
-background:#b89b5e;
-border:none;
-color:white;
-cursor:pointer;
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 350px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-content button {
+    margin-top: 18px;
+    padding: 11px 25px;
+    background: #b89b5e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .auth-card {
+        width: 90%;
+        padding: 24px 22px;
+    }
+
+    .auth-card h2 {
+        font-size: 26px;
+    }
+
+    .decor-line span {
+        width: 60px;
+    }
+
+    .hotel-logo p {
+        font-size: 12px;
+    }
+
+    .switch-auth {
+        font-size: 13px;
+    }
 }

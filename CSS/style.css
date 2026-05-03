@@ -75,9 +75,10 @@ body {
 }
 
 .menu-center .nav-link.active {
-    color:  #e0a61f;
+    color: #e0a61f;
 
 }
+
 /* --HERO BANNER-- */
 .hero {
     background:
@@ -115,6 +116,7 @@ body {
     position: absolute;
 
 }
+
 .contact {
     list-style: none;
     display: flex;
@@ -134,6 +136,7 @@ body {
 .contact img:hover {
     transform: scale(1.2);
 }
+
 .booking-form {
     display: flex;
     gap: 15px;

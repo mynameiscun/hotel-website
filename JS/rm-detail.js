@@ -1,8 +1,8 @@
 // Regex: tên phải viết hoa chữ cái đầu mỗi từ
 const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
 
-// Regex: số điện thoại 10 số, bắt đầu bằng 01-09
-const phoneRegex = /^(0[1-9])[0-9]{8}$/;
+// Regex: số điện thoại 10 số, bắt đầu bằng 03|05|07|08|09
+const phoneRegex = /^(03|05|07|08|09)\d{8}$/;
 // validation for booking form
 document.addEventListener("DOMContentLoaded", function () {
     // đổi thành getID để kh bị phụ thuộc thứ tự

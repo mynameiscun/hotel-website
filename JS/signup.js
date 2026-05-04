@@ -6,6 +6,14 @@ $(document).ready(function () {
     let email = $("#signup-email").val().trim();
     let username = $("#signup-username").val().trim();
     let password = $("#signup-password").val().trim();
+    //  REGEX: ít nhất 6 ký tự, 1 chữ hoa, 3 số
+    let passwordRegex = /^(?=.*[A-Z])(?=(?:.*\d){3,}).{6,}$/;
+
+    //  KIỂM TRA PASSWORD
+    if (!passwordRegex.test(password)) {
+      alert("Mật khẩu phải có ít nhất 6 ký tự, 1 chữ in hoa và 3 chữ số");
+      return;
+    }
 
     // lấy users
     let users = JSON.parse(localStorage.getItem("users")) || [];

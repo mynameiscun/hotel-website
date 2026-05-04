@@ -1,5 +1,5 @@
 // Regex: tên phải viết hoa chữ cái đầu mỗi từ
-const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
+const nameRegex = /^([A-ZÀ-Ỹ]{1}[a-zà-ỹ]*)(\s[A-ZÀ-Ỹ]{1}[a-zà-ỹ]*)+$/;
 
 // Regex: số điện thoại 10 số, bắt đầu bằng 03|05|07|08|09
 const phoneRegex = /^(03|05|07|08|09)\d{8}$/;
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     phoneInput.addEventListener("input", () => {
         if (!phoneRegex.test(phoneInput.value.trim())) {
-            showError(phoneInput, "Số điện thoại phải đủ 10 số và bắt đầu từ 01-09.");
+            showError(phoneInput, "số điện thoại 10 số, bắt đầu bằng 03|05|07|08|09");
         } else {
             clearError(phoneInput);
         }

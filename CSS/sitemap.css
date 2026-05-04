@@ -1,0 +1,301 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.sitemap-container {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    padding: 20px;
+}
+
+.sitemap-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../IMAGE/login.png") center center / cover no-repeat;
+    filter: blur(5px);
+    transform: scale(1.04);
+    z-index: 0;
+}
+
+.sitemap-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 12, 6, 0.55);
+    z-index: 1;
+}
+
+.sitemap-card {
+    position: relative;
+    z-index: 2;
+
+    width: 560px;
+    max-width: 92vw;
+
+    padding: 18px 28px 20px;
+    border-radius: 18px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(32, 20, 14, 0.78), rgba(32, 20, 14, 0.85)),
+        url("../IMAGE/login.jpg") center center / cover no-repeat;
+
+    border: 1px solid rgba(224, 166, 31, 0.85);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.45),
+        inset 0 0 35px rgba(255, 255, 255, 0.06);
+}
+
+.sitemap-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(35, 20, 15, 0.24);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+/* Nội dung nổi lên */
+.sitemap-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hotel-logo {
+    text-align: center;
+    color: #d6aa4f;
+    margin-bottom: 6px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    opacity: 0.65;
+}
+
+.hotel-logo p {
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+.stars {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #d6aa4f;
+}
+
+
+.sitemap-card h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 4px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+.sitemap-desc {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.decor-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px 0 12px;
+    color: #d6aa4f;
+}
+
+.decor-line span {
+    width: 70px;
+    height: 1px;
+    background: rgba(214, 170, 79, 0.7);
+}
+
+.decor-line i {
+    font-style: normal;
+    font-size: 14px;
+}
+
+.sitemap-box {
+    background: rgba(226, 213, 188, 0.92);
+    border: 1px solid rgba(226, 180, 87, 0.75);
+    border-radius: 12px;
+    padding: 12px 16px;
+    text-align: left;
+    
+}
+
+.tree,
+.tree ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tree {
+    padding-left: 0;
+}
+
+.tree ul {
+    margin-top: 5px;
+}
+
+.tree li {
+    position: relative;
+    margin: 5px 0;
+    padding-left: 17px;
+}
+
+.tree li::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 1px;
+    height: calc(100% + 10px);
+    background: rgba(160, 127, 63, 0.55);
+}
+
+.tree li::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 15px;
+    height: 1px;
+    background: rgba(160, 127, 63, 0.55);
+}
+
+/* node gốc không có line */
+.tree > li::before,
+.tree > li::after {
+    display: none;
+}
+
+.tree span {
+    display: inline-block;
+    min-width: 210px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(214, 170, 79, 0.7);
+    border-radius: 8px;
+    padding: 5px 9px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.25s ease;
+}
+
+.tree span:hover {
+    background: #fff7e8;
+    transform: translateX(3px);
+}
+
+/* Link */
+.tree a {
+    color: #2C2C2C;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.tree a:hover {
+    color: #c9952f;
+}
+
+.back-home {
+    display: block;
+    width: 100%;
+    height: 36px;
+
+    margin-top: 12px;
+    border-radius: 9px;
+
+    background: linear-gradient(90deg, #c9952f, #f3d56b, #c9952f);
+    color: #2b1d0f;
+
+    text-align: center;
+    line-height: 36px;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(224, 166, 31, 0.35);
+}
+
+@media (max-width: 600px) {
+    .sitemap-card {
+        width: 92%;
+        padding: 16px 18px;
+    }
+
+    .sitemap-card h1 {
+        font-size: 26px;
+    }
+
+    .sitemap-desc {
+        font-size: 11px;
+    }
+
+    .decor-line span {
+        width: 55px;
+    }
+
+    .sitemap-box {
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .tree,
+    .tree ul {
+        padding-left: 17px;
+    }
+
+    .tree span {
+        min-width: 190px;
+    }
+
+    .tree a {
+        font-size: 11px;
+    }
+}

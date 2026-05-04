@@ -373,7 +373,24 @@ $("#booking-form").submit(function (e) {
         .fadeIn();
 
 });
+// =======================
+// CLOSE ERROR MODAL
+// =======================
 
+// nút "Đóng"
+$(document).on("click", "#closeErrorBtn", function () {
+    $("#errorModal").fadeOut();
+});
+
+// dấu X
+$(document).on("click", "#closeError", function () {
+    $("#errorModal").fadeOut();
+});
+$(window).click(function (e) {
+    if ($(e.target).is("#errorModal")) {
+        $("#errorModal").fadeOut();
+    }
+});
 
 // =======================
 // LOGIN MODAL

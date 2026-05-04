@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     // Name
     if (!nameRegex.test(name)) {
-      alert("Họ tên phải từ 2 ký tự, chỉ gồm chữ cái và khoảng trắng");
+      alert("Họ tên: đầu mỗi từ viết hoa, chỉ gồm chữ cái và khoảng trắng ");
       return;
     }
 
@@ -35,7 +35,7 @@ $(document).ready(function () {
 
     // Username
     if (!usernameRegex.test(username)) {
-      alert("Username phải từ 5-20 ký tự, chỉ gồm chữ và số");
+      alert("Username phải từ 5-20 ký tự, chỉ gồm chữ và số, không được có khoảng trắng.");
       return;
     }
 

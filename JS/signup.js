@@ -1,62 +1,105 @@
+// Chờ DOM load xong
 $(document).ready(function () {
+
+  // Bắt sự kiện submit form signup
   $("#signup-form").submit(function (e) {
+
+    // Ngăn form reload trang
     e.preventDefault();
 
+    // Lấy dữ liệu từ các input và trim khoảng trắng
     let name = $("#signup-name").val().trim();
     let email = $("#signup-email").val().trim();
     let username = $("#signup-username").val().trim();
     let password = $("#signup-password").val().trim();
-    //  REGEX: ít nhất 6 ký tự, 1 chữ hoa, 3 số
-    let passwordRegex = /^(?=.*[A-Z])(?=(?:.*\d){3,}).{6,}$/;
+    
+ // ================= REGEX =================
+    const usernameRegex = /^[a-zA-Z0-9]{5,20}$/;
+    const passRegex = /^(?=.*[A-Z])(?=(?:.*\d){3,}).{6,}$/;
+    const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]+)(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
-    //  KIỂM TRA PASSWORD
-    if (!passwordRegex.test(password)) {
-      alert("Mật khẩu phải có ít nhất 6 ký tự, 1 chữ in hoa và 3 chữ số");
+    // ================= VALIDATE =================
+
+    // Name
+    if (!nameRegex.test(name)) {
+      alert("Họ tên phải từ 2 ký tự, chỉ gồm chữ cái và khoảng trắng");
       return;
     }
 
-    // lấy users
+    // Email
+    if (!emailRegex.test(email)) {
+      alert("Email phải là Gmail hợp lệ (example@gmail.com)");
+      return;
+    }
+
+    // Username
+    if (!usernameRegex.test(username)) {
+      alert("Username phải từ 5-20 ký tự, chỉ gồm chữ và số");
+      return;
+    }
+
+    // Password
+    if (!passRegex.test(password)) {
+      alert("Mật khẩu phải ≥6 ký tự, có ít nhất 1 chữ hoa và 3 chữ số");
+      return;
+    }
+
+
+    // Lấy danh sách users từ localStorage (nếu chưa có thì là mảng rỗng)
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // check username trùng
+    // Kiểm tra username đã tồn tại chưa
     let exist = users.find((user) => user.username === username);
 
+    // Nếu đã tồn tại
     if (exist) {
+
+      // Thông báo lỗi
       alert("Username đã tồn tại");
-      return;
+
+      return; // dừng xử lý
     }
 
-    // tạo user
+    // Tạo object user mới
     let newUser = {
-      name: name,
-      email: email,
-      username: username,
-      password: password,
+      name: name,         // tên người dùng
+      email: email,       // email
+      username: username, // username đăng nhập
+      password: password, // mật khẩu
     };
 
-    // push user
+    // Thêm user mới vào mảng users
     users.push(newUser);
 
-    // save
+    // Lưu lại vào localStorage (chuyển object → JSON)
     localStorage.setItem("users", JSON.stringify(users));
 
-    // HIỂN THỊ MODAL SAU KHI SUCCESS
+    // Hiển thị modal signup thành công
     $("#signupModal").css("display", "flex").hide().fadeIn();
   });
 
-  // nút login
+  // Nút chuyển sang trang login
   $("#goLogin").click(function () {
+
+    // Redirect sang login.html
     window.location.href = "login.html";
   });
 
-  // nút X đóng modal
+  // Nút X đóng modal
   $(".close-modal").click(function () {
+
+    // Ẩn modal signup
     $("#signupModal").fadeOut();
   });
 
-  // click ngoài modal đóng
+  // Bắt sự kiện click toàn window
   $(window).click(function (e) {
+
+    // Nếu click vào nền của modal
     if ($(e.target).is("#signupModal")) {
+
+      // Ẩn modal
       $("#signupModal").fadeOut();
     }
   });

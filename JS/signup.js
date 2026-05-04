@@ -16,14 +16,14 @@ $(document).ready(function () {
  // ================= REGEX =================
     const usernameRegex = /^[a-zA-Z0-9]{5,20}$/;
     const passRegex = /^(?=.*[A-Z])(?=(?:.*\d){3,}).{6,}$/;
-    const nameRegex = /^([A-ZÀ-Ỹ][a-zà-ỹ]*)(\s[A-ZÀ-Ỹ][a-zà-ỹ]*)*$/;
+    const nameRegex = /^([A-ZÀ-Ỹ]{1}[a-zà-ỹ]*)(\s[A-ZÀ-Ỹ]{1}[a-zà-ỹ]*)+$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
     // ================= VALIDATE =================
 
     // Name
     if (!nameRegex.test(name)) {
-      alert("Họ tên: đầu mỗi từ viết hoa, chỉ gồm chữ cái và khoảng trắng ");
+      alert("Họ tên: đủ 2 từ trở lên, đầu mỗi từ viết hoa, chỉ gồm chữ cái và khoảng trắng");
       return;
     }
 
